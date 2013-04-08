@@ -29,8 +29,11 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 <?php wp_head(); ?>
-
+<script>
+  var $ = jQuery.noConflict();    
+</script>
 <link rel="stylesheet" type="text/css" media="all" href="/wp-content/css/scmg.css" />
+<script src="/wp-content/js/scmg.js"></script>
 </head>
 
 <body <?php body_class(); ?>>

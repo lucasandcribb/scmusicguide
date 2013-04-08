@@ -1,5 +1,5 @@
 /* GENERAL STYLING */
-#secondary {width:200px;}
+#secondary {width:190px; border:1px solid #999; padding:5px; margin-top:0px;}
 
 
 
@@ -19,8 +19,47 @@
 
 /* BUSINESS LISTINGS PAGE */
 .wpbdp-msg {display:none;}
-.entry-content .wpbdp-bar {padding-top:10px; background:#FAFAFA; border:1px solid #666;}
+.entry-content .wpbdp-bar {padding-top:10px; background:#FAFAFA; border:1px solid #999;}
 .entry-content .wpbdp-main-links input {margin-right:5px;}
 .entry-content #wpbdmsearchsubmit {margin-left:5px;}
 .entry-content #wpbdp-categories ul li {list-style:none;}
-.entry-content .wpbdp-page-content .wpbdp-listing {background:#FAFAFA; border:1px solid #666; margin-bottom:15px;}
+.entry-content .wpbdp-page-content .wpbdp-listing {background:#FAFAFA; border:1px solid #999; margin-bottom:15px;}
+
+
+/* SUBMIT MUSIC PAGE */
+#gform_wrapper_1 {width:750px; position:relative; float:left; margin-top:0px; background:#FAFAFA;}
+#gform_fields_1 {padding:10px; border:1px solid #999;}
+#gform_fields_1 input, #gform_fields_1 select {background:#E6E6E6;}
+#gform_fields_1 input:focus, #gform_fields_1 select:focus {background:#fff; border:1px solid #999;}
+
+
+/* ALBUM REVIEWS */
+.page-template-album-reviews-php .album-review-cont {position:relative; float:left; width:750px; padding:10px; margin-bottom:25px;
+	border:1px solid #999;}
+.page-template-album-reviews-php .album-review-cont div {position:relative;}
+.page-template-album-reviews-php .album-review-title {position:relative; float:left; width:740px; margin-bottom:10px; background:#efefef; 
+	border:1px solid #666; padding:5px;}
+.page-template-album-reviews-php .album-review-title a {color:#666; font-weight:bold; font-size:22px;}
+.page-template-album-reviews-php .album-review-title a:hover {color:#000;}
+.page-template-album-reviews-php .album-review-img {float:left; width:200px;}
+.page-template-album-reviews-php .album-review-info div {margin-bottom:5px; float:left; width:500px;}
+.page-template-album-reviews-php .album-review-info span {font-weight:bold;}
+.page-template-album-reviews-php .album-review-info .ratings {height:50px; padding-top:25px;}
+.page-template-album-reviews-php .album-review-info .ratings article {height:50px;}
+.page-template-album-reviews-php .album-review-info .ratings article .entry-content img {margin-right:5px; background:#0101DF;}
+.page-template-album-reviews-php article .entry-header {display:none;}
+.page-template-album-reviews-php .album-review-content {position:relative; float:left; width:100%; margin-top:20px; overflow:hidden; display:none;}
+.page-template-album-reviews-php .expand-review, .page-template-album-reviews-php .retract-review {float:left; margin-top:10px; cursor:pointer;}
+.page-template-album-reviews-php .retract-review {display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
