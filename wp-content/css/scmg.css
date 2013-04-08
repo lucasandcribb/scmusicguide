@@ -15,3 +15,12 @@
 .artist-section {margin-top:5px; margin-bottom:5px;}
 .index-single-cont {position:relative; float:left; width:100%; margin-bottom:15px;}
 .index-single-cont .index-section-title {width:100%; font-weight:bold;}
+
+
+/* BUSINESS LISTINGS PAGE */
+.wpbdp-msg {display:none;}
+.entry-content .wpbdp-bar {padding-top:10px; background:#FAFAFA; border:1px solid #666;}
+.entry-content .wpbdp-main-links input {margin-right:5px;}
+.entry-content #wpbdmsearchsubmit {margin-left:5px;}
+.entry-content #wpbdp-categories ul li {list-style:none;}
+.entry-content .wpbdp-page-content .wpbdp-listing {background:#FAFAFA; border:1px solid #666; margin-bottom:15px;}
