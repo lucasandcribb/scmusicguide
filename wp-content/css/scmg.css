@@ -34,10 +34,10 @@
 
 
 /* ALBUM REVIEWS */
-.page-template-album-reviews-php .album-review-cont {position:relative; float:left; width:750px; padding:10px; margin-bottom:25px;
+.page-template-album-reviews-php .album-review-cont {position:relative; float:left; width:725px; padding:10px; margin-bottom:25px;
 	border:1px solid #999;}
 .page-template-album-reviews-php .album-review-cont div {position:relative;}
-.page-template-album-reviews-php .album-review-title {position:relative; float:left; width:740px; margin-bottom:10px; background:#efefef; 
+.page-template-album-reviews-php .album-review-title {position:relative; float:left; width:715px; margin-bottom:10px; background:#efefef; 
 	border:1px solid #666; padding:5px;}
 .page-template-album-reviews-php .album-review-title a {color:#666; font-weight:bold; font-size:22px;}
 .page-template-album-reviews-php .album-review-title a:hover {color:#000;}
@@ -54,6 +54,12 @@
 
 
 
+/* SINGLE ARTIST PAGE */
+.single-artist-cont div {position:relative; float:left; width:400px; margin-bottom:20px; line-height:150%;}
+.single-artist-cont {position:relative; float:left;}
+.single-artist-cont span {font-weight:bold;}
+.single-artist-cont .single-artist-title {width:400px; font-weight:bold; font-size:24px; margin-bottom:20px;}
+.single-artist-cont .single-artist-image {width:175px; float:right; text-align:right;}
 
 
 

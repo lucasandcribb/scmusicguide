@@ -15,7 +15,7 @@ Template Name: Album Reviews
 				<div class="album-review-info">
 					<div><span>Band/Album Name: </span> <?php the_title(); ?></div>
 					<div><span>Genre: </span> <?php the_field('genre'); ?></div>
-					<div><span>Release Date: </span> <?php the_field('release_date'); ?></div>
+					<div><span>Release Date: </span> <?php $date = get_field('release_date'); echo date("m/d/y", strtotime($date)); ?></div>
 					<div><span>Review By: </span><?php the_field('reviewed_by'); ?></div>
 					<div class="ratings"><span><?php get_template_part( 'content', 'page' ); ?></div>
 				</div>

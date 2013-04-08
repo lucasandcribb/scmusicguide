@@ -25,7 +25,7 @@ Template Name: Artist Index
 					$array_val = $alph_array[$i];
 					$index = get_field('index');
 					if ($index == $array_val) { ?>
-					<a href="<?php $url; ?>">
+					<a href="<?php echo $url; ?>">
 						<div id="index-<?php echo $alph_array[$i];?>" class="artist-section">
 							<div class="artist-img"><?php the_post_thumbnail('thumbnail'); ?></div>
 							<div class="artist-title"><?php the_title(); ?></div>
