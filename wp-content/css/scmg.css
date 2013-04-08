@@ -1,0 +1,17 @@
+/* GENERAL STYLING */
+#secondary {width:200px;}
+
+
+
+/* ARTIST INDEX */
+#artist-index {width:750px;}
+#artist-index, .artist-content {position:relative; float:left; margin-bottom:20px;}
+#artist-index div {position:relative; float:left;}
+#artist-index .artist-title {font-weight:bold;}
+#artist-index .artist-img, #artist-index .artist-img img {width:30px;}
+#artist-index .artist-img {margin-right:10px;}
+#index-links {width:100%; margin-bottom:20px; text-align:center;}
+#index-links a {width:25px; position:relative; float:left;}
+.artist-section {margin-top:5px; margin-bottom:5px;}
+.index-single-cont {position:relative; float:left; width:100%; margin-bottom:15px;}
+.index-single-cont .index-section-title {width:100%; font-weight:bold;}
