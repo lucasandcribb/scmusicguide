@@ -1,0 +1,8 @@
+[21-Nov-2012 17:06:36] PHP Fatal error:  Class 'LBGalleryController' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/admin/controllers/reset.php on line 2
+[21-Nov-2012 17:40:58] PHP Fatal error:  Class 'LBGalleryController' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/admin/controllers/category.php on line 2
+[22-Nov-2012 04:44:20] PHP Fatal error:  Class 'LBGalleryController' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/admin/controllers/gallery.php on line 2
+[16-Dec-2012 11:56:20] PHP Fatal error:  Class 'LBGalleryController' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/admin/controllers/gallery.php on line 2
+[19-Dec-2012 08:58:55] PHP Fatal error:  Class 'LBGalleryController' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/admin/controllers/image.php on line 2
+[19-Dec-2012 21:52:30] PHP Fatal error:  Class 'LBGalleryController' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/admin/controllers/setting.php on line 2
+[11-Feb-2013 09:03:17] PHP Fatal error:  Class 'LBGalleryController' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/admin/controllers/setting.php on line 2
+[05-Mar-2013 12:40:38] PHP Fatal error:  Class 'LBGalleryController' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/admin/controllers/setting.php on line 2

@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+/**/
+#lbgal-header-settings,
+#lbgal-header-category,
+#lbgal-header-gallery,
+#lbgal-header-image,
+#lbgal-header-reset{
+	background-repeat:no-repeat;
+}
+#lbgal-header-settings{
+	background-image:url(../images/settings_32x32.png);
+}
+#lbgal-header-category{
+	background-image:url(../images/category_32x32.png);
+}
+#lbgal-header-gallery{
+	background-image:url(../images/gallery_32x32.png);
+}
+#lbgal-header-image{
+	background-image:url(../images/image_32x32.png);
+}
+#lbgal-header-reset{
+	background-image:url(http://cdn4.iconfinder.com/data/icons/bluecoral/Reset.png);
+}
+.action-button{	
+	display:inline-block;
+	-webkit-border-radius: 3px;
+	width:16px;
+	height:16px;
+	margin:0 20px 0 0;
+}
+.lbgal-move-handle{
+	position:relative;
+}
+.lbgal-move-handle span{
+	background-image:url(http://cdn3.iconfinder.com/data/icons/gis/pan.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	display:block;
+	background-color:#F0F0F0;
+	cursor:move;
+}
+.editable{
+	display:none;
+}
+.lbgal-description{
+	font-style:italic;
+	font-size:11px;
+}
+.wp-list-table .inline-edit{
+	background-color:#F5F5F5;
+}
+.wp-list-table .inline-edit table{
+	border:0px solid;
+}
+.wp-list-table .inline-edit table td{
+	border:0px solid;
+}
+.lbgal-input,
+.lbgal-textarea{
+	width:95%;
+}
+.lbgal-editinline-title,
+.lbgal-editinline-description,
+.lbgal-editinline-linkto,
+.lbgal-editinline-source,
+.lbgal-editinline-thumbname{
+	width:300px;
+}
+.ajax-loading{
+	visibility:hidden;
+}
+.colorSelector {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	background: url(../../libraries/colorpicker/images/select2.png);
+	vertical-align: middle;
+}
+.colorSelector div {
+	margin: 4px;
+	height: 28px;
+	background: url(../../libraries/colorpicker/images/select2.png) center;
+}

@@ -34,6 +34,7 @@
 </script>
 <link rel="stylesheet" type="text/css" media="all" href="/wp-content/css/scmg.css" />
 <script src="/wp-content/js/scmg.js"></script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -54,6 +55,8 @@
 		if ( ! empty( $header_image ) ) : ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 		<?php endif; ?>
+
+		
 	</header><!-- #masthead -->
 
 	<div id="main" class="wrapper">

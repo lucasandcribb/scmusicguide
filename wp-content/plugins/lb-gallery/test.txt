@@ -1,0 +1,14 @@
+Array
+(
+    [title] => DSC01962_03-17-2013
+    [description] => DSC01962_03-17-2013
+    [created] => 1364350520
+    [filename] => http://scmusicguide.com/wp-content/plugins/lb-gallery/files/gallery/3/DSC01962_03-17-2013.jpg
+    [gid] => 3
+    [type] => image
+    [storage] => local
+    [provider] => 
+    [thumbname] => 
+    [ordering] => 23
+    [author] => 1
+)

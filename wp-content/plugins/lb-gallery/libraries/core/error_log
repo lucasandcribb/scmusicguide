@@ -1,0 +1,8 @@
+[22-Nov-2012 03:56:46] PHP Fatal error:  Class 'LBGalleryObject' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/libraries/core/table.php on line 2
+[22-Nov-2012 04:13:51] PHP Fatal error:  Class 'LBGalleryObject' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/libraries/core/core.php on line 6
+[22-Nov-2012 14:25:03] PHP Fatal error:  Class 'LBGalleryObject' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/libraries/core/template.php on line 2
+[22-Nov-2012 14:26:29] PHP Fatal error:  Class 'LBGalleryObject' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/libraries/core/view.php on line 2
+[22-Nov-2012 14:29:38] PHP Fatal error:  Class 'LBGalleryObject' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/libraries/core/helper.php on line 2
+[22-Nov-2012 15:03:18] PHP Fatal error:  Class 'LBGalleryObject' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/libraries/core/controller.php on line 2
+[23-Dec-2012 09:07:48] PHP Fatal error:  Class 'LBGalleryObject' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/libraries/core/core.php on line 6
+[25-Dec-2012 03:20:48] PHP Fatal error:  Class 'LBGalleryObject' not found in /home/mikevh68/public_html/scmusicguide.com/wp-content/plugins/lb-gallery/libraries/core/core.php on line 6

@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+.lbtooltip-wrapper{
+	position:absolute;
+	z-index:9999;
+	border:0px solid;
+	max-width:600px;
+	
+}
+.lbtooltip-wrapper .lbtooltip-content{
+	margin: 0;
+	padding:10px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	border:1px solid #C7C7C7;
+	background-color: #EBEBEB;
+	color: #1982D1;
+	text-shadow: 0 1px 0 white;
+	position:relative;
+	z-index:40;
+	min-height:1px;
+}
+.lbtooltip-wrapper .lbtooltip-content h3.lb-tooltip-title{
+	font-size:14px;
+	margin:0 0 5px 0;
+	padding:0;
+	font-weight:bold;
+}
+.lbtooltip-wrapper .lbtooltip-content .lb-tooltip-text{
+	font-size:12px;
+}
+.lbtooltip-wrapper .lbtooltip-arrow{
+	background-image:url(images/lbtooltip-arrow.png);
+	display:block;
+	width:28px;
+	height:14px;
+	position:absolute;
+	z-index:50;
+}

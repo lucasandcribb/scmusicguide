@@ -5,11 +5,13 @@ Template Name: Album Reviews
 ?>
 <?php get_header(); ?>
 	<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 10, 'order' => 'ASC' ) ); ?>
-	<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink();?>
+	<?php while ( $loop->have_posts() ) : $loop->the_post(); 
+		$url = get_permalink();
+		$name = get_field('artist_name'); $newUrl = str_replace(' ', '-',$name); $lowerUrl = strtolower($newUrl);?>
 		
 			<div class="album-review-cont">
 				<div class="album-review-title">
-					<a href="<?php echo $url; ?>"><?php the_title(); ?></a>
+					<a href="/artists/<?php echo $lowerUrl; ?>"><?php the_title(); ?></a>
 				</div>
 				<div class="album-review-img"><?php the_post_thumbnail('thumbnail'); ?></div>
 				<div class="album-review-info">

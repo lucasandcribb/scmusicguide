@@ -1,6 +1,23 @@
 /* GENERAL STYLING */
+html {margin-top:0px !important;}
+#page {margin-top:10px;}
 #secondary {width:190px; border:1px solid #999; padding:5px; margin-top:0px;}
 
+
+/* HEADER */
+#header-social-links {position:relative; float:right; margin-top:0px; margin-right:20px; margin-bottom:20px; width:250px;}
+#header-social-links div {position:relative; float:left; margin-right:10px; width:100%; margin-bottom:5px;}
+#header-social-title {width:100%; margin-bottom:5px;}
+hgroup {width:600px; position:relative; float:left;}
+.nav-menu li a {padding-left:5px; padding-right:5px;}
+
+
+/* HOMEPAGE */
+#featured-artist, #featured-artist div {position:relative; float:left;}
+#featured-artist {width:240px; padding:5px; border:1px solid #999;}
+#featured-artist .featured-title {width:230px; background:#666; color:#fff; padding:5px;}
+#featured-artist #featured-img img {width:240px;}
+#featured-artist #featured-name {position:absolute; width:100%; text-align:center; top:30px; color:#fff; opacity:0.7; font-size:22px;}
 
 
 /* ARTIST INDEX */
@@ -63,9 +80,17 @@
 
 
 
-
-
-
+/* EVENTS */
+.page-template-default #comments {display:none;}
+#event-o-matic {padding:10px; border:1px solid #999; background:#FAFAFA;}
+#event-o-matic input, #event-o-matic input.required, #event-o-matic textarea, #event-o-matic textarea.required,
+	#event-o-matic table td input, #event-o-matic #image_file, #event-o-matic .url, #event-o-matic .number {color:#666; background:#E6E6E6;}
+#event-o-matic input:focus, #event-o-matic input.required:focus, #event-o-matic textarea:focus, #event-o-matic textarea.required:focus,
+	#event-o-matic table td input:hover, #event-o-matic #image_file:hover, #event-o-matic .url:hover, #event-o-matic .number:hover {color:#000; background:#fff; border:1px solid #999;}
+#event-o-matic small {width:100%; position:relative; float:left;}
+.eom_event {padding:10px; border:1px solid #999; position:relative;}
+.eom_event .attachment-thumbnail {position:absolute; right:10px;} 
+.eom_event h1, .eom_event p {margin-top:0px; width:450px;}
 
 
 
