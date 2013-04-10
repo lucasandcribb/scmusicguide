@@ -12,12 +12,41 @@ hgroup {width:600px; position:relative; float:left;}
 .nav-menu li a {padding-left:5px; padding-right:5px;}
 
 
-/* HOMEPAGE */
+/* SIDEBAR */ 
+.widget_archive, .widget_categories {width:150px; overflow:hidden;}
+.widget select {width:165px; border:1px solid #999; height:25px; background:url(../images/select-arrow.png) no-repeat; 
+	background-position:125px 0px;}
+
+
+/***** HOMEPAGE *****/
+#hp-widget-holder {max-width:750px; position:relative; float:left;}
+.hp-custom-widget {margin-right:25px;}
+/* Featured Artist */
 #featured-artist, #featured-artist div {position:relative; float:left;}
-#featured-artist {width:240px; padding:5px; border:1px solid #999;}
+#featured-artist {width:240px; padding:5px; border:1px solid #999; cursor:pointer;}
 #featured-artist .featured-title {width:230px; background:#666; color:#fff; padding:5px;}
 #featured-artist #featured-img img {width:240px;}
 #featured-artist #featured-name {position:absolute; width:100%; text-align:center; top:30px; color:#fff; opacity:0.7; font-size:22px;}
+/* Locally Grown */
+#locally-grown, #locally-grown div {position:relative; float:left;}
+#locally-grown {width:240px; padding:5px; border:1px solid #999; cursor:pointer;}
+#locally-grown .lg-title {width:230px; background:#666; color:#fff; padding:5px;}
+#locally-grown #lg-img img {width:240px;}
+#locally-grown #lg-name {width:100%; text-align:center; margin-top:20px; color:#000; font-size:18px;}
+#locally-grown #lg-artist {width:100%; text-align:center; margin-top:20px; color:#000; font-size:16px;}
+/* Sights and Sounds */
+#sights-sounds, #sights-sounds div {position:relative; float:left;}
+#sights-sounds {width:240px; padding:5px; border:1px solid #999; cursor:pointer;}
+#sights-sounds .ss-list {width:100%; margin-bottom:10px;}
+#sights-sounds .ss-title {width:230px; background:#666; color:#fff; padding:5px; margin-bottom:10px;}
+#sights-sounds #ss-img {width:30px;}
+#sights-sounds #ss-img img {width:25px;}
+#sights-sounds #ss-name {width:200px; height:25px; margin-left:5px; color:#000; font-size:14px;}
+
+
+
+/* ABOUT US */
+.about-us-profile {position:relative; float:left; padding:10px; background:#FAFAFA; border:1px solid #999;}
 
 
 /* ARTIST INDEX */

@@ -14,10 +14,10 @@ $(document).ready(function() {
 		$(this).parent().children('.album-review-content').fadeOut();
 	});
 
-    // $('#featured-artist').mouseenter(function() {
-    // 	$('#featured-name').css({'opacity':1.0});
-    // }).mouseleave(function() {
-    // 	$('#featured-name').css({'opacity':0.7});
-    // });
+    $('#featured-artist').mouseenter(function() {
+    	$('#featured-name').css({'opacity':1.0});
+    }).mouseleave(function() {
+    	$('#featured-name').css({'opacity':0.7});
+    });
 
 });
