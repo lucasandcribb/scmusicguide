@@ -5,6 +5,12 @@ Template Name: Homepage
 ?>
 <?php get_header(); ?>
 
+<?php get_sidebar(); ?>
+
+<div id="header-slideshow">
+	<?php echo do_shortcode('[portfolio_slideshow id=15]');?>
+</div>
+
 <div id="hp-widget-holder">
 
 	<div id="featured-artist" class="hp-custom-widget">
@@ -74,5 +80,4 @@ Template Name: Homepage
 
 </div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

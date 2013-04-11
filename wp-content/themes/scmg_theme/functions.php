@@ -448,3 +448,37 @@ function twentytwelve_customize_preview_js() {
 	wp_enqueue_script( 'twentytwelve-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
+
+// Add Favicon //
+
+function diww_favicon() {
+	echo '<link rel="shortcut icon" type="image/x-icon" href="'.get_bloginfo('stylesheet_directory').'/favicon.ico" />';
+}
+add_action('wp_head', 'diww_favicon');
+add_action('admin_head', 'diww_favicon');
+
+function filter_ptags_on_images($content){
+   //return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+
+}
+
+add_filter('the_content', 'filter_ptags_on_images');
+
+add_filter( 'show_admin_bar', '__return_false' );
+
+add_filter('the_content', 'remove_img_titles');
+
+function remove_img_titles($text) {
+
+    // Get all title="..." tags from the html.
+    $result = array();
+    preg_match_all('|title="[^"]*"|U', $text, $result);
+
+    // Replace all occurances with an empty string.
+    foreach($result[0] as $img_tag) {
+        $text = str_replace($img_tag, '', $text);
+    }
+
+    return $text;
+}
