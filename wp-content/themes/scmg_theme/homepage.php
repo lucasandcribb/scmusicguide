@@ -42,7 +42,7 @@ Template Name: Homepage
 		<?php while ( $loop->have_posts() ) : $loop->the_post();
 			$id = get_the_ID();
 			$local = get_field('locally_grown');
-			if ($local == true) {
+			if ($local == 1) {
 				array_push($lg_arry, $id);
 			}
 			$count++;
