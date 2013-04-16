@@ -20,4 +20,37 @@ $(document).ready(function() {
     	$('#featured-name').css({'opacity':0.7});
     });
 
+    $('.alpha-link').click(function() {
+    	var filter = $(this).attr('rel');
+    	$('.index-single-cont').each(function() {
+    		var alpha = $(this).attr('alpha');
+    		if (filter == alpha) {
+    			$(this).show();
+    		} else if (filter == 'All') {
+    			$(this).show();
+    		} else {
+    			$(this).hide();
+    		}
+    	});
+    });
+
+
+    $('.genre-link').click(function() {
+    	var filter = $(this).attr('rel');
+    	$('.index-single-cont').find('.artist-section').each(function() {
+    		var genre = $(this).attr('genre');
+    		if ( genre.contains(filter) ) {
+    			$(this).parent().show();
+    		} else {
+    			$(this).parent().hide();
+    		}
+    	});
+    	$('.index-single-cont').each(function() {
+    		if ($(this).find('.artist-section').length == 0) {
+    			$(this).hide();
+    		}
+    	})
+    });
+
+
 });
