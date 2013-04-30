@@ -58,7 +58,7 @@ header #searchform {position:relative; float:right; width:210px;}
 	font-weight:bold; padding-left:5px;}
 
 #vid-aud-titles {position:relative; float:left; width:780px;}
-.vid-aud-title {position:relative; float:left; width:363px; text-align:center; border:1px solid #000; color:#fff;
+.vid-aud-title {position:relative; float:left; width:364px; text-align:center; border:1px solid #000; color:#fff;
 	background:url('/wp-content/images/backgrounds/black-linen.jpg'); padding-left:5px; padding-right:5px; margin-left:5px; margin-right:5px;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
