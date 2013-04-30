@@ -38,7 +38,7 @@ header #searchform {position:relative; float:right; width:210px;}
 
 /* SIDEBAR */ 
 .widget_archive, .widget_categories {width:150px; overflow:hidden;}
-.widget select {width:165px; border:1px solid #999; height:25px; background:url(../images/select-arrow.png) no-repeat; 
+.widget select {width:166px; border:1px solid #999; height:25px; background:url(../images/select-arrow.png) no-repeat; 
 	background-position:124px 0px;}
 
 
