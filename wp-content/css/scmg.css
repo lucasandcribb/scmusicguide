@@ -23,7 +23,7 @@ hgroup {position:relative; float:left; margin-bottom:10px;}
 .main-navigation li ul li a {background:url(../images/nav-bg.jpg) no-repeat; color:#fff; width:140px;}
 .main-navigation li ul li a:hover {color:#D8D8D8; text-decoration:underline; background:url(../images/nav-bg.jpg) no-repeat;}
 .main-navigation ul li ul li {margin-right:0px; width:140px;}
-.main-navigation ul li ul li a {padding-right:0px; padding-left:0px;}
+.main-navigation ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666;}
 .main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a, 
 	.main-navigation .current_page_item > a, .main-navigation .current_page_ancestor > a {color:#efefef;}
 .main-navigation .nav-menu li a:hover {color:#D8D8D8; text-decoration:underline;}
@@ -111,10 +111,12 @@ header #searchform {position:relative; float:right; width:210px;}
 
 
 /* SUBMIT MUSIC PAGE */
-#gform_wrapper_1, #gform_wrapper_2 {width:750px; position:relative; float:left; margin-top:0px; background:#FAFAFA;}
-#gform_fields_1, #gform_fields_2 {padding:10px; border:1px solid #999;}
-#gform_fields_1 input, #gform_fields_1 select, #gform_fields_2 input, #gform_fields_2 select, #gform_fields_2 textarea {background:#E6E6E6;}
-#gform_fields_1 input:focus, #gform_fields_2 input:focus, #gform_fields_1 select:focus, #gform_fields_2 select:focus, #gform_fields_2 textarea:focus {background:#fff; border:1px solid #999;}
+#gform_wrapper_1, #gform_wrapper_2, #gform_wrapper_3 {width:750px; position:relative; float:left; margin-top:0px; background:#FAFAFA;}
+#gform_fields_1, #gform_fields_2, #gform_fields_3 {padding:10px; border:1px solid #999;}
+#gform_fields_1 input, #gform_fields_1 select, #gform_fields_2 input, #gform_fields_2 select, #gform_fields_2 textarea, 
+	#gform_fields_3 input, #gform_fields_3 select, #gform_fields_3 textarea {background:#E6E6E6;}
+#gform_fields_1 input:focus, #gform_fields_2 input:focus, #gform_fields_1 select:focus, #gform_fields_2 select:focus, #gform_fields_2 textarea:focus,
+	#gform_fields_3 input:focus, #gform_fields_3 select:focus, #gform_fields_3 textarea:focus {background:#fff; border:1px solid #999;}
 #ui-datepicker-div {width:220px !important;}
 
 /* ALBUM REVIEWS */
