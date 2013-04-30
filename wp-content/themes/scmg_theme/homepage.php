@@ -7,9 +7,9 @@ Template Name: Homepage
 
 <?php get_sidebar(); ?>
 
-<div id="header-slideshow">
-	<?php echo do_shortcode('[portfolio_slideshow id=15]');?>
-</div>
+
+
+<?php get_template_part( 'content', get_post_format() ); ?>
 
 <div id="hp-widget-holder">
 

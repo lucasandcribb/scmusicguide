@@ -57,17 +57,34 @@ header #searchform {position:relative; float:right; width:210px;}
 #header-slideshow .slideshow-wrapper .slideshow-meta p {margin-top:2px !important; margin-bottom:0px !important; font-size:16px; 
 	font-weight:bold; padding-left:5px;}
 
+#vid-aud-titles {position:relative; float:left; width:780px;}
+.vid-aud-title {position:relative; float:left; width:363px; text-align:center; border:1px solid #000; color:#fff;
+	background:url('/wp-content/images/backgrounds/black-linen.jpg'); padding-left:5px; padding-right:5px; margin-left:5px; margin-right:5px;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;}
 
+.home .pfwrpr {position:relative; float:left; padding:10px 5px 0px 5px; border:1px solid #999; background:#efefef; margin-bottom:20px; margin-right:5px; margin-left:5px;}
+
+.home article {position:relative; float:left; width:780px;}
+.home article .entry-header, .home article .entry-meta {display:none;}
+
+.featured-title, .lg-title, .ss-title {width:230px; background:url('/wp-content/images/backgrounds/black-linen.jpg'); color:#fff; padding:5px;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;}
 /* Featured Artist */
 #featured-artist, #featured-artist div {position:relative; float:left;}
 #featured-artist {width:240px; padding:5px; border:1px solid #999; cursor:pointer;}
-#featured-artist .featured-title {width:230px; background:#666; color:#fff; padding:5px;}
+/*#featured-artist .featured-title {width:230px; background:url('/wp-content/images/backgrounds/black-linen.jpg'); color:#fff; padding:5px;}*/
 #featured-artist #featured-img img {width:240px;}
 #featured-artist #featured-name {position:absolute; width:100%; text-align:center; top:30px; color:#fff; opacity:0.7; font-size:22px;}
 /* Locally Grown */
 #locally-grown, #locally-grown div {position:relative; float:left;}
 #locally-grown {width:240px; padding:5px; border:1px solid #999; cursor:pointer;}
-#locally-grown .lg-title {width:230px; background:#666; color:#fff; padding:5px;}
+/*#locally-grown .lg-title {width:230px; background:url('/wp-content/images/backgrounds/black-linen.jpg'); color:#fff; padding:5px;}*/
 #locally-grown #lg-img img {width:240px;}
 #locally-grown #lg-name {width:100%; text-align:center; margin-top:20px; color:#000; font-size:18px;}
 #locally-grown #lg-artist {width:100%; text-align:center; margin-top:20px; color:#000; font-size:16px;}
@@ -75,7 +92,7 @@ header #searchform {position:relative; float:right; width:210px;}
 #sights-sounds, #sights-sounds div {position:relative; float:left;}
 #sights-sounds {width:240px; padding:5px; border:1px solid #999; cursor:pointer;}
 #sights-sounds .ss-list {width:100%; margin-bottom:10px;}
-#sights-sounds .ss-title {width:230px; background:#666; color:#fff; padding:5px; margin-bottom:10px;}
+#sights-sounds .ss-title {margin-bottom:10px;}
 #sights-sounds #ss-img {width:30px;}
 #sights-sounds #ss-img img {width:25px;}
 #sights-sounds #ss-name {width:200px; height:25px; margin-left:5px; color:#000; font-size:14px;}
