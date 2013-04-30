@@ -16,7 +16,7 @@ header.site-header {padding-bottom:10px; padding-top:0px !important;}
 #header-social-title {width:100%; margin-bottom:5px;}
 hgroup {position:relative; float:left; margin-bottom:10px;}
 .nav-menu ul {background:url(../images/nav-bg.jpg) no-repeat;}
-.nav-menu li {margin-right:0px;}
+.nav-menu li {margin-right:0px; z-index:5;}
 .nav-menu li a {color:#fff; width:140px; text-align:center;}
 
 .main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border-bottom:1px solid #999; border-top:1px solid #999;}
@@ -30,6 +30,8 @@ hgroup {position:relative; float:left; margin-bottom:10px;}
 #social-links, #social-links img {position:relative; float:left;}
 #social-links {width:500px; margin-left:35px;}
 #social-links img {margin:5px; width:30px;}
+
+#f-login {position:relative; float:right; margin-top:40px; margin-right:5px;}
 
 header #searchform {position:relative; float:right; width:210px;}
 

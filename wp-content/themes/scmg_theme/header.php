@@ -67,6 +67,8 @@
 
 		<?php get_search_form(); ?>
 
+		<div id="f-login"><?php echo do_shortcode('[flexible-frontend-login-modal]'); ?></div>
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
