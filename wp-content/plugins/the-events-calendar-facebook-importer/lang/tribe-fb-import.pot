@@ -1,0 +1,411 @@
+# Copyright (C) 2012 The Events Calendar: Facebook Importer
+# This file is distributed under the same license as the The Events Calendar: Facebook Importer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: The Events Calendar: Facebook Events 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-14 17:38-0500\n"
+"PO-Revision-Date: 2013-03-14 17:38-0500\n"
+"Last-Translator: Timothy Wood <tim@imaginesimplicity.com>\n"
+"Language-Team: Modern Tribe Inc. <pro@tri.be>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_ex;_x;_n;_c;_n_noop;_nc;__ngetttext;"
+"__ngettext_noop;_nx;_nx_noop;esc_attr__;esc_html__;est_attr_e;esc_html_e;"
+"esc_attr_x;esc_html_x\n"
+"X-Poedit-Basepath: ./\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../the-events-calendar-facebook-importer.php:312
+msgid "The return argument should be object or id"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:361
+msgid "Object type provided is invalid"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:605
+#, php-format
+msgid " \"%s\" is not a valid image. %s"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:612
+msgid "The file cannot be saved."
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:628
+msgid "Failed to save record into database."
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:678
+#, php-format
+msgid "The event \"%s\" was already imported from Facebook."
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:681
+#, php-format
+msgid ""
+"Either the event with ID %s does not exist, is marked as private on Facebook "
+"or we couldn't reach the Facebook API"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:718
+msgid "The Facebook event IDs provided must be numeric and one per line."
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:733
+msgid "Import FB Events"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:774
+#: ../the-events-calendar-facebook-importer.php:974
+msgid "Facebook"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:825
+msgid ""
+"No valid events were provided for import. The import failed as a result."
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:851
+#, php-format
+msgid "Events from %s:"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:859
+msgid "(previously imported)"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:870
+#, php-format
+msgid "%s does not have any Facebook events"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:944
+msgid "Once Weekly"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:965
+msgid "Import"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:983
+msgid "Facebook Events"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:999
+msgid "Settings"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:1044
+msgid "The Events Calendar"
+msgstr ""
+
+#: ../the-events-calendar-facebook-importer.php:1045
+#, php-format
+msgid ""
+"To begin using <b>The Events Calendar: Facebook Events</b>, please install "
+"the latest version of %s."
+msgstr ""
+
+#: ../admin-views/import-page.php:8
+msgid "settings page"
+msgstr ""
+
+#: ../admin-views/import-page.php:9
+msgid "Go take a look at your event(s)"
+msgstr ""
+
+#: ../admin-views/import-page.php:16 ../admin-views/settings-tab.php:14
+msgid "Import Facebook Events"
+msgstr ""
+
+#: ../admin-views/import-page.php:20
+msgid "The following errors have occurred:"
+msgstr ""
+
+#: ../admin-views/import-page.php:27
+msgid "Please note that as a result, no events were successfully imported."
+msgstr ""
+
+#: ../admin-views/import-page.php:29
+msgid "Please note that other events have been successfully imported."
+msgstr ""
+
+#: ../admin-views/import-page.php:36
+msgid "The selected event has been successfully imported."
+msgstr ""
+
+#: ../admin-views/import-page.php:44
+msgid "How to Import Facebook Events"
+msgstr ""
+
+#: ../admin-views/import-page.php:46
+#, php-format
+msgid ""
+"Visit the %s to insert the Facebook User or Page Identifiers that you wish "
+"to import from. Once you do, you will be able to select which events you "
+"wish to import."
+msgstr ""
+
+#: ../admin-views/import-page.php:48
+#, php-format
+msgid ""
+"Since you've already setup some Facebook user(s) or page(s) to import from, "
+"you can import those events below. Visit the %s to modify the Facebook user"
+"(s) or page(s) you want to import from."
+msgstr ""
+
+#: ../admin-views/import-page.php:50
+msgid ""
+"You can also import any arbitrary event by entering Facebook event IDs in "
+"the text area below."
+msgstr ""
+
+#: ../admin-views/import-page.php:52
+#, php-format
+msgid ""
+"You can determine an event's Facebook ID by looking at the URL of the event. "
+"For example, the ID of this event: %s would be %s"
+msgstr ""
+
+#: ../admin-views/import-page.php:53
+msgid "Please enter one Facebook event ID per line."
+msgstr ""
+
+#: ../admin-views/import-page.php:63
+msgid "Events from Facebook organization(s) or page(s) you've added:"
+msgstr ""
+
+#: ../admin-views/import-page.php:70
+msgid "Import events by their Facebook ID:"
+msgstr ""
+
+#: ../admin-views/import-page.php:74
+msgid "One event ID per line"
+msgstr ""
+
+#: ../admin-views/import-page.php:79
+msgid "Import events"
+msgstr ""
+
+#: ../admin-views/import-page.php:97
+msgid "Please select or enter the ID of at least one event to import"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:15
+msgid "Getting Started"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:16
+msgid ""
+"You need your Facebook App ID and App Secret to access data via the Facebook "
+"Graph API to import your events from Facebook. We've provided a default set "
+"of API credentials, however we encourage you to create your own Facebook App "
+"and enter your credentials below."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:18
+#, php-format
+msgid "%s to learn more about Facebook Apps"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:18 ../admin-views/settings-tab.php:19
+msgid "Click here"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:19
+#, php-format
+msgid "%s to view or create Facebook Apps"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:21
+msgid "Selecting pages or users to sync events with"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:22
+msgid ""
+"You can import events belonging to a Facebook organization or a Facebook "
+"page. You will need the username(s) or ID of each organization or page that "
+"you want to fetch events from. We do not currently support importing events "
+"from personal profiles."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:24
+#, php-format
+msgid ""
+"A page or organization's username or ID can be found in the URL used to "
+"access its profile. Modern Tribe's page is %s and the username is "
+"'ModernTribeInc'. If a page or organization doesn't have a username, you "
+"will see the ID (numerical) in the URL."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:25
+#, php-format
+msgid ""
+"You can also find the ID of an organization or page by visiting the Graph "
+"API. For example, to find Modern Tribe's ID, visit %s. You will get a json "
+"response with information about the user or page. The first result should be "
+"the ID."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:35
+msgid "Account Settings"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:39
+msgid "Facebook App ID"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:40 ../admin-views/settings-tab.php:49
+msgid "This information is optional."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:40
+msgid "Follow the instructions above to create or find your Facebook App ID."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:48
+msgid "Facebook App secret"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:49
+msgid "Follow the instructions above to create or find your App Secret."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:57
+msgid "Organization and page usernames / IDs to sync with"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:58
+msgid "Please put one entry per line."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:58
+msgid "Follow the instructions above to find usernames or IDs."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:67
+msgid "Import Settings"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:71
+msgid "Default status to use for imported events"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:72
+msgid "Published"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:72
+msgid "Draft"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:72
+msgid "Pending Review"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:78
+msgid "Enable Google Maps on imported events"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:79
+msgid ""
+"Check to enable maps for imported events in the frontend. Please enable "
+"Google Maps on the \"General\" tab to ensure your events will have map "
+"options."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:86
+msgid "Auto import from Facebook"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:87
+msgid ""
+"If selected, events will be automatically imported from Facebook at the set "
+"interval."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:93
+msgid "Import frequency"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:94
+msgid ""
+"How often should we fetch events from Facebook. Only applies if Auto Import "
+"is set."
+msgstr ""
+
+#: ../admin-views/settings-tab.php:95
+msgid "Weekly"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:95
+msgid "Daily"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:95
+msgid "Twice daily"
+msgstr ""
+
+#: ../admin-views/settings-tab.php:95
+msgid "Hourly"
+msgstr ""
+
+#: ../vendor/pue-client/admin-views/license-key.view.php:9
+#: ../vendor/pue-client/admin-views/license-key.view.php:13
+msgid "License Key"
+msgstr ""
+
+#: ../vendor/pue-client/admin-views/license-key.view.php:10
+#: ../vendor/pue-client/admin-views/license-key.view.php:17
+msgid "A valid license key is required for support and updates."
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:174
+#, php-format
+msgid "License Key for %s"
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:175
+msgid "A valid license key is required for support and updates"
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:238
+msgid "License key(s) updated."
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:275
+msgid "Sorry, key validation server is not available."
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:277
+msgid "Sorry, this key is expired."
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:279
+msgid "Sorry, this key is out of installs."
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:281
+msgid "Sorry, this key is not valid."
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:284
+#, php-format
+msgid "Valid Key! Expires on %s"
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:288
+msgid ""
+"Hmmm... something's wrong with this validator. Please contact <a href="
+"\"http://tri.be/support\">support.</a>"
+msgstr ""
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:316
+msgid "[X]"
+msgstr ""

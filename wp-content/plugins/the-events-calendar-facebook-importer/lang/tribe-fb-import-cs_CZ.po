@@ -1,0 +1,345 @@
+# Copyright (C) 2012 The Events Calendar: Facebook Importer
+# This file is distributed under the same license as the The Events Calendar: Facebook Importer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: The Events Calendar: Facebook Events 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-30 23:47+0100\n"
+"PO-Revision-Date: 2012-07-04 02:08+0100\n"
+"Last-Translator: Petr Baštán <pbastan@lop.cz>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_x:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;est_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"X-Poedit-Basepath: ./\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../the-events-calendar-facebook-importer.php:272
+msgid "The return argument should be object or id"
+msgstr "Typ návratového parametru musí být objekt nebo id"
+
+#: ../the-events-calendar-facebook-importer.php:321
+msgid "Object type provided is invalid"
+msgstr "Zadaný typ objektu je neplatný"
+
+#: ../the-events-calendar-facebook-importer.php:577
+#, php-format
+msgid "The event \"%s\" was already imported from Facebook."
+msgstr "Událost \"%s\" již byla z Facebooku importována."
+
+#: ../the-events-calendar-facebook-importer.php:580
+#, php-format
+msgid "Either the event with ID %s does not exist, is marked as private on Facebook or we couldn't reach the Facebook API"
+msgstr "Buďto událost s ID %s neexistuje, nebo je na Facebooku označena jako soukromá, anebo se nezdařil přístup do Facebook API"
+
+#: ../the-events-calendar-facebook-importer.php:617
+msgid "The Facebook event IDs provided must be numeric and one per line."
+msgstr "Zadané ID facebookové události musí být číslo a každé na samostatném řádku."
+
+#: ../the-events-calendar-facebook-importer.php:632
+msgid "Import FB Events"
+msgstr "Import akcí z FB"
+
+#: ../the-events-calendar-facebook-importer.php:644
+#: ../the-events-calendar-facebook-importer.php:839
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../the-events-calendar-facebook-importer.php:695
+msgid "No valid events were provided for import. The import failed as a result."
+msgstr "Nebyly zadány žádné platné události k importu. V důsledku toho se importování nezdařilo."
+
+#: ../the-events-calendar-facebook-importer.php:720
+#, php-format
+msgctxt "%s is the name of the Facebook user or page"
+msgid "Events from %s:"
+msgstr "Události pro %s:"
+
+#: ../the-events-calendar-facebook-importer.php:727
+msgid "(previously imported)"
+msgstr "(již importováno)"
+
+#: ../the-events-calendar-facebook-importer.php:738
+#, php-format
+msgctxt "%s is the name of the Facebook user or page"
+msgid "%s does not have any Facebook events"
+msgstr "%s nemá žádné události na Facebooku"
+
+#: ../the-events-calendar-facebook-importer.php:809
+msgid "Once Weekly"
+msgstr "Jednou týdně"
+
+#: ../the-events-calendar-facebook-importer.php:830
+msgid "Import"
+msgstr "Import"
+
+#: ../the-events-calendar-facebook-importer.php:848
+msgid "Facebook Events"
+msgstr "Akce z Facebooku"
+
+#: ../the-events-calendar-facebook-importer.php:865
+msgid "The Events Calendar"
+msgstr "The Events Calendar"
+
+#: ../the-events-calendar-facebook-importer.php:866
+#, php-format
+msgid "To begin using <b>The Events Calendar: Facebook Events</b>, please install the latest version of %s."
+msgstr "Než začnete používat plugin <b>The Events Calendar: Facebook Events</b>, nainstalujte si prosím aktuální verzi pluginu %s."
+
+#: ../admin-views/import-page.php:8
+msgid "settings page"
+msgstr "stránce s nastavením"
+
+#: ../admin-views/import-page.php:9
+msgid "Go take a look at your event(s)"
+msgstr "Přehled vašich akcí"
+
+#: ../admin-views/import-page.php:16
+#: ../admin-views/settings-tab.php:14
+msgid "Import Facebook Events"
+msgstr "Import akcí z Facebooku"
+
+#: ../admin-views/import-page.php:20
+msgid "The following errors have occurred:"
+msgstr "Došlo k následujícím chybám:"
+
+#: ../admin-views/import-page.php:27
+msgid "Please note that as a result, no events were successfully imported."
+msgstr "Vezměte prosím na vědomí, že v důsledku toho nebyly úspěšně importovány žádné akce."
+
+#: ../admin-views/import-page.php:29
+msgid "Please note that other events have been successfully imported."
+msgstr "Vezměte prosím na vědomí, že ostatní akce byly úspěšně importovány."
+
+#: ../admin-views/import-page.php:34
+msgid "The selected event(s) have been successfully imported."
+msgstr "Všechny vybrané akce byly úspěšně importovány."
+
+#: ../admin-views/import-page.php:39
+msgid "How to Import Facebook Events"
+msgstr "Jak importovat akce (události) z Facebooku"
+
+#: ../admin-views/import-page.php:41
+#, php-format
+msgctxt "%s is a link to the settings page"
+msgid "You can setup some Facebook User or Page identifiers to import from on the %s. Once you do, you will be able to select which events to import from those Facebook users(s) or page(s)"
+msgstr "Pro snazší importování si můžete nastavit seznam facebookových stránek či uživatelů na %s. Jakmile tak učiníte, budete moci si vybrat, které události z těchto stránek a uživatelů Facebooku se budou importovat."
+
+#: ../admin-views/import-page.php:43
+#, php-format
+msgctxt "%s is a link to the settings page"
+msgid "Since you've already setup some Facebook pser(s) or page(s) to import from, you can import those events below. Visit the %s to modify the Facebook user(s) or page(s) you want to import from."
+msgstr "Vzhledem k tomu, že jste už pro importování nastavili nějaké uživatele či stránky Facebooku, můžete jejich události importovat níže. Seznam facebookových stránek a uživatelů, ze kterých chcete importovat si můžete změnit na %s."
+
+#: ../admin-views/import-page.php:45
+msgid "You can also import any arbitrary event by entering Facebook event IDs in the textarea below."
+msgstr "Můžete také importovat libovolnou událost, když zadáte ID jednotlivých facebookových událostí do níže uvedeného textového pole."
+
+#: ../admin-views/import-page.php:47
+#, php-format
+msgid "You can determine an event's Facebook ID by looking at the URL of the event. For example, the ID of this event: %s would be %s"
+msgstr "Pro zjištění ID dané facebookové události se stačí podívat na její URL adresu. Například ID pro událost s adresou %s bude %s"
+
+#: ../admin-views/import-page.php:48
+msgid "Please enter one Facebook event ID per line"
+msgstr "Zadejte prosím ID každé facebookové události na samostatný řádek"
+
+#: ../admin-views/import-page.php:55
+msgid "Events from Facebook organizations(s) or page(s) you've added:"
+msgstr "Přehled událostí pro vámi vybrané facebookové skupiny či stránky:"
+
+#: ../admin-views/import-page.php:62
+msgid "Import arbitrary events by their Facebook ID:"
+msgstr "Importovat jednotlivé události podle jejich ID na Facebooku:"
+
+#: ../admin-views/import-page.php:65
+msgid "One event ID per line"
+msgstr "Jedno ID události na řádek"
+
+#: ../admin-views/import-page.php:70
+msgid "Import events"
+msgstr "Importovat akce"
+
+#: ../admin-views/import-page.php:86
+msgid "Please select or enter the ID of at least one event to import"
+msgstr "Vyberte nebo zadejte ID alespoň jedné události k importování"
+
+#: ../admin-views/settings-tab.php:15
+msgid "Getting Started"
+msgstr "Začínáme"
+
+#: ../admin-views/settings-tab.php:16
+msgid "Facebook requires a Facebook App ID and App Secret to access data via the Facebook Graph API in order to import your events from Facebook. We've provided a default set of API credentials, however we encourage you to create your own Facebook App and enter your credentials below. "
+msgstr "Aby mohly být z Facebooku importovány vaše akce (události), je pro přístup k datům pomocí Facebook Graph API zapotřebí tzv. Facebook App ID a App Secret. Přestože jsme poskytli výchozí sadu těchto přístupových údajů do API, doporučujeme vám si vytvořit vlastní aplikaci na Facebooku a své přístupové údaje pak zadejte níže."
+
+#: ../admin-views/settings-tab.php:18
+#, php-format
+msgid "%s to learn more about Facebook Apps"
+msgstr "%s pro více informací o Facebook aplikacích"
+
+#: ../admin-views/settings-tab.php:18
+#: ../admin-views/settings-tab.php:19
+msgid "Click here"
+msgstr "Klikněte zde"
+
+#: ../admin-views/settings-tab.php:19
+#, php-format
+msgid "%s to view or create Facebook Apps"
+msgstr "%s pro zobrazení nebo vytvoření Facebook aplikace"
+
+#: ../admin-views/settings-tab.php:21
+msgid "Selecting pages or users to sync events with"
+msgstr "Výběr stránek nebo uživatelů k synchronizaci akcí"
+
+#: ../admin-views/settings-tab.php:22
+msgid "You can import events belonging to a Facebook organization or a Facebook page. You will need the username(s) or ID of each organization or page that you want to fetch events for. We do not currently support importing events from personal profiles."
+msgstr "Importovat můžete události, které patří facebookové skupině nebo stránce. Budete potřebovat uživatelské jméno nebo ID každé skupiny či stránky, pro kterou chcete načíst její události. Importování událostí z osobních profilů není momentálně podporováno."
+
+#: ../admin-views/settings-tab.php:24
+#, php-format
+msgid "A page or organization's username or ID can be found in the URL used to access its profile. Modern Tribe's Page is %s and the username is 'ModernTribeInc'. If a page or organization doesn't have a username, you will see the ID (numerical) in the URL for its profile."
+msgstr "Uživatelské jméno nebo ID se dá zjistit z URL adresy profilu dané stránky či skupiny. Stránka společnosti Modern Tribe je %s a její uživatelské jméno je tedy 'ModernTribeInc'. Pokud stránka či skupina nemá uživatelské jméno, pak v URL adrese profilu je vidět její ID (číslo)."
+
+#: ../admin-views/settings-tab.php:25
+#, php-format
+msgid "You can also find the ID of an organization or page by visiting the Graph API. For example, to find Modern Tribe's ID, visit %s. You will get a json response with information about the user or page. The first result should be the ID."
+msgstr "ID skupiny či stránky můžete také zjistit pomocí dotazu do Graph API. Chcete-li například zjistit ID pro stránku Modern Tribe, navštivte adresu %s. Obdržíte odpověď ve formátu JSON s dostupnými údaji o uživateli nebo stránce. První záznam ve výstupu by mělo být ID."
+
+#: ../admin-views/settings-tab.php:31
+msgid "Facebook App ID"
+msgstr "Facebook App ID"
+
+#: ../admin-views/settings-tab.php:32
+#: ../admin-views/settings-tab.php:41
+msgid "This information is completely optional."
+msgstr "Toto nastavení je volitelné."
+
+#: ../admin-views/settings-tab.php:32
+msgid "Follow the instructions above to create or find your Facebook App ID."
+msgstr "Pro vytvoření nebo zjištění svého App ID postupujte podle výše uvedených pokynů."
+
+#: ../admin-views/settings-tab.php:40
+msgid "Facebook App Secret"
+msgstr "Facebook App Secret"
+
+#: ../admin-views/settings-tab.php:41
+msgid "Follow the instructions above to create or find your App Secret."
+msgstr "Pro vytvoření nebo zjištění svého App Secret postupujte podle výše uvedených pokynů."
+
+#: ../admin-views/settings-tab.php:49
+msgid "Organization and Page Usernames / IDs to sync with"
+msgstr "Uživatelská jména nebo ID skupin a stránek"
+
+#: ../admin-views/settings-tab.php:50
+msgid "Please put one entry per line."
+msgstr "Každou položku zadejte na samostatný řádek."
+
+#: ../admin-views/settings-tab.php:50
+msgid "Follow the instructions above to find usernames or IDs."
+msgstr "Pro zjištění uživatelských jmen nebo ID postupujte podle výše uvedených pokynů."
+
+#: ../admin-views/settings-tab.php:59
+msgid "Default status to use for imported events"
+msgstr "Výchozí stav pro importované akce"
+
+#: ../admin-views/settings-tab.php:60
+msgid "Published"
+msgstr "Publikováno"
+
+#: ../admin-views/settings-tab.php:60
+msgid "Draft"
+msgstr "Koncept"
+
+#: ../admin-views/settings-tab.php:60
+msgid "Pending Review"
+msgstr "Čekající na schválení"
+
+#: ../admin-views/settings-tab.php:66
+msgid "Auto Import from Facebook"
+msgstr "Automatický import z Facebooku"
+
+#: ../admin-views/settings-tab.php:67
+msgid "If selected, events will be automatically imported from Facebook at the set interval."
+msgstr "Pokud povolíte tuto možnost, budou akce automaticky importovány z Facebooku ve stanoveném intervalu."
+
+#: ../admin-views/settings-tab.php:73
+msgid "Import Frequency"
+msgstr "Četnost importování"
+
+#: ../admin-views/settings-tab.php:74
+msgid "How often should we fetch events from Facebook. Only applies if Auto Import is set."
+msgstr "Jak často se mají akce z Facebooku načítat. Platí pouze pokud je povolen Automatický import."
+
+#: ../admin-views/settings-tab.php:75
+msgid "Weekly"
+msgstr "Týdně"
+
+#: ../admin-views/settings-tab.php:75
+msgid "Daily"
+msgstr "Denně"
+
+#: ../admin-views/settings-tab.php:75
+msgid "Twice daily"
+msgstr "Dvakrát denně"
+
+#: ../admin-views/settings-tab.php:75
+msgid "Hourly"
+msgstr "Každou hodinu"
+
+#: ../vendor/pue-client/admin-views/license-key.view.php:9
+#: ../vendor/pue-client/admin-views/license-key.view.php:13
+msgid "License Key"
+msgstr "Licenční klíč"
+
+#: ../vendor/pue-client/admin-views/license-key.view.php:10
+#: ../vendor/pue-client/admin-views/license-key.view.php:17
+msgid "A valid license key is required for support and updates."
+msgstr "Platný licenční klíč je vyžadován pro podporu a aktualizace."
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:194
+#, php-format
+msgid "License Key for %s"
+msgstr "Licenční klíč pro %s"
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:195
+msgid "A valid license key is required for support and updates"
+msgstr "Platný licenční klíč je vyžadován pro podporu a aktualizace"
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:258
+msgid "License key(s) updated."
+msgstr "Licenční klíč(e) byl aktualizován."
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:295
+msgid "Sorry, key validation server is not available."
+msgstr "Omlouváme se, ale server k ověření klíče není dostupný."
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:297
+msgid "Sorry, this key is expired."
+msgstr "Omlouváme se, ale platnost tohoto klíče skončila."
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:299
+msgid "Sorry, this key is out of installs."
+msgstr "Omlouváme se, ale tento klíč je mimo instalaci."
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:301
+msgid "Sorry, this key is not valid."
+msgstr "Omlouváme se, ale tento klíč není platný."
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:304
+#, php-format
+msgid "Valid Key! Expires on %s"
+msgstr "Platný klíč! Platnost tohoto klíče skončí %s"
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:308
+msgid "Hmmm... something's wrong with this validator. Please contact <a href=\"http://tri.be/support\">support.</a>"
+msgstr "Hmmm... něco je špatně s tímto validátorem. Kontaktujte prosím <a href=\"http://tri.be/support\">podporu.</a>"
+
+#: ../vendor/pue-client/lib/pue_plugin_update_engine.class.php:484
+msgid "[X]"
+msgstr "[X]"
+

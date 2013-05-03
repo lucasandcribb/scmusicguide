@@ -7,9 +7,26 @@ Template Name: Homepage
 
 <?php get_sidebar(); ?>
 
+<div id="banner-slideshow" class="hp-slideshow">
+	<div id="slide-next" class="slide-btn"></div>
+	<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 12, 'order' => 'ASC' ) ); $count = 0; ?>
+	<div id="hp-slide-cont">
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
+				<div class="slide-main" rel="<?php echo $count; ?>">
+					<a href="<?php echo $url; ?>"><?php the_post_thumbnail('full') ?></a>
+				</div>
+				<?php $count++; ?>
+		<?php endwhile; ?>
+	</div>
+	<div id="hp-slidethumb-cont">
+		<?php $count = 0; ?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
+				<div class="slide-thumb" rel="<?php echo $count; ?>"><?php the_post_thumbnail('full') ?></div>
+				<?php $count++; ?>
+		<?php endwhile; ?>
+	</div>
+</div>
 
-
-<?php get_template_part( 'content', get_post_format() ); ?>
 
 <div id="hp-widget-holder">
 
@@ -75,6 +92,22 @@ Template Name: Homepage
 				</a>
 			</div>
 			<?php } ?>
+		<?php endwhile; ?>
+	</div>
+
+	<div id="show-single-artist-in-month" class="hp-custom-widget">
+		<div class="ss-title">Test to show one artist for current month</div>
+		<?php 	$month = date(F);
+				$year = date('Y'); 
+				$loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 1, 'order' => 'ASC', 'year=' . $year . '&monthnum=' . $month ) ); ?>
+		<?php $array = array(); $count = 0;?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<div class="ss-list TEST">
+				<a href="<?php echo $url; ?>">
+					<div id="ss-img"><?php the_post_thumbnail('thumbnail'); ?></div>
+					<div id="ss-name"><?php the_title(); ?></div>
+				</a>
+			</div>
 		<?php endwhile; ?>
 	</div>
 

@@ -5,11 +5,18 @@ Template Name: Artist Index
 ?>
 <?php get_header(); ?>
 
-	<?php $alph_array = array("1-10","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","All"); ?>
+	<?php $alph_array = array("All","1-10","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"); ?>
 	<?php $genre_array = array("Acoustic","Bluegrass","Blues","Funk","Rock"); ?>
 
 	<div id="artist-index">
 		<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 15, 'order' => 'ASC' ) ); ?>
+
+		<?php 	
+			$genreCount = 0;
+			foreach ($genre_array as $genre) {
+				$genreCount++;
+			}
+		?>
 
 		<div class="index-links">
 			<?php for ($i = 0; $i < 28; $i++) {
@@ -17,7 +24,7 @@ Template Name: Artist Index
 			} ?>
 		</div>
 		<div class="index-links">
-			<?php for ($i = 0; $i < 5; $i++) {
+			<?php for ($i = 0; $i < $genreCount; $i++) {
     			echo "<a href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</a> ";
 			} ?>
 		</div>
