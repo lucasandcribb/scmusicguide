@@ -58,7 +58,7 @@ header #searchform {position:relative; float:right; width:225px; text-align:righ
 .hp-custom-widget {margin-right:25px;}
 
 
-#banner-slideshow {position:relative; float:left; margin-bottom:20px; width:750px; height:460px; overflow:hidden; border:1px solid #000; background:#999; padding:2px;}
+#banner-slideshow {position:relative; float:left; margin-bottom:20px; width:750px; height:460px; overflow:hidden; border:1px solid #000; background:#333; padding:2px;}
 #banner-slideshow div {position:relative; float:left;}
 #hp-slide-cont {width:9000px; height:400px; overflow:hidden;
   -moz-box-shadow:    0px 2px 2px 1px #000;
