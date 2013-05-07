@@ -81,14 +81,13 @@ $(document).ready(function() {
         $('.slide-thumb').removeClass('current-thumb');
         $(this).addClass('current-thumb');
         var ind = parseInt($(this).attr('rel')),
-            currentId = '#slide-'+currentSlide;
+            currentId = '#slide-'+ind;
         $('.slide-main').each(function() {
             var slideIndex = parseInt($(this).attr('rel'));
             if (slideIndex == ind) {
                 $('.current').removeClass('current');
                 $(this).addClass('current');
                 $('.current').fadeIn(1000);
-                $(currentId).fadeOut();
             }
         });
     });
@@ -129,9 +128,7 @@ function hpSlideNext() {
     }
 }
 
-function hpFadeNext() {
 
-}
 
 
 

@@ -20,7 +20,7 @@ Template Name: Homepage
 	</div>
 	<div id="hp-slidethumb-cont">
 		<?php $count = 0; ?>
-		<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				<div class="slide-thumb" rel="<?php echo $count; ?>"><?php the_post_thumbnail('full') ?></div>
 				<?php $count++; ?>
 		<?php endwhile; ?>
