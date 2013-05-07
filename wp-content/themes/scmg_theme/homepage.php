@@ -12,7 +12,7 @@ Template Name: Homepage
 	<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 12, 'order' => 'ASC' ) ); $count = 0; ?>
 	<div id="hp-slide-cont">
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
-				<div class="slide-main" rel="<?php echo $count; ?>">
+				<div id="slide-<?php echo $count; ?>" class="slide-main" rel="<?php echo $count; ?>">
 					<a href="<?php echo $url; ?>"><?php the_post_thumbnail('full') ?></a>
 				</div>
 				<?php $count++; ?>

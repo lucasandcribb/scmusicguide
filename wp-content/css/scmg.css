@@ -59,20 +59,22 @@ header #searchform {position:relative; float:right; width:225px; text-align:righ
 
 
 #banner-slideshow {position:relative; float:left; margin-bottom:20px; width:750px; height:460px; overflow:hidden; border:1px solid #000; background:#333; padding:2px;}
-#banner-slideshow div {position:relative; float:left;}
-#hp-slide-cont {width:9000px; height:400px; overflow:hidden;
+#hp-slide-cont {width:750px; height:400px; overflow:hidden;
   -moz-box-shadow:    0px 2px 2px 1px #000;
   -webkit-box-shadow: 0px 2px 2px 1px #000;
   box-shadow:         0px 2px 2px 1px #000;}
+.slide-main {display:none; position:absolute; top:0px; left:0px; z-index:5;}
+.current {z-index:10;}
+#hp-slide-cont, #hp-slidethumb-cont, #hp-slidethumb-cont div {position:relative; float:left;}
 #hp-slide-cont img {width:750px; height:400px; margin-right:2px;}
 #hp-slidethumb-cont {margin-top:5px;}
-.slide-thumb {margin-right:3px; cursor:pointer;
+.slide-thumb {margin-right:15px; cursor:pointer;
   -moz-box-shadow:    0px 2px 2px 1px #000;
   -webkit-box-shadow: 0px 2px 2px 1px #000;
   box-shadow:         0px 2px 2px 1px #000;}
 #hp-slidethumb-cont img {width:50px; height:50px;}
 .slide-btn {display:none;}
-.slide-thumb {opacity:0.75;}
+.slide-thumb {opacity:0.25;}
 .current-thumb {opacity:1.0;}
 
 

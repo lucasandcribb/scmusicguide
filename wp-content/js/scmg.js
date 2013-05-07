@@ -53,6 +53,7 @@ $(document).ready(function() {
     });
 
     $('.slide-main').first().addClass('current');
+    $('.current').fadeIn(500);
     $('.slide-thumb').first().addClass('current-thumb');
     
     var hpSlideInterval;
@@ -80,13 +81,14 @@ $(document).ready(function() {
         $('.slide-thumb').removeClass('current-thumb');
         $(this).addClass('current-thumb');
         var ind = parseInt($(this).attr('rel')),
-            newLeft = ind * -752;
+            currentId = '#slide-'+currentSlide;
         $('.slide-main').each(function() {
             var slideIndex = parseInt($(this).attr('rel'));
             if (slideIndex == ind) {
                 $('.current').removeClass('current');
                 $(this).addClass('current');
-                $('#hp-slide-cont').animate({'margin-left': newLeft}, 1500);
+                $('.current').fadeIn(1000);
+                $(currentId).fadeOut();
             }
         });
     });
@@ -100,19 +102,22 @@ function hpSlideNext() {
     });
     var currentSlide = parseInt($('#hp-slide-cont .current').attr('rel')),
         nextSlideIndex = currentSlide + 1,
-        leftPos = parseInt($('#hp-slide-cont').css('margin-left'));
+        leftPos = parseInt($('#hp-slide-cont').css('margin-left')),
+        currentId = '#slide-'+currentSlide;
     if (count == nextSlideIndex) {
         $('#hp-slide-cont .current').removeClass('current');
-        $('.slide-main').first().addClass('current');
-        $('#hp-slide-cont').css({'margin-left': 0}, 1500);
+        $('.slide-main').first().addClass('current');        
+        $('.current').fadeIn(1000);
+        $(currentId).fadeOut();
+        $('.slide-thumb').removeClass('current-thumb');
         $('.slide-thumb').first().addClass('current-thumb');
     } else {
         $('.slide-main').each(function() {
             if (parseInt($(this).attr('rel')) == nextSlideIndex) {
                 $('#hp-slide-cont .current').removeClass('current');
                 $(this).addClass('current');
-                leftPos = leftPos - 752;
-                $('#hp-slide-cont').animate({'margin-left': leftPos}, 1500);
+                $('.current').fadeIn(1000);
+                $(currentId).fadeOut();
             }
         })
         $('.slide-thumb').each(function() {
@@ -122,6 +127,10 @@ function hpSlideNext() {
             }
         });
     }
+}
+
+function hpFadeNext() {
+
 }
 
 
