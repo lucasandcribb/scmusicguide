@@ -42,6 +42,14 @@
    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   	})();
 </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=167175973446333";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 </head>
 
@@ -70,6 +78,8 @@
 
 		<div id="f-login"><?php echo do_shortcode('[flexible-frontend-login-modal]'); ?></div>
 
+		<div class="fb-like" data-href="http://scmusicguide.com" data-send="true" data-width="300" data-show-faces="true"></div>
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
@@ -81,7 +91,7 @@
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 		<?php endif; ?>
 
-
+		
 
 		
 	</header><!-- #masthead -->
