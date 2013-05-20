@@ -27,6 +27,9 @@ Template Name: Homepage
 	</div>
 </div>
 
+<?php while ( have_posts() ) : the_post(); ?>
+	<?php get_template_part( 'content', 'page' ); ?>
+<?php endwhile; // end of the loop. ?>
 
 <div id="hp-widget-holder">
 

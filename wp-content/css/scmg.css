@@ -77,6 +77,14 @@ header #searchform {position:relative; float:right; width:225px; text-align:righ
 .slide-thumb {opacity:0.25;}
 .current-thumb {opacity:1.0;}
 
+#myplayer {position:relative; float:left; color:#333; border:1px solid #999; margin-bottom:20px;}
+#myplayer .track-info p {color:#333;}
+#myplayer .ttw-music-player .player-controls {background:#FAFAFA; border:1px solid #999;}
+#myplayer .ttw-music-player .tracklist {background:#efefef;}
+#myplayer .ttw-music-player .tracklist .title, .ttw-music-player .tracklist ol li {color:#333; margin-left:0px;}
+#myplayer .ttw-music-player .tracklist .title:hover , #myplayer .ttw-music-player .tracklist ol li:hover {color:#666;}
+#myplayer .ttw-music-player .show-more-button .more {color:#000; height:10px; padding-top:2px;}
+
 
 #header-slideshow {position:relative; float:left; width:775px; border:1px solid #000; margin-bottom:10px;
 	background:#FAFAFA;}
