@@ -116,21 +116,33 @@ ul.wpuf_customs {display: none;}
 #featured-review .review-one-body {width:550px; margin-left:20px; height:100px;}
 #featured-review .fr-read-more {margin-top:5px; margin-right:10px; float:right;}
 
+#featured-review .fr-review-sm-cont {width:100%; margin-top:10px;}
+#featured-review .fr-review-sm-img {width:100px;}
+#featured-review .fr-review-sm-img img {width:100px; height:75px;}
+#featured-review .fr-review-sm-title {width:600px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
+#featured-review .fr-review-sm-body {width:600px; margin-left:20px; height:55px;}
+#featured-review .fr-reveiws .rev-1 {display:none;}
+#featured-review #review-divider {width:725px; margin-top:5px; margin-bottom:5px; height:1px; 
+	background:#999;}
+
 /*HP VID SECTION*/
-#vid-aud-titles {position:relative; float:left; width:780px;}
-.vid-aud-title {position:relative; float:left; width:364px; text-align:center; border:1px solid #000; color:#fff;
+#vid-aud-titles {position:relative; float:left; width:750px;}
+.vid-aud-title {position:relative; float:left; width:348px; text-align:center; border:1px solid #000; color:#fff;
 	background:url('/wp-content/images/backgrounds/black-linen.jpg'); padding-left:5px; padding-right:5px; margin-left:5px; margin-right:5px;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;
     border-radius: 5px;}
 
-.home .pfwrpr {position:relative; float:left; padding:10px 5px 0px 5px; border:1px solid #999; background:#efefef; margin-bottom:20px; margin-right:5px; margin-left:5px;}
+.home .pfwrpr {position:relative; float:left; padding:10px 5px 0px 5px; border:1px solid #999; background:#efefef; 
+	margin-bottom:20px; margin-right:5px; margin-left:5px;}
+.home .pfwrpr .view {margin-left:3px; margin-right:3px; margin-bottom:6px;}
 
-.home article {position:relative; float:left; width:780px;}
+.home article {position:relative; float:left; width:750px;}
 .home article .entry-header, .home article .entry-meta {display:none;}
 
-.featured-title, .lg-title, .ss-title {width:230px; background:url('/wp-content/images/backgrounds/black-linen.jpg'); color:#fff; padding:5px;
+.featured-title, .lg-title, .ss-title {width:220px; background:url('/wp-content/images/backgrounds/black-linen.jpg'); 
+	color:#fff; padding:5px;
 	-moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     -khtml-border-radius: 5px;

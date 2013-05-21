@@ -45,8 +45,26 @@ Template Name: Homepage
 				<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
 			</div>
 		<?php endwhile; ?>
+		<div id="review-divider"></div>
+		<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 3, 'order' => 'ASC' ) ); 
+			  $url = get_permalink(); $rev_num = 1;?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
+				<a class="fr-review-sm-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
+				<div class="fr-review-sm-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+				<div class="fr-review-sm-body">
+					<?php echo substr(get_field('review_content'), 0, 300).'...'; ?>
+				</div>
+				<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
+			</div>
+			<?php $rev_num++; ?>
+		<?php endwhile; ?>
 	</div>
 </div>
+
+<?php while ( have_posts() ) : the_post(); ?>
+	<?php get_template_part( 'content', 'page' ); ?>
+<?php endwhile; ?>
 
 <div id="hp-widget-holder">
 

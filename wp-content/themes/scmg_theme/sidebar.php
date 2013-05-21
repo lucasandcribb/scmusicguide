@@ -12,6 +12,11 @@
 
 	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div id="secondary" class="widget-area" role="complementary">
+			<div class="fb-like" data-href="http://scmusicguide.com" data-send="false" data-width="215" data-show-faces="false"></div>
+			<div class="fb-comments" data-href="http://scmusicguide.com" data-width="215" data-num-posts="5"></div>
+			
+			<?php echo do_shortcode('[ti_audio name="Homepage Playlist" autoresume="1" repeat="1"]');?>
+			
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
 		</div><!-- #secondary -->
 	<?php endif; ?>
