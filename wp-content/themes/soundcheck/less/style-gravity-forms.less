@@ -1,0 +1,112 @@
+@import 'theme-bootstrap.less';
+
+.gform_edit_link a, 
+.gf_progressbar_wrapper, 
+.gform_title, 
+.gsection_title  {
+	font-family: 'Oswald', "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/* WIDGET */
+body .widget .gform_footer {
+    clear: both;
+    padding: 12px 15px;
+    border-top: 1px solid @color_light;
+}
+
+body .gform_widget {
+	.gform_wrapper {
+		max-width: 100%;
+		margin: 0;
+		padding-top: 10px;
+		border-top: 1px solid @color_dark;
+		background: url(../images/bg-gradient.png) 0 0 repeat-x;
+	}
+	
+	.gform_description {
+		margin-bottom: 10px;
+	}
+	
+	.gform_heading,
+	.gform_body,
+	.validation_error {
+		padding: 0 15px;
+		margin: 0;
+	}
+	
+	.gfield_error {
+		text-shadow: none;
+		
+		input {
+			border: 1px solid #790000
+		}
+	}
+	
+	.gsection .gfield_label,
+	h2.gsection_title,
+	h3.gform_title {
+		font-size: 16px;
+	}
+	
+	.gform_body {
+		margin: 15px 0;
+	}
+	
+	.ginput_complex {
+		.ginput_left, .ginput_right {
+			float: left;
+		}
+	}
+	
+	textarea,
+	input[type=text],
+	input[type=url],
+	input[type=email],
+	input[type=phone],
+	input[type=number],
+	input[type=file],
+	input[type=password] {
+		width: 100% !important;
+	}
+	
+	.gform_footer {
+		height: 50px;
+		overflow: hidden;
+		margin: 0 !important;
+	}
+}
+
+
+
+/* FORM ELEMENTS
+----------------------------------------------- */
+body .gform_wrapper {    
+    .percentbar_blue {
+    	background: @primary_2 repeat-x;
+    }
+    
+    .gfield_label {
+    	color: @primary_1;
+    }
+    
+    .gfield {
+    	margin: 10px 0;
+    	border: none;    	
+    }
+    
+	textarea,
+	input[type=text],
+	input[type=url],
+	input[type=email],
+	input[type=phone],
+	input[type=number],
+	input[type=file],
+	input[type=password] {
+    	font-size: 13px;
+    	padding: 4px 10px;
+	}
+}

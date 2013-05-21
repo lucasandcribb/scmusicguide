@@ -48,7 +48,6 @@ Template Name: Homepage
 	</div>
 </div>
 
-
 <div id="hp-widget-holder">
 
 	<div id="featured-artist" class="hp-custom-widget">
