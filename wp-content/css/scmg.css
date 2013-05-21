@@ -6,7 +6,7 @@ html {margin-top:0px !important;}
   box-shadow:         0px 5px 5px 0px #000;
  }
 #primary {width:750px;}
-#secondary {width:190px; border:1px solid #999; padding:5px; margin-top:0px;}
+#secondary {width:225px; border:1px solid #999; padding:5px; margin-top:0px;}
 header.site-header {padding-bottom:10px; padding-top:0px !important;}
 #bg {position:fixed; top:0px; left:0px; width:100%; height:100%; background:url('/wp-content/images/backgrounds/black-linen.jpg'); z-index:-1; opacity:0.8;}
 
@@ -15,15 +15,27 @@ header.site-header {padding-bottom:10px; padding-top:0px !important;}
 #header-social-links {position:relative; float:right; margin-top:0px; margin-right:20px; margin-bottom:20px; width:250px;}
 #header-social-links div {position:relative; float:left; margin-right:10px; width:100%; margin-bottom:5px;}
 #header-social-title {width:100%; margin-bottom:5px;}
-hgroup {position:relative; float:left; margin-bottom:10px;}
-.nav-menu ul, .nav-menu {background:url(../images/nav-bg.jpg) repeat;}
-.nav-menu li {margin-right:0px; z-index:5;}
-.nav-menu li a {color:#fff; width:120px; text-align:center;}
+hgroup {z-index:500; position:absolute; top:10px; left:25px;}
+hgroup img {width:200px;}
+#social-links, #social-links img {position:relative; float:right;}
+#social-links {width:100%; margin-left:35px;}
+#social-links img {margin:5px; width:30px;}
 
-.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border-bottom:1px solid #999; border-top:1px solid #999;}
-.main-navigation li ul li a {background:#000; color:#fff; width:120px;}
+#f-login {position:relative; float:right; margin-top:10px; margin-right:5px; margin-bottom:5px}
+
+header #searchform {position:relative; float:right; width:100%; text-align:right;}
+header #searchform input {width:300px;}
+header #searchform input#searchsubmit {width:100px;}
+
+.nav-menu ul, .nav-menu {background:url(../images/nav-bg.jpg) repeat; z-index:500;}
+.nav-menu li {margin-right:0px; z-index:500;}
+.nav-menu li a {color:#fff; width:100px; text-align:center;}
+
+.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border-bottom:1px solid #999; border-top:1px solid #999;
+	padding-left:150px;}
+.main-navigation li ul li a {background:#000; color:#fff; width:100px; font-size:12px;}
 .main-navigation li ul li a:hover {color:#D8D8D8; text-decoration:underline; background:url(../images/nav-bg.jpg) no-repeat;}
-.main-navigation ul li ul li {margin-right:0px; width:120px;}
+.main-navigation ul li ul li {margin-right:0px; width:100px;}
 .main-navigation ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666;}
 .main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a, 
 	.main-navigation .current_page_item > a, .main-navigation .current_page_ancestor > a {color:#efefef;}
@@ -32,19 +44,12 @@ hgroup {position:relative; float:left; margin-bottom:10px;}
 #menu-main-nav-container ul.nav-menu, #menu-main-nav-container div.nav-menu > ul {border-bottom:1px solid #999; border-top:1px solid #999;}
 #menu-main-nav-container li ul li a {background:#000; color:#fff; width:120px;}
 #menu-main-nav-container li ul li a:hover {color:#D8D8D8; text-decoration:underline; background:url(../images/nav-bg.jpg) no-repeat;}
-#menu-main-nav-container ul li ul li {margin-right:0px; width:120px;}
+#menu-main-nav-container ul li ul li {margin-right:0px; width:100px; z-index:500;}
 #menu-main-nav-container ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666;}
 #menu-main-nav-container .current-menu-item > a, #menu-main-nav-container .current-menu-ancestor > a, 
 	#menu-main-nav-container .current_page_item > a, #menu-main-nav-container .current_page_ancestor > a {color:#efefef;}
 #menu-main-nav-container .nav-menu li a:hover {color:#D8D8D8; text-decoration:underline;}
 
-#social-links, #social-links img {position:relative; float:left;}
-#social-links {width:500px; margin-left:35px;}
-#social-links img {margin:5px; width:30px;}
-
-#f-login {position:relative; float:right; margin-top:40px; margin-right:5px;}
-
-header #searchform {position:relative; float:right; width:225px; text-align:right;}
 
 
 /* SIDEBAR */ 
@@ -57,7 +62,6 @@ header #searchform {position:relative; float:right; width:225px; text-align:righ
 #hp-widget-holder {max-width:750px; position:relative; float:left;}
 .hp-custom-widget {margin-right:25px;}
 
-
 #banner-slideshow {position:relative; float:left; margin-bottom:20px; width:750px; height:460px; overflow:hidden; border:1px solid #000; background:#333; padding:2px;}
 #hp-slide-cont {width:750px; height:400px; overflow:hidden;
   -moz-box-shadow:    0px 2px 2px 1px #000;
@@ -67,17 +71,17 @@ header #searchform {position:relative; float:right; width:225px; text-align:righ
 .current {z-index:10;}
 #hp-slide-cont, #hp-slidethumb-cont, #hp-slidethumb-cont div {position:relative; float:left;}
 #hp-slide-cont img {width:750px; height:400px; margin-right:2px;}
-#hp-slidethumb-cont {margin-top:5px;}
-.slide-thumb {margin-right:15px; cursor:pointer;
+#hp-slidethumb-cont {margin-top:1px; overflow:hidden;}
+.slide-thumb {margin-right:1px; cursor:pointer;
   -moz-box-shadow:    0px 2px 2px 1px #000;
   -webkit-box-shadow: 0px 2px 2px 1px #000;
   box-shadow:         0px 2px 2px 1px #000;}
-#hp-slidethumb-cont img {width:50px; height:50px;}
+#hp-slidethumb-cont img {width:75px; height:60px;}
 .slide-btn {display:none;}
 .slide-thumb {opacity:0.25;}
 .current-thumb {opacity:1.0;}
 
-
+/*HP SLIDESHOW*/
 #header-slideshow {position:relative; float:left; width:775px; border:1px solid #000; margin-bottom:10px;
 	background:#FAFAFA;}
 #header-slideshow .slideshow-nav {margin-top:0px; font-size:12px; color:#666; padding-left:5px;}
@@ -90,6 +94,21 @@ header #searchform {position:relative; float:right; width:225px; text-align:righ
 	font-weight:bold; padding-left:5px;}
 ul.wpuf_customs {display: none;}
 
+/*HP ALBUM REVIEW*/
+#featured-review {position:relative; float:left; width:750px; border:1px solid #333; margin-bottom:20px;}
+#featured-review div, #featured-review a {position:relative; float:left;}
+#featured-review .fr-title {width:730px; height:30px; background:#FE2E64; border-bottom:1px solid #999; padding-left:20px;
+	padding-top:5px; font-weight:bold; font-size:24px; color:#fff; letter-spacing:2px; text-decoration:none;}
+#featured-review a {text-decoration:none;}
+#featured-review .fr-reveiws {width:730px; padding:10px;}
+#featured-review .fr-review-cont {width:100%;}
+#featured-review .fr-review-title {width:530px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
+#featured-review .fr-review-img {width:150px;}
+#featured-review .fr-review-img img {width:200px; height:150px;}
+#featured-review .review-one-body {width:550px; margin-left:20px; height:100px;}
+#featured-review .fr-read-more {margin-top:5px; margin-right:10px; float:right;}
+
+/*HP VID SECTION*/
 #vid-aud-titles {position:relative; float:left; width:780px;}
 .vid-aud-title {position:relative; float:left; width:364px; text-align:center; border:1px solid #000; color:#fff;
 	background:url('/wp-content/images/backgrounds/black-linen.jpg'); padding-left:5px; padding-right:5px; margin-left:5px; margin-right:5px;

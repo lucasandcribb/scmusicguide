@@ -61,7 +61,7 @@
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
-			<img id="logo" src="/wp-content/images/logo150.jpg" />
+			<img id="logo" src="/wp-content/images/logo/vintage-logo.jpg" />
 		</hgroup>
 
 		<div id="social-links">
@@ -78,7 +78,7 @@
 
 		<div id="f-login"><?php echo do_shortcode('[flexible-frontend-login-modal]'); ?></div>
 
-		<div class="fb-like" data-href="http://scmusicguide.com" data-send="true" data-width="300" data-show-faces="true"></div>
+		<!-- <div class="fb-like" data-href="http://scmusicguide.com" data-send="true" data-width="300" data-show-faces="true"></div> -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
