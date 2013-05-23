@@ -68,7 +68,7 @@ Template Name: Homepage
 
 <div id="hp-widget-holder">
 
-	<div id="featured-artist" class="hp-custom-widget">
+	<!-- <div id="featured-artist" class="hp-custom-widget">
 		<div class="featured-title">Featured Artist</div>
 		<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 500, 'order' => 'ASC' ) ); ?>
 		<?php $artist_arry = array(); $count = 0;?>
@@ -88,9 +88,9 @@ Template Name: Homepage
 			<div id="featured-img"><?php echo $img; ?></div>
 			<div id="featured-name"><?php echo $title; ?></div>
 		</a>
-	</div>
+	</div> -->
 
-	<div id="locally-grown" class="hp-custom-widget">
+<!-- 	<div id="locally-grown" class="hp-custom-widget">
 		<div class="lg-title">Locally Grown</div>
 		<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 500, 'order' => 'ASC' ) ); ?>
 		<?php $lg_arry = array(); $count = 0;?>
@@ -114,9 +114,9 @@ Template Name: Homepage
 			<div id="lg-name"><?php echo $title; ?></div>
 			<div id="lg-artist"><?php echo $artist; ?></div>
 		</a>
-	</div>
+	</div> -->
 
-	<div id="sights-sounds" class="hp-custom-widget">
+	<!-- <div id="sights-sounds" class="hp-custom-widget">
 		<div class="ss-title">Sights and Sounds</div>
 		<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 5, 'order' => 'ASC' ) ); ?>
 		<?php $ss_arry = array(); $count = 0;?>
@@ -131,9 +131,9 @@ Template Name: Homepage
 			</div>
 			<?php } ?>
 		<?php endwhile; ?>
-	</div>
+	</div> -->
 
-	<div id="show-single-artist-in-month" class="hp-custom-widget">
+	<!-- <div id="show-single-artist-in-month" class="hp-custom-widget">
 		<div class="ss-title">Test to show one artist for current month</div>
 		<?php 	$month = date(F);
 				$year = date('Y'); 
@@ -147,7 +147,7 @@ Template Name: Homepage
 				</a>
 			</div>
 		<?php endwhile; ?>
-	</div>
+	</div> -->
 
 </div>
 
