@@ -10,14 +10,22 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-	</div><!-- #main .wrapper -->
-	<footer id="colophon" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'twentytwelve_credits' ); ?>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	</div>
+	
+	<?php $genre_array = array("Acoustic","Bluegrass","Blues","Funk","Rock"); ?>
+	<?php $genreCount = 0; foreach ($genre_array as $genre) { $genreCount++; } ?>
+	
+	
+	<footer id="colophon">
+		<div id="footer-by-cat">
+			<div class="footer-cat-links">
+				<?php for ($i = 0; $i < $genreCount; $i++) {
+	    			echo "<a href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</a> ";
+				} ?>
+			</div>
+		</div>
+	</footer>
+</div>
 
 <?php wp_footer(); ?>
 </body>

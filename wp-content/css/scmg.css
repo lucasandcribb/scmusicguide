@@ -51,6 +51,10 @@ header #searchform input#searchsubmit {width:100px;}
 #menu-main-nav-container .nav-menu li a:hover {color:#D8D8D8; text-decoration:underline;}
 
 
+/*FOOTER*/
+footer {width:100%; height:150px; background:#000; margin-top:20px; margin-bottom:20px; }
+.footer-cat-links a {color:#fff;}
+
 
 /* SIDEBAR */ 
 .widget_archive, .widget_categories {width:150px; overflow:hidden;}
@@ -127,6 +131,17 @@ ul.wpuf_customs {display: none;}
 #featured-review .fr-reveiws .rev-1 {display:none;}
 #featured-review #review-divider {width:725px; margin-top:5px; margin-bottom:5px; height:1px; 
 	background:#999;}
+
+/*HP NEW ARTISTS*/
+#new-artists {position:relative; float:left; border:1px solid #666; width:750px;}
+#new-artists-title {width:730px; background:#5b6c8a; height:30px; padding-top:5px; font-size:24px; color:#fff;
+	letter-spacing:2px; font-weight:bold; padding-left:20px;}
+#new-artists div {position:relative; float:left;}
+#new-artists-cont {width:100%; padding:10px;}
+#new-artists-cont .new-artist {margin-right:10px; margin-left:10px;}
+#new-artists-cont .new-artist, #new-artists-cont a img {width:125px; height:100px;}
+#new-artists-cont .new-artist .new-artist-name {position:absolute; float:none; bottom:10px; color:#efefef; font-size:11px;
+	width:100%; text-align:center;}
 
 /*HP VID SECTION*/
 #vid-aud-titles {position:relative; float:left; width:750px;}

@@ -62,6 +62,23 @@ Template Name: Homepage
 	</div>
 </div>
 
+<div id="new-artists">
+	<div id="new-artists-title">NEW ARTISTS</div>
+	<div id="new-artists-cont">
+		<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 5, 'order' => 'ASC' ) ); ?>
+		<?php $url = get_permalink(); ?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<div class="new-artist">
+				<a href="<?php echo $url; ?>">
+					<?php echo the_post_thumbnail() ?>
+					<div class="new-artist-name"><?php the_title(); ?></div>
+				</a>
+			</div>
+		<?php endwhile; ?>
+	</div>
+</div>
+
+
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php get_template_part( 'content', 'page' ); ?>
 <?php endwhile; ?>
