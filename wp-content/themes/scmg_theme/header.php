@@ -64,7 +64,12 @@
 		<hgroup>
 			<img id="logo" src="/wp-content/images/logo/vintage-logo.jpg" />
 		</hgroup>
-
+		<div id="header-top-links">
+			<a class="header-top-links" href="/contact">Contact</a>
+			<a class="header-top-links" href="/directory">Directory</a>
+			<a class="header-top-links" href="/artists">Artists</a>
+			<a class="header-top-links" href="/reviews">Reviews</a>
+		</div>
 		<div id="social-links">
 			<a href="http://www.facebook.com/sharer.php?u=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?> " target="_blank"><img class="social-link" src="/wp-content/images/social-icons/fb.jpg" /></a>
 			<a href="http://www.twitter.com/share?text=<?php echo bloginfo('name'); ?>&url=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>" target="_blank"><img class="social-link" src="/wp-content/images/social-icons/twitter.jpg" /></a>

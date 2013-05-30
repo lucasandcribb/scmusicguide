@@ -18,11 +18,11 @@
 	
 	<footer id="colophon">
 		<div id="footer-by-cat">
-			<div class="footer-cat-links">
+			
 				<?php for ($i = 0; $i < $genreCount; $i++) {
-	    			echo "<a href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</a> ";
+	    			echo "<div class='footer-cat-links'><a href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</a> </div>";
 				} ?>
-			</div>
+			
 		</div>
 	</footer>
 </div>
