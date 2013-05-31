@@ -62,7 +62,7 @@
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
-			<img id="logo" src="/wp-content/images/logo/vintage-logo.jpg" />
+			<img id="logo" src="/wp-content/images/logo/logo.jpg" />
 		</hgroup>
 		<div id="header-top-links">
 			<a class="header-top-links" href="/contact">Contact</a>
@@ -75,7 +75,7 @@
 			<a href="http://www.twitter.com/share?text=<?php echo bloginfo('name'); ?>&url=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>" target="_blank"><img class="social-link" src="/wp-content/images/social-icons/twitter.jpg" /></a>
 			<a href="https://plus.google.com/share?url=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>" target="_blank"><img class="social-link" src="/wp-content/images/social-icons/g.jpg" /></a>
 			<a href="http://www.tumblr.com/share/link?url=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>&name=<?php echo bloginfo('name'); ?>" target="_blank"><img class="social-link" src="/wp-content/images/social-icons/tumblr.jpg" /></a>
-			<a href="http://pinterest.com/pin/create/button/?url=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>&description=<?php echo bloginfo('name'); ?>" target="_blank"><img class="social-link" src="/wp-content/images/social-icons/pinterest.jpg" /></a>
+			<!-- <a href="http://pinterest.com/pin/create/button/?url=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>&description=<?php echo bloginfo('name'); ?>" target="_blank"><img class="social-link" src="/wp-content/images/social-icons/pinterest.jpg" /></a> -->
 			<!-- <img class="social-link" src="/wp-content/images/social-icons/vimeo.jpg" />
 			<img class="social-link" src="/wp-content/images/social-icons/youtube.jpg" /> -->
 		</div>

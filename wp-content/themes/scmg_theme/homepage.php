@@ -78,6 +78,13 @@ Template Name: Homepage
 	</div>
 </div>
 
+<!-- <div id="vid-aud-titles">
+	<div class="vid-aud-title">FEATURED VIDEOS</div>
+</div> 
+
+<div id="hp-vid-list">
+  [easy-media med="97,98,102,106"][easy-media med="97,98,102,106"]
+</div>-->
 
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php get_template_part( 'content', 'page' ); ?>
