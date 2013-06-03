@@ -4,6 +4,9 @@ Template Name: Album Reviews
 */
 ?>
 <?php get_header(); ?>
+
+	<?php get_sidebar(); ?>
+	
 	<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 10, 'order' => 'ASC' ) ); ?>
 	<?php while ( $loop->have_posts() ) : $loop->the_post(); 
 		$url = get_permalink();
@@ -30,5 +33,5 @@ Template Name: Album Reviews
 		
 	<?php endwhile; ?>
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
