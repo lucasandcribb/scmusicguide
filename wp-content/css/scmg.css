@@ -94,10 +94,10 @@ footer {width:100%; height:200px; background:#000; margin-top:20px; margin-botto
 .slide-thumb {opacity:0.25;}
 .current-thumb {opacity:1.0;}
 
-#hp-playlist-title {position:relative; float:left; width:750px; margin-top:20px;}
-#hp-playlist-title .hp-playlist-title {width:732px; background:#A901DB; height:30px; padding-top:0px; padding-bottom:7px; font-size:24px; color:#fff;
+#hp-playlist-title {position:relative; float:left; width:750px; margin-top:20px; border:1px solid #333; border-bottom:none;}
+#hp-playlist-title .hp-playlist-title {width:730px; background:#A901DB; height:30px; padding-top:0px; padding-bottom:7px; font-size:24px; color:#fff;
 	letter-spacing:2px; font-weight:bold; padding-left:20px;}
-#myplayer {position:relative; float:left; color:#333; border:1px solid #999; margin-bottom:20px; width:750px;}
+#myplayer {position:relative; float:left; color:#333; border:1px solid #333; margin-bottom:20px; width:750px;}
 #myplayer .track-info p {color:#333;}
 #myplayer .ttw-music-player {width:720px;}
 #myplayer .ttw-music-player .player-controls {background:#FAFAFA; border:1px solid #999;}
@@ -142,7 +142,7 @@ ul.wpuf_customs {display: none;}
 	background:#999;}
 
 /*HP NEW ARTISTS*/
-#new-artists {position:relative; float:left; border:1px solid #666; width:750px;}
+#new-artists {position:relative; float:left; border:1px solid #333; width:750px;}
 #new-artists-title {width:730px; background:#5b6c8a; height:30px; padding-top:5px; font-size:24px; color:#fff;
 	letter-spacing:2px; font-weight:bold; padding-left:20px;}
 #new-artists div {position:relative; float:left;}
@@ -194,6 +194,21 @@ ul.wpuf_customs {display: none;}
 /* Single Artist for a Month */
 #show-single-artist-in-month {width:240px; padding:5px; border:1px solid #999; cursor:pointer;}
 #show-single-artist-in-month, #show-single-artist-in-month div {position:relative; float:left;}
+
+/* Musicians Corner */
+#musicians-corner-cont {position:relative; float:left; width:750px; border:1px solid #333;}
+#musicians-corner-cont .musicians-corner-title {width:730px; background:#088A08; height:30px; padding-top:5px; font-size:24px; color:#fff;
+	letter-spacing:2px; font-weight:bold; padding-left:20px;}
+.mc-nav, .mc-nav div {position:relative; float:left;}
+.mc-nav {width:100%; height:20px; border-bottom:2px solid #666; border-top:2px solid #666;}
+.mc-nav-tabs {width:248px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
+	text-align:center; border-right:1px solid #666; border-left:1px solid #666;}
+.mc-nav-tabs:hover {background:#999; color:#000;}
+.mc-nav-current {background:#999; color:#000; font-weight:bold;}
+#Musicians_Corner {position:relative; float:left; width:730px; padding:10px;}
+.widget_better_rss_widget {display:none;}
+.widget_better_rss_widget li {margin-top:10px;}
+.widget_better_rss_widget li .rssSummary {font-size:12px;}
 
 
 

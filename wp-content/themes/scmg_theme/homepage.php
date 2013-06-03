@@ -90,6 +90,18 @@ Template Name: Homepage
 	<?php get_template_part( 'content', 'page' ); ?>
 <?php endwhile; ?>
 
+
+<div id="musicians-corner-cont">
+	<div class="musicians-corner-title">MUSICANS CORNER</div>
+	<div class="mc-nav">
+		<div id="mc-nav-news" class="mc-nav-tabs mc-nav-current" rel="News">NEWS</div>
+		<div id="mc-nav-tips" class="mc-nav-tabs" rel="Tips">TIPS</div>
+		<div id="mc-nav-diy" class="mc-nav-tabs" rel="DIY">DIY</div>
+	</div>
+	<?php echo do_shortcode("[widgets_on_pages id='Musicians Corner']") ?>
+</div>
+
+
 <div id="hp-widget-holder">
 
 	<!-- <div id="featured-artist" class="hp-custom-widget">

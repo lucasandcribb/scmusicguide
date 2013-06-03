@@ -92,6 +92,21 @@ $(document).ready(function() {
         });
     });
 
+    $('#better_rss_widget-2').show();   
+
+    $('.mc-nav-tabs').click(function() {
+        var tab = $(this).attr('rel');
+        $('.mc-nav-tabs').removeClass('mc-nav-current');
+        $(this).addClass('mc-nav-current');
+        $('#Musicians_Corner ul li .widgettitle').each(function() {
+            var title = $(this).html();
+            if (tab == title) {
+                $('.widget_better_rss_widget').hide();
+                $(this).parent().show();
+            }
+        });
+    });
+
 });
 
 function hpSlideNext() {
