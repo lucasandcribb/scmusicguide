@@ -92,7 +92,7 @@ $(document).ready(function() {
         });
     });
 
-    $('#better_rss_widget-2').show();   
+    $('#Musicians_Corner .widget_better_rss_widget').first().show();   
 
     $('.mc-nav-tabs').click(function() {
         var tab = $(this).attr('rel');
