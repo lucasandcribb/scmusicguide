@@ -65,10 +65,7 @@ Template Name: Homepage
 <div id="featured-spotlight">
 	<div class="fr-title">SPOTLIGHT</div>
 	<div class="fr-reveiws">
-		
-
-
-		<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'ASC', 'category' => 'Spotlight' ) ); 
+		<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'ASC', 'category_name' => 'Spotlight' ) ); 
 			  $url = get_permalink(); $cats = wp_get_post_categories(); ?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<div class="fr-review-one-cont">
@@ -81,7 +78,7 @@ Template Name: Homepage
 			</div>
 		<?php endwhile; ?>
 		<div id="review-divider"></div>
-		<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'ASC' ) ); 
+		<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'ASC', 'category_name' => 'Spotlight' ) ); 
 			  $url = get_permalink(); $rev_num = 1;?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
@@ -96,6 +93,8 @@ Template Name: Homepage
 		<?php endwhile; ?>
 	</div>
 </div>
+
+
 
 <div id="new-artists">
 	<div id="new-artists-title">NEW ARTISTS</div>
