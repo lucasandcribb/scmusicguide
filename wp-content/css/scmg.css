@@ -320,6 +320,21 @@ ul.wpuf_customs {display: none;}
 .video-gallery-thumbnail-box-outer {font-size:10px;}
 
 
+/* SINGLE REVIEWS */
+.single-reviews article {margin-top:20px;}
+.single-reviews .review-info article .entry-header, .single-reviews .review-info article .entry-meta, .single-reviews article .entry-content,
+	.single-reviews article .entry-header {display:none;}
+.single-reviews #content article {margin-top:20px;}
+.single-reviews .review-info article {border-top:none; border-bottom:none;}
+.single-reviews article .entry-meta, .single-reviews .review-info article .entry-content {display:block;}
+.single-reviews .review-info div {position:relative; float:left;}
+.single-reviews .review-info div span {font-style:italic; font-weight:bold;}
+.single-reviews .review-info .single-review-img {width:200px;}
+.single-reviews .review-info .single-review-title, .single-review-genre, .single-review-release-date, .single-review-by, .review-info article {width:500px; margin-bottom:10px;}
+.single-reviews .review-content {position:relative; float:left; width:700px; margin-top:20px; margin-bottom:50px;}
+.single-reviews .review-info .single-review-title {font-size:16px; font-weight:bold; margin-bottom:10px;}
+footer.entry-meta {height:25px; width:740px; padding-left:10px;}
+
 
 /* EVENTS */
 .page-template-default #comments {display:none;}

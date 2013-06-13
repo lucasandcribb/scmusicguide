@@ -27,7 +27,7 @@ get_header(); ?>
 				<div class="single-artist-title"><?php the_title(); ?></div>
 				<div class="single-artist-image"><?php the_post_thumbnail('full'); ?></div>
 				<div><span>Bio: </span><?php the_field('bio'); ?></div>
-				<div><span>Website: </span><?php the_field('artist_website'); ?></div>
+				<div><span>Website: </span><a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a></div>
 			</div>
 			<?php endwhile; ?>
 

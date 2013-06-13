@@ -37,12 +37,12 @@ Template Name: Homepage
 			  $url = get_permalink(); ?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<div class="fr-review-one-cont">
-				<a class="fr-review-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
-				<div class="fr-review-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+				<a class="fr-review-img" href="<?php echo get_permalink(); ?>"><?php echo the_post_thumbnail() ?></a>
+				<div class="fr-review-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></div>
 				<div class="review-one-body">
 					<?php echo substr(get_field('review_content'), 0, 500).'...'; ?>
 				</div>
-				<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
+				<div class="fr-read-more"><a href="<?php echo get_permalink(); ?>">Read More</a></div>
 			</div>
 		<?php endwhile; ?>
 		<div id="review-divider"></div>
