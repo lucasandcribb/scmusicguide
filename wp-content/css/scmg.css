@@ -341,6 +341,11 @@ footer.entry-meta {height:25px; width:740px; padding-left:10px;}
 #tribe-events-content {padding:0px;}
 
 
+/* IMAGE GALLERY */
+.page-template-image-gallery-php article {width:750px; position:relative; float:left;}
+.page-template-image-gallery-php article .comments-link, .page-template-image-gallery-php article .entry-meta {display:none;}
+
+
 
 /* ARTICLES */
 .single article {margin-bottom:20px;}

@@ -19,7 +19,7 @@ get_header(); ?>
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>
-			<?php $band_name = get_field('artist_name'); $newBandName = str_replace(' ','-',$band_name); $band_url = strtolower($newBandName); echo $band_url; ?>
+			<?php $band_name = get_field('artist_name'); $newBandName = str_replace(' ','-',$band_name); $band_url = strtolower($newBandName); ?>
 
 			<div class="review-info">
 				<div class="single-review-img"><?php the_post_thumbnail('thumbnail'); ?></div>
