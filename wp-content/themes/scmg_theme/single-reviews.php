@@ -19,11 +19,11 @@ get_header(); ?>
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 		<?php if ( have_posts() ) : ?>
-
+			<?php $band_name = get_field('artist_name'); $newBandName = str_replace(' ','-',$band_name); $band_url = strtolower($newBandName); echo $band_url; ?>
 
 			<div class="review-info">
 				<div class="single-review-img"><?php the_post_thumbnail('thumbnail'); ?></div>
-				<div class="single-review-title"><span>Band/Album Name: </span> <?php the_title(); ?></div>
+				<div class="single-review-title"><span>Band/Album Name: </span> <a href="/artists/<?php echo $band_url; ?>"><?php the_title(); ?></a></div>
 				<div class="single-review-genre"><span>Genre: </span> <?php the_field('genre'); ?></div>
 				<div class="single-review-release-date"><span>Release Date: </span> <?php $date = get_field('release_date'); echo date("m/d/y", strtotime($date)); ?></div>
 				<div class="single-review-by"><span>Review By: </span><?php the_field('reviewed_by'); ?></div>
