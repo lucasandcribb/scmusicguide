@@ -62,6 +62,41 @@ Template Name: Homepage
 	</div>
 </div>
 
+<div id="featured-spotlight">
+	<div class="fr-title">SPOTLIGHT</div>
+	<div class="fr-reveiws">
+		
+
+
+		<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'ASC', 'category' => 'Spotlight' ) ); 
+			  $url = get_permalink(); $cats = wp_get_post_categories(); ?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<div class="fr-review-one-cont">
+				<a class="fr-review-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
+				<div class="fr-review-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+				<div class="review-one-body">
+					<?php echo substr(get_the_content(), 0, 500).'...'; ?>
+				</div>
+				<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
+			</div>
+		<?php endwhile; ?>
+		<div id="review-divider"></div>
+		<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'ASC' ) ); 
+			  $url = get_permalink(); $rev_num = 1;?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
+				<a class="fr-review-sm-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
+				<div class="fr-review-sm-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+				<div class="fr-review-sm-body">
+					<?php echo substr(get_field('review_content'), 0, 300).'...'; ?>
+				</div>
+				<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
+			</div>
+			<?php $rev_num++; ?>
+		<?php endwhile; ?>
+	</div>
+</div>
+
 <div id="new-artists">
 	<div id="new-artists-title">NEW ARTISTS</div>
 	<div id="new-artists-cont">

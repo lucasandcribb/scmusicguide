@@ -7,7 +7,8 @@ html {margin-top:0px !important;}
  }
 #primary {width:750px;}
 #secondary {width:230px; border:1px solid #999; padding:5px; margin-top:0px; background:#F2F2F2;}
-header.site-header {padding-bottom:10px; padding-top:0px !important;}
+header {position:relative;}
+header.site-header {padding-bottom:20px; padding-top:0px !important; position:relative;}
 #bg {position:fixed; top:0px; left:0px; width:100%; height:100%; background:url('/wp-content/images/backgrounds/black-linen.jpg'); z-index:-1; opacity:0.8;}
 .tribe_events .entry-meta, .page-id-196 .entry-meta {display:none;}
 
@@ -16,8 +17,8 @@ header.site-header {padding-bottom:10px; padding-top:0px !important;}
 #header-social-links {position:relative; float:right; margin-top:0px; margin-right:20px; margin-bottom:20px; width:250px;}
 #header-social-links div {position:relative; float:left; margin-right:10px; width:100%; margin-bottom:5px;}
 #header-social-title {width:100%; margin-bottom:5px;}
-hgroup {z-index:500; position:absolute; top:10px; left:25px;}
-hgroup img {width:200px;}
+hgroup {z-index:5000; position:absolute; top:-25px; left:-35px;}
+hgroup img#logo {width:200px;}
 #header-top-links {position:relative; float:right; margin-top:-10px; margin-bottom:5px;}
 #header-top-links .header-top-links {padding-left:5px; padding-right:5px; color:#666; font-size:11px;}
 #header-top-links .header-top-links:hover {color:#000;}
@@ -25,34 +26,38 @@ hgroup img {width:200px;}
 #social-links {width:100%; margin-left:35px;}
 #social-links img {margin:5px; width:30px; margin-left:15px;}
 
+#header-title {position:absolute; top:20px; left:180px; color:#000; font-size:44px; font-family:"Cooper Std";}
+
 #f-login {position:relative; float:right; margin-top:10px; margin-right:5px; margin-bottom:5px}
 
 header #searchform {position:relative; float:right; width:100%; text-align:right;}
 header #searchform input {width:300px;}
 header #searchform input#searchsubmit {width:100px;}
 
-.nav-menu ul, .nav-menu {background:url(../images/nav-bg.jpg) repeat; z-index:500;}
+.nav-menu ul, .nav-menu {background:none; z-index:600;}
 .nav-menu li {margin-right:0px; z-index:500;}
-.nav-menu li a {color:#fff; width:100px; text-align:center;}
+.nav-menu li a {color:#666; width:100px; text-align:center;}
 
-.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border-bottom:1px solid #999; border-top:1px solid #999;
-	padding-left:150px;}
-.main-navigation li ul li a {background:#000; color:#fff; width:100px; font-size:12px;}
-.main-navigation li ul li a:hover {color:#D8D8D8; text-decoration:underline; background:url(../images/nav-bg.jpg) no-repeat;}
+.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border-top:1px solid #666;
+	margin-left:150px; width:800px; padding-left:50px;}
+#header-nav-divider {width:885px; position:relative; float:right; height:1px; background:#666;}
+
+.main-navigation li ul li a {background:#fff; color:#666; width:100px; font-size:12px;}
+.main-navigation li ul li a:hover {color:#000; text-decoration:underline; background:#999;}
 .main-navigation ul li ul li {margin-right:0px; width:100px;}
 .main-navigation ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666;}
 .main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a, 
-	.main-navigation .current_page_item > a, .main-navigation .current_page_ancestor > a {color:#efefef;}
-.main-navigation .nav-menu li a:hover {color:#D8D8D8; text-decoration:underline;}
+	.main-navigation .current_page_item > a, .main-navigation .current_page_ancestor > a {color:#000;}
+.main-navigation .nav-menu li a:hover {color:#000; text-decoration:underline; background:#efefef;}
 
 #menu-main-nav-container ul.nav-menu, #menu-main-nav-container div.nav-menu > ul {border-bottom:1px solid #999; border-top:1px solid #999;}
-#menu-main-nav-container li ul li a {background:#000; color:#fff; width:120px;}
-#menu-main-nav-container li ul li a:hover {color:#D8D8D8; text-decoration:underline; background:url(../images/nav-bg.jpg) no-repeat;}
+#menu-main-nav-container li ul li a {background:#000; color:#666; width:120px;}
+#menu-main-nav-container li ul li a:hover {color:#000; text-decoration:underline; background:#999;}
 #menu-main-nav-container ul li ul li {margin-right:0px; width:100px; z-index:500;}
 #menu-main-nav-container ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666;}
 #menu-main-nav-container .current-menu-item > a, #menu-main-nav-container .current-menu-ancestor > a, 
-	#menu-main-nav-container .current_page_item > a, #menu-main-nav-container .current_page_ancestor > a {color:#efefef;}
-#menu-main-nav-container .nav-menu li a:hover {color:#D8D8D8; text-decoration:underline;}
+	#menu-main-nav-container .current_page_item > a, #menu-main-nav-container .current_page_ancestor > a {color:#000;}
+#menu-main-nav-container .nav-menu li a:hover {color:#000; text-decoration:underline; background:#efefef;}
 
 
 /*FOOTER*/
@@ -141,6 +146,30 @@ ul.wpuf_customs {display: none;}
 #featured-review .fr-reveiws .rev-1 {display:none;}
 #featured-review #review-divider {width:725px; margin-top:5px; margin-bottom:5px; height:1px; 
 	background:#999;}
+
+/* HP Spotlight */
+#featured-spotlight {position:relative; float:left; width:750px; border:1px solid #333; margin-bottom:20px;}
+#featured-spotlight div, #featured-spotlight a {position:relative; float:left;}
+#featured-spotlight .fr-title {width:730px; height:30px; background:#FE2E64; border-bottom:1px solid #999; padding-left:20px;
+	padding-top:5px; font-weight:bold; font-size:24px; color:#fff; letter-spacing:2px; text-decoration:none;}
+#featured-spotlight a {text-decoration:none;}
+#featured-spotlight .fr-reveiws {width:730px; padding:10px;}
+#featured-spotlight .fr-review-cont {width:100%;}
+#featured-spotlight .fr-review-title {width:530px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
+#featured-spotlight .fr-review-img {width:150px;}
+#featured-spotlight .fr-review-img img {width:200px; height:150px;}
+#featured-spotlight .review-one-body {width:550px; margin-left:20px; height:100px;}
+#featured-spotlight .fr-read-more {margin-top:5px; margin-right:10px; float:right;}
+
+#featured-spotlight .fr-review-sm-cont {width:100%; margin-top:10px;}
+#featured-spotlight .fr-review-sm-img {width:100px;}
+#featured-spotlight .fr-review-sm-img img {width:100px; height:75px;}
+#featured-spotlight .fr-review-sm-title {width:600px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
+#featured-spotlight .fr-review-sm-body {width:600px; margin-left:20px; height:55px;}
+#featured-spotlight .fr-reveiws .rev-1 {display:none;}
+#featured-spotlight #review-divider {width:725px; margin-top:5px; margin-bottom:5px; height:1px; 
+	background:#999;}
+
 
 /*HP NEW ARTISTS*/
 #new-artists {position:relative; float:left; border:1px solid #333; width:750px;}

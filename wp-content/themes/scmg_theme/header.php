@@ -62,8 +62,11 @@
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
-			<img id="logo" src="/wp-content/images/logo/logo.jpg" />
+			<img id="logo" src="/wp-content/images/logo/logo.png" />
 		</hgroup>
+		<div id="header-title">
+			South Carolina</br>Music Guide
+		</div>
 		<div id="header-top-links">
 			<a class="header-top-links" href="/contact">Contact</a>
 			<a class="header-top-links" href="/directory">Directory</a>
@@ -88,6 +91,7 @@
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			<div id="header-nav-divider"></div>
 		</nav><!-- #site-navigation -->
 
 		<?php $header_image = get_header_image();
