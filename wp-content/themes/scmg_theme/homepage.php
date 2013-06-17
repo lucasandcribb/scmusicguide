@@ -17,6 +17,7 @@ Template Name: Homepage
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
 				<div id="slide-<?php echo $count; ?>" class="slide-main" rel="<?php echo $count; ?>">
 					<a href="<?php echo $url; ?>"><?php get_template_part( 'content', 'page' ); ?></a>
+					<div class="slide-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
 				</div>
 				<?php $count++; ?>
 		<?php endwhile; ?>

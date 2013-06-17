@@ -50,7 +50,7 @@ echo trim($output, $separator);
 			</div>
 			<?php endwhile; ?>
 
-			<div class="single-artist-video-title"><span>Tracks: </span></div>
+			<div class="single-artist-video-title"><span></span></div>
 			<?php get_template_part( 'content', get_post_format() ); ?>
 
 		<?php endif; // end have_posts() check ?>

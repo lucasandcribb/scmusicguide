@@ -99,6 +99,11 @@ footer {width:100%; height:200px; background:#000; margin-top:20px; margin-botto
 .slide-btn {display:none;}
 .slide-thumb {opacity:0.25;}
 .current-thumb {opacity:1.0;}
+#hp-slide-cont .slide-title {opacity:0.75; font-size:32px; position:absolute; bottom:20px; right:10px; z-index:1;}
+#hp-slide-cont .slide-title a {color:#efefef; text-decoration:none;
+	text-shadow: 0.1em 0.1em 0.05em #333}
+#hp-slide-cont .slide-title a:hover {color:#fff;}
+.slide-thumb .entry-content a {pointer-events: none;}
 
 #hp-playlist-title {position:relative; float:left; width:750px; margin-top:20px; border:1px solid #333; border-bottom:none;}
 #hp-playlist-title .hp-playlist-title {width:730px; background:#A901DB; height:30px; padding-top:0px; padding-bottom:7px; font-size:24px; color:#fff;
@@ -123,6 +128,8 @@ footer {width:100%; height:200px; background:#000; margin-top:20px; margin-botto
 #header-slideshow .slideshow-wrapper .slideshow-meta p {margin-top:2px !important; margin-bottom:0px !important; font-size:16px; 
 	font-weight:bold; padding-left:5px;}
 ul.wpuf_customs {display: none;}
+#header-slideshow .video-gallery-thumbnail-box-outer {display:none;}
+
 
 /*HP ALBUM REVIEW*/
 #featured-review {position:relative; float:left; width:750px; border:1px solid #333; margin-bottom:20px;}

@@ -63,10 +63,12 @@ $(document).ready(function() {
 
     $('#hp-slide-cont').mouseenter(function() {
         clearInterval(hpSlideInterval);
+        $('.slide-title').css({'opacity':1.0});
     }).mouseleave(function() {
         hpSlideInterval = setInterval(function() {
             hpSlideNext();
         },  5000);
+        $('.slide-title').css({'opacity':0.6});
     });
 
     $('#hp-slidethumb-cont').mouseenter(function() {
