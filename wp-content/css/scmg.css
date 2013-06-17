@@ -305,7 +305,7 @@ ul.wpuf_customs {display: none;}
 	border:1px solid #666; padding:5px;}
 .page-template-album-reviews-php .album-review-title a {color:#666; font-weight:bold; font-size:22px;}
 .page-template-album-reviews-php .album-review-title a:hover {color:#000;}
-.page-template-album-reviews-php .album-review-img {float:left; width:200px;}
+.page-template-album-reviews-php .album-review-img {float:left; width:200px; height:150px;}
 .page-template-album-reviews-php .album-review-info div {margin-bottom:5px; float:left; width:500px;}
 .page-template-album-reviews-php .album-review-info span {font-weight:bold;}
 .page-template-album-reviews-php .album-review-info .ratings {height:50px; padding-top:25px;}
@@ -329,6 +329,7 @@ ul.wpuf_customs {display: none;}
 .video-gallery-thumbnail-box-outer {font-size:10px;}
 .single-artist-cont div.artist-site-links {width:700px;}
 .entry-content .video-gallery-thumbnail a div {background-size:18px 18px;}
+.singel-artist-genre a {pointer-events: none;}
 
 
 /* SINGLE REVIEWS */
