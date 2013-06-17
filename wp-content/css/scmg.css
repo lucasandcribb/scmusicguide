@@ -267,8 +267,10 @@ ul.wpuf_customs {display: none;}
 #artist-index .artist-img, #artist-index .artist-img img {width:30px;}
 #artist-index .artist-img {margin-right:10px;}
 .index-links {width:100%; margin-bottom:20px; text-align:center;}
-.index-links a.alpha-link {width:25px; position:relative; float:left;}
-.index-links a.genre-link {width:75px; position:relative; float:left;}
+.index-links a.alpha-link {width:40px; position:relative; float:left; padding:5px; background:#000; color:#fff; border:1px solid #333;}
+.index-links a.alpha-link:hover {color:#333; background:#fff; border:1px solid #000;}
+.index-links a.genre-link {width:134px; position:relative; float:left; padding:5px; background:#000; color:#fff; border:1px solid #333;}
+.index-links a.genre-link:hover {color:#333; background:#fff; border:1px solid #000;}
 .genre-title, .artist-genre a {font-size:11px; margin-top:2px;}
 .artist-section {margin-top:5px; margin-bottom:5px; width:100%; height:30px;}
 .index-single-cont {position:relative; float:left; width:100%; margin-bottom:15px;}

@@ -6,7 +6,7 @@ Template Name: Artist Index
 <?php get_header(); ?>
 
 	<?php $alph_array = array("All","1-10","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"); ?>
-	<?php $genre_array = array("Acoustic","Bluegrass","Blues","Funk","Rock"); ?>
+	<?php $genre_array = array("Acoustic","Alternative","Bluegrass","Blues","Country","Folk","Funk","Pop","Rock","Singer-Songwriter","Stompgrass"); ?>
 
 	<div id="artist-index">
 		<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 15, 'order' => 'ASC' ) ); ?>
