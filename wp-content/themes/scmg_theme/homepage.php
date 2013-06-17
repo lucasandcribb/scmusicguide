@@ -16,7 +16,7 @@ Template Name: Homepage
 	<div id="hp-slide-cont">
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
 				<div id="slide-<?php echo $count; ?>" class="slide-main" rel="<?php echo $count; ?>">
-					<a href="<?php echo $url; ?>"><?php the_post_thumbnail('full') ?></a>
+					<a href="<?php echo $url; ?>"><?php get_template_part( 'content', 'page' ); ?></a>
 				</div>
 				<?php $count++; ?>
 		<?php endwhile; ?>
@@ -24,7 +24,7 @@ Template Name: Homepage
 	<div id="hp-slidethumb-cont">
 		<?php $count = 0; ?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				<div class="slide-thumb" rel="<?php echo $count; ?>"><?php the_post_thumbnail('full') ?></div>
+				<div class="slide-thumb" rel="<?php echo $count; ?>"><?php get_template_part( 'content', 'page' ); ?></div>
 				<?php $count++; ?>
 		<?php endwhile; ?>
 	</div>

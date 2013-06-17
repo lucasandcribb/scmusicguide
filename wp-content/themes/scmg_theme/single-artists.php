@@ -26,12 +26,31 @@ get_header(); ?>
 			<div class="single-artist-cont">
 				<div class="single-artist-title"><?php the_title(); ?></div>
 				<div class="single-artist-image"><?php the_post_thumbnail('full'); ?></div>
-				<div><span>Bio: </span><?php the_field('bio'); ?></div>
-				<div><span>Website: </span><a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a></div>
+				<div><span>Genre: </span>
+					<?php
+$categories = get_the_category();
+$separator = ' ';
+$output = '';
+if($categories){
+	foreach($categories as $category) {
+		$output .= '<a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+	}
+echo trim($output, $separator);
+}
+?>
+				</div>
+				<div class="artist-bio"><span>Bio: </span><?php the_field('bio'); ?></div>
+				<div class="artist-website artist-site-links"><span>Website: </span><a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a></div>
+				<div class="artist-facebook artist-site-links"><span>Facebook: </span><a href="<?php the_field('artist_facebook_page'); ?>"><?php the_field('artist_facebook_page'); ?></a></div>
+				<div class="artist-twitter artist-site-links"><span>Twitter: </span><a href="<?php the_field('artist_twitter'); ?>"><?php the_field('artist_twitter'); ?></a></div>
+				<div class="artist-reverbnation artist-site-links"><span>Reverbnation: </span><a href="<?php the_field('artist_reverbnation'); ?>"><?php the_field('artist_reverbnation'); ?></a></div>
+				<div class="artist-youtube artist-site-links"><span>YouTube: </span><a href="<?php the_field('artist_youtube'); ?>"><?php the_field('artist_youtube'); ?></a></div>
+				<div class="artist-itunes artist-site-links"><span>iTunes: </span><a href="<?php the_field('artist_itunes'); ?>"><?php the_field('artist_itunes'); ?></a></div>
+
 			</div>
 			<?php endwhile; ?>
 
-			<div class="single-artist-video-title"><span>Artist Video &amp Music Gallery: </span></div>
+			<div class="single-artist-video-title"><span>Tracks: </span></div>
 			<?php get_template_part( 'content', get_post_format() ); ?>
 
 		<?php endif; // end have_posts() check ?>

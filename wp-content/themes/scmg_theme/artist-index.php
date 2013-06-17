@@ -40,7 +40,8 @@ Template Name: Artist Index
 				while ( $loop->have_posts() ) : $loop->the_post();
 					$url = get_permalink();
 					$array_val = $alph_array[$i];
-					$index = get_field('index');
+					$band_name = get_the_title();
+					$index = $band_name[0];
 					$cats = wp_get_post_categories();
 					if ($index == $array_val) { ?>
 					
