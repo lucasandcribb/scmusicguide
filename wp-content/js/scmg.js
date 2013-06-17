@@ -38,8 +38,8 @@ $(document).ready(function() {
     $('.genre-link').click(function() {
     	var filter = $(this).attr('rel');
     	$('.index-single-cont').find('.artist-section').each(function() {
-    		var genre = $(this).attr('genre');
-    		if ( genre.contains(filter) ) {
+    		
+    		if ( $(this).hasClass(filter) ) {
     			$(this).parent().show();
     		} else {
     			$(this).parent().hide();

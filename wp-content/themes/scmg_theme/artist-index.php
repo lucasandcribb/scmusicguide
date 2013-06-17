@@ -45,7 +45,7 @@ Template Name: Artist Index
 					$cats = wp_get_post_categories();
 					if ($index == $array_val) { ?>
 					
-						<div class="artist-section" alpha="<?php echo $alph_array[$i];?>" genre="<?php $categories = get_the_category(); if($categories){ foreach($categories as $category) {echo $category->cat_name." "; }}?>" >
+						<div class="artist-section <?php $categories = get_the_category(); if($categories){ foreach($categories as $category) {echo $category->cat_name." "; }}?>" alpha="<?php echo $alph_array[$i];?>"  >
 							<a href="<?php echo $url; ?>">
 								<div class="artist-img"><?php the_post_thumbnail('thumbnail'); ?></div>
 								<div class="artist-title"><?php the_title(); ?></div>
