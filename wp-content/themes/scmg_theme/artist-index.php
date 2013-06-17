@@ -6,7 +6,7 @@ Template Name: Artist Index
 <?php get_header(); ?>
 
 	<?php $alph_array = array("All","1-10","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"); ?>
-	<?php $genre_array = array("Acoustic","Alternative","Bluegrass","Blues","Country","Folk","Funk","Pop","Rock","Singer-Songwriter","Stompgrass"); ?>
+	<?php $genre_array = array("Acoustic","Alternative","Americana","Bluegrass","Blues","Country","Folk","Funk","Pop","Rock","Roots","Singer-Songwriter","Stompgrass"); ?>
 
 	<div id="artist-index">
 		<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 15, 'order' => 'ASC' ) ); ?>
@@ -45,7 +45,7 @@ Template Name: Artist Index
 					$cats = wp_get_post_categories();
 					if ($index == $array_val) { ?>
 					
-						<div class="artist-section" alpha="<?php echo $alph_array[$i];?>" genre="<?php $categories = get_the_category(); if($categories){ foreach($categories as $category) {echo $category->cat_name; }}?>" >
+						<div class="artist-section" alpha="<?php echo $alph_array[$i];?>" genre="<?php $categories = get_the_category(); if($categories){ foreach($categories as $category) {echo $category->cat_name." "; }}?>" >
 							<a href="<?php echo $url; ?>">
 								<div class="artist-img"><?php the_post_thumbnail('thumbnail'); ?></div>
 								<div class="artist-title"><?php the_title(); ?></div>
