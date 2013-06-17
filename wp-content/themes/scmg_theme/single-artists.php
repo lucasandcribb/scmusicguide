@@ -25,7 +25,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<div class="single-artist-cont">
 				<div class="single-artist-title"><?php the_title(); ?></div>
-				<div class="single-artist-image"><?php the_post_thumbnail('full'); ?></div>
+				
 				<div class="singel-artist-genre"><span>Genre: </span>
 					<?php
 					$categories = get_the_category();
@@ -39,7 +39,7 @@ get_header(); ?>
 					}
 					?>
 				</div>
-				<div class="artist-bio"><span>Bio: </span><?php the_field('bio'); ?></div>
+				<div class="artist-bio"><span>Bio: </span><div class="single-artist-image"><?php the_post_thumbnail('full'); ?></div><?php the_field('bio'); ?></div>
 				<div class="artist-website artist-site-links"><span>Website: </span><a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a></div>
 				<div class="artist-facebook artist-site-links"><span>Facebook: </span><a href="<?php the_field('artist_facebook_page'); ?>"><?php the_field('artist_facebook_page'); ?></a></div>
 				<div class="artist-twitter artist-site-links"><span>Twitter: </span><a href="<?php the_field('artist_twitter'); ?>"><?php the_field('artist_twitter'); ?></a></div>

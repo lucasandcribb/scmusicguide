@@ -322,14 +322,15 @@ ul.wpuf_customs {display: none;}
 .single-artist-cont div {position:relative; float:left; width:400px; margin-bottom:20px; line-height:150%;}
 .single-artist-cont {position:relative; float:left;}
 .single-artist-cont span, .single-artist-video-title span {font-weight:bold;}
-.single-artist-cont .single-artist-title {width:400px; font-weight:bold; font-size:24px; margin-bottom:20px;}
-.single-artist-cont .single-artist-image {width:250px; float:right; text-align:center; background:#000; margin-right:20px;}
+.single-artist-cont .single-artist-title {width:700px; font-weight:bold; font-size:24px; margin-bottom:20px;}
+.single-artist-cont .single-artist-image {width:250px; float:right; text-align:center; background:#000; margin-left:20px;}
 .single-artist-cont .single-artist-image img {width:250px;}
 .single-artists .entry-header, .single-artists .entry-meta {display:none;}
 .video-gallery-thumbnail-box-outer {font-size:10px;}
 .single-artist-cont div.artist-site-links {width:700px;}
 .entry-content .video-gallery-thumbnail a div {background-size:18px 18px;}
 .singel-artist-genre a {pointer-events: none;}
+.single-artist-cont div.artist-bio {width:700px;}
 
 
 /* SINGLE REVIEWS */
