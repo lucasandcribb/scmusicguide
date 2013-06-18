@@ -34,7 +34,7 @@ Template Name: Homepage
 <div id="featured-review">
 	<a href="/album-reviews"><div class="fr-title">ALBUM REVIEWS</div></a>
 	<div class="fr-reveiws">
-		<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 1, 'order' => 'ASC' ) ); 
+		<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 1, 'order' => 'DESC' ) ); 
 			  $url = get_permalink(); ?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<div class="fr-review-one-cont">
@@ -47,7 +47,7 @@ Template Name: Homepage
 			</div>
 		<?php endwhile; ?>
 		<div id="review-divider"></div>
-		<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 3, 'order' => 'ASC' ) ); 
+		<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 3, 'order' => 'DESC' ) ); 
 			  $url = get_permalink(); $rev_num = 1;?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">

@@ -303,7 +303,7 @@ ul.wpuf_customs {display: none;}
 .page-template-album-reviews-php .album-review-cont div {position:relative;}
 .page-template-album-reviews-php .album-review-title {position:relative; float:left; width:715px; margin-bottom:10px; background:#efefef; 
 	border:1px solid #666; padding:5px;}
-.page-template-album-reviews-php .album-review-title a {color:#666; font-weight:bold; font-size:22px;}
+.page-template-album-reviews-php .album-review-title a {color:#333; font-weight:bold; font-size:22px;}
 .page-template-album-reviews-php .album-review-title a:hover {color:#000;}
 .page-template-album-reviews-php .album-review-img {float:left; width:200px; height:150px;}
 .page-template-album-reviews-php .album-review-info div {margin-bottom:5px; float:left; width:500px;}
@@ -312,7 +312,7 @@ ul.wpuf_customs {display: none;}
 .page-template-album-reviews-php .album-review-info .ratings article {height:50px;}
 .page-template-album-reviews-php .album-review-info .ratings article .entry-content img {margin-right:5px; background:#0101DF;}
 .page-template-album-reviews-php article .entry-header {display:none;}
-.page-template-album-reviews-php .album-review-content {position:relative; float:left; width:100%; margin-top:20px; overflow:hidden; display:none;}
+.page-template-album-reviews-php .album-review-content {position:relative; float:left; width:100%; margin-top:20px; overflow:hidden; display:none; line-height:25px}
 .page-template-album-reviews-php .expand-review, .page-template-album-reviews-php .retract-review {float:left; margin-top:10px; cursor:pointer;}
 .page-template-album-reviews-php .retract-review, .page-template-album-reviews-php .entry-meta {display:none;}
 
@@ -344,7 +344,7 @@ ul.wpuf_customs {display: none;}
 .single-reviews .review-info div span {font-style:italic; font-weight:bold;}
 .single-reviews .review-info .single-review-img {width:200px;}
 .single-reviews .review-info .single-review-title, .single-review-genre, .single-review-release-date, .single-review-by, .review-info article {width:500px; margin-bottom:10px;}
-.single-reviews .review-content {position:relative; float:left; width:700px; margin-top:20px; margin-bottom:50px; line-height:20px;}
+.single-reviews .review-content {position:relative; float:left; width:700px; margin-top:20px; margin-bottom:50px; line-height:25px;}
 .single-reviews .review-info .single-review-title {font-size:16px; font-weight:bold; margin-bottom:10px;}
 footer.entry-meta {height:25px; width:740px; padding-left:10px;}
 

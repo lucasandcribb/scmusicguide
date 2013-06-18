@@ -23,10 +23,10 @@ get_header(); ?>
 
 			<div class="review-info">
 				<div class="single-review-img"><?php the_post_thumbnail('thumbnail'); ?></div>
-				<div class="single-review-title"><span>Band/Album Name: </span> <a href="/artists/<?php echo $band_url; ?>"><?php the_title(); ?></a></div>
+				<div class="single-review-title"><span>Album &amp Band Name: </span> <a href="/artists/<?php echo $band_url; ?>"><?php the_title(); ?></a></div>
 				<div class="single-review-genre"><span>Genre: </span> <?php the_field('genre'); ?></div>
 				<div class="single-review-release-date"><span>Release Date: </span> <?php $date = get_field('release_date'); echo date("m/d/y", strtotime($date)); ?></div>
-				<div class="single-review-by"><span>Review By: </span><?php the_field('reviewed_by'); ?></div>
+				<div class="single-review-by"><span>Reviewed By: </span><?php the_field('reviewed_by'); ?></div>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php get_template_part( 'content', get_post_format() ); ?>
 				<?php endwhile; ?>
