@@ -62,10 +62,10 @@
 <div id="page" class="hfeed site">
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
-			<img id="logo" src="/wp-content/images/logo/logo.png" />
+			<a href="/"><img id="logo" src="/wp-content/images/logo/logo.png" /></a>
 		</hgroup>
 		<div id="header-title">
-			South Carolina</br>Music Guide
+			<a href="/">South Carolina</br>Music Guide</a>
 		</div>
 		<div id="header-top-links">
 			<a class="header-top-links" href="/contact">Contact</a>

@@ -22,7 +22,7 @@ get_header(); ?>
 			<?php $band_name = get_field('artist_name'); $newBandName = str_replace(' ','-',$band_name); $band_url = strtolower($newBandName); ?>
 
 			<div class="review-info">
-				<div class="single-review-img"><?php the_post_thumbnail('thumbnail'); ?></div>
+				<div class="single-review-img"><a href="<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); echo $image[0]; ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
 				<div class="single-review-title"><span>Album: </span> <?php the_field('album_name'); ?></div>
 				<div class="single-review-artist"><span>Artist Name: </span><a href="/artists/<?php echo $band_url; ?>"><?php the_field('artist_name'); ?></a></div>
 				<div class="single-review-genre"><span>Genre: </span> <?php the_field('genre'); ?></div>

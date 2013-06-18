@@ -26,7 +26,8 @@ hgroup img#logo {width:200px;}
 #social-links {width:100%; margin-left:35px;}
 #social-links img {margin:5px; width:30px; margin-left:15px;}
 
-#header-title {position:absolute; top:20px; left:180px; color:#000; font-size:44px; font-family:"Cooper Std";}
+#header-title {position:absolute; top:20px; left:180px; color:#000; font-size:44px; font-family:"Cooper Std"; z-index:5;}
+#header-title a {color:#000; font-size:44px; font-family:"Cooper Std"; text-decoration:none;}
 
 #f-login {position:relative; float:right; margin-top:10px; margin-right:5px; margin-bottom:5px}
 
@@ -366,5 +367,9 @@ footer.entry-meta {height:25px; width:740px; padding-left:10px;}
 .single article {margin-bottom:20px;}
 .fb-like, .twitter-share-button, #google-plus {position:relative; float:left; margin-bottom:25px; width:100%;}
 
+
+/* SEARCH RESULTS */
+.search-results article .entry-meta, .category article .entry-meta, .search-results article .entry-content, .category article .entry-content {display:none;}
+.search-results article .entry-header .wp-post-image, .category article .entry-header .wp-post-image {max-width:250px;}
 
 
