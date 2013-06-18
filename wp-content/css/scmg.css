@@ -158,7 +158,7 @@ ul.wpuf_customs {display: none;}
 /* HP Spotlight */
 #featured-spotlight {position:relative; float:left; width:750px; border:1px solid #333; margin-bottom:20px;}
 #featured-spotlight div, #featured-spotlight a {position:relative; float:left;}
-#featured-spotlight .fr-title {width:730px; height:30px; background:#FE2E64; border-bottom:1px solid #999; padding-left:20px;
+#featured-spotlight .fr-title {width:730px; height:30px; background:#01DFD7; border-bottom:1px solid #999; padding-left:20px;
 	padding-top:5px; font-weight:bold; font-size:24px; color:#fff; letter-spacing:2px; text-decoration:none;}
 #featured-spotlight a {text-decoration:none;}
 #featured-spotlight .fr-reveiws {width:730px; padding:10px;}
