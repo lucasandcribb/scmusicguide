@@ -22,12 +22,13 @@ $(document).ready(function() {
 
     $('.alpha-link').click(function() {
     	var filter = $(this).attr('rel');
+        $('.index-single-cont').hide();
     	$('.index-single-cont').each(function() {
     		var alpha = $(this).attr('alpha');
     		if (filter == alpha) {
-    			$(this).show();
+    			$(this).fadeIn('slow');
     		} else if (filter == 'All') {
-    			$(this).show();
+    			$(this).fadeIn('slow');
     		} else {
     			$(this).hide();
     		}
