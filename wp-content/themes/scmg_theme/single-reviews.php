@@ -23,7 +23,8 @@ get_header(); ?>
 
 			<div class="review-info">
 				<div class="single-review-img"><?php the_post_thumbnail('thumbnail'); ?></div>
-				<div class="single-review-title"><span>Album &amp Band Name: </span> <a href="/artists/<?php echo $band_url; ?>"><?php the_title(); ?></a></div>
+				<div class="single-review-title"><span>Album: </span> <?php the_field('album_name'); ?></div>
+				<div class="single-review-artist"><span>Artist Name: </span><a href="/artists/<?php the_field('artist_name'); ?>"><?php the_field('artist_name'); ?></a></div>
 				<div class="single-review-genre"><span>Genre: </span> <?php the_field('genre'); ?></div>
 				<div class="single-review-release-date"><span>Release Date: </span> <?php $date = get_field('release_date'); echo date("m/d/y", strtotime($date)); ?></div>
 				<div class="single-review-by"><span>Reviewed By: </span><?php the_field('reviewed_by'); ?></div>
@@ -34,8 +35,18 @@ get_header(); ?>
 			<div class="review-content" rel="<?php echo get_the_ID(); ?>">
 				<?php the_field('review_content'); ?>
 			</div>
+			<div class="review-band-links">
+				<div>Artist Website:</div>
+				<a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a>
+				<div>Artist Facebook:</div>
+				<a href="<?php the_field('artist_facebook'); ?>"><?php the_field('artist_facebook'); ?></a>
+				<div>Artist YouTube:</div>
+				<a href="<?php the_field('artist_youtube'); ?>"><?php the_field('artist_youtube'); ?></a>
+				<div>Artist iTunes:</div>
+				<a href="<?php the_field('artist_itunes'); ?>"><?php the_field('artist_itunes'); ?></a>
+			</div>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<?php comments_template(); ?>
 			<?php endwhile; ?>
 			
 				
