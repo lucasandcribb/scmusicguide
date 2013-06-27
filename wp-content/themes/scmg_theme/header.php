@@ -65,11 +65,15 @@
 			<a href="/"><img id="logo" src="/wp-content/images/logo/logo.png" /></a>
 		</hgroup>
 		<div id="header-title">
-			<a href="/">South Carolina</br>Music Guide</a>
+			<a href="/">
+				<div>South Carolina</div>
+				<div id="header-nav-divider"></div>
+				<div>Music Guide</div>
+			</a>
 		</div>
 		<div id="header-top-links">
 			<a class="header-top-links" href="/contact">Contact</a>
-			<a class="header-top-links" href="/directory">Directory</a>
+			<a class="header-top-links" href="/about-us">About Us</a>
 			<a class="header-top-links" href="/artists">Artists</a>
 			<a class="header-top-links" href="/reviews">Reviews</a>
 		</div>
@@ -92,7 +96,7 @@
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
 			
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			<div id="header-nav-divider"></div>
+			
 		</nav><!-- #site-navigation -->
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
