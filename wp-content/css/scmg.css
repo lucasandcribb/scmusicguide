@@ -88,7 +88,7 @@ header #searchform input#searchsubmit {width:100px; color:#fff; border:none; fon
 	#menu-main-nav-container .current_page_item > a, #menu-main-nav-container .current_page_ancestor > a {color:#000;}
 #menu-main-nav-container .nav-menu li a:hover {color:#fff; text-decoration:underline; background:#111;}
 .main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a, .main-navigation .current_page_item > a, 
-	.main-navigation .current_page_ancestor > a, .nav-menu li a {font-size:16px; font-family:Helvetica; line-height:2.51; padding-left:16px; padding-right:16px;}
+	.main-navigation .current_page_ancestor > a, .nav-menu li a {font-size:16px; font-family:Helvetica; line-height:2.51; padding-left:15px; padding-right:15px;}
 
 
 /*FOOTER*/
