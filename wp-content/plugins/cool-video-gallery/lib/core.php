@@ -1594,7 +1594,7 @@ class CvgCore{
 				$out .= $cool_video_gallery->CVGVideo_Parse('[cvg-video videoId='. $video->pid . ' mode="slide_show" placeholder="'.$place_holder.'" /]');
 		    	$out .= '<span class="bottom">Click to Play</span></li>';
 			}else {	
-				$out .= '<div style="float:left;margin-right:10px;"><div class="video-gallery-thumbnail-box" style="padding:0px;" id="vide-file-'.$index.'">';
+				$out .= '<div class="videio-link-container" style="float:left;margin-right:10px;"><div class="video-gallery-thumbnail-box" style="padding:0px;" id="vide-file-'.$index.'">';
 				$out .= '<div class="video-gallery-thumbnail">';
 				$out .= $cool_video_gallery->CVGVideo_Parse('[cvg-video videoId='. $video->pid . ' mode="list_items" placeholder="'.$place_holder.'"/]');
 		    	$out .= '</div></div>';
