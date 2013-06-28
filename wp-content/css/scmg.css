@@ -42,7 +42,6 @@ hgroup img#logo {width:200px;}
 
 #header-title {position:absolute; width:403px; top:20px; left:180px; color:#000; font-size:44px; font-family:"Cooper Std"; z-index:5;}
 #header-title a {color:#000; font-size:44px; font-family:"Cooper Std"; text-decoration:none;}
-#header-title #header-nav-divider {width:403px; position:relative; float:left; height:5px; background:#000; margin-top:-9px;}
 #header-title div {position:relative; float:left; width:100%;}
 
 #f-login {position:relative; float:right; margin-top:10px; margin-right:5px; margin-bottom:5px}
@@ -68,22 +67,28 @@ header #searchform input#searchsubmit {width:100px; color:#fff; border:none; fon
 .nav-menu li {margin-right:0px; z-index:500;}
 .nav-menu li a {color:#666; text-align:center;}
 
-.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border:1px solid #999; background:url('/wp-content/images/nav-bg.jpg');
+.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border-top:1px solid #999; background:url('/wp-content/images/nav-bg.jpg');
 	margin-left:150px; width:850px; }
-
+#header-nav-divider {width:885px; position:relative; float:right; height:1px; background:#999; margin-top:-1px;}
 
 .main-navigation li ul li a {background:#222; color:#fff; width:150px; font-size:15px;}
-.main-navigation li ul li a:hover {color:#fff; text-decoration:underline; background:#111;}
+.main-navigation li ul li a:hover {color:#fff; text-decoration:underline; 
+	background:url("/wp-content/images/nav-bg.jpg") repeat scroll 0 0 transparent;}
 .main-navigation ul li ul li {margin-right:0px; width:100px;}
 .main-navigation ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666;  font-size:16px;}
 #menu-main-nav-container li ul li a {background:#000; color:#666; width:120px; font-size:16px;}
-#menu-main-nav-container li ul li a:hover {color:#000; text-decoration:underline; background:#999; font-size:16px;}
+#menu-main-nav-container li ul li a:hover {color:#000; text-decoration:underline; font-size:16px;
+	background:url("/wp-content/images/nav-bg.jpg") repeat scroll 0 0 transparent;}
 #menu-main-nav-container ul li ul li {margin-right:0px; width:100px; z-index:500;}
 #menu-main-nav-container ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666; font-size:16px;}
 
 .main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a, 
 	.main-navigation .current_page_item > a, .main-navigation .current_page_ancestor > a {color:#000; font-size:16px;}
 .main-navigation .nav-menu li a:hover {color:#fff; text-decoration:underline; background:#111;  font-size:16px;}
+.main-navigation .nav-menu li .sub-menu li a:hover {color:#000; text-decoration:underline; font-size:16px;
+	background:url("/wp-content/images/nav-bg.jpg") repeat scroll 0 0 transparent;}
+
+
 #menu-main-nav-container .current-menu-item > a, #menu-main-nav-container .current-menu-ancestor > a, 
 	#menu-main-nav-container .current_page_item > a, #menu-main-nav-container .current_page_ancestor > a {color:#000;}
 #menu-main-nav-container .nav-menu li a:hover {color:#fff; text-decoration:underline; background:#111;}

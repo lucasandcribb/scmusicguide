@@ -66,9 +66,8 @@
 		</hgroup>
 		<div id="header-title">
 			<a href="/">
-				<div>South Carolina</div>
-				<div id="header-nav-divider"></div>
-				<div>Music Guide</div>
+				South Carolina</br>
+				Music Guide
 			</a>
 		</div>
 		<div id="header-top-links">
@@ -96,7 +95,7 @@
 			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentytwelve' ); ?>"><?php _e( 'Skip to content', 'twentytwelve' ); ?></a>
 			
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			
+			<div id="header-nav-divider"></div>
 		</nav><!-- #site-navigation -->
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
