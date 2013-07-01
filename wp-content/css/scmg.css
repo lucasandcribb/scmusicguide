@@ -135,10 +135,10 @@ footer {width:100%; height:200px; background:#000; margin-top:20px; margin-botto
 .slide-btn {display:none;}
 .slide-thumb {opacity:0.25;}
 .current-thumb {opacity:1.0;}
-#hp-slide-cont .slide-title {opacity:0.75; font-size:32px; position:absolute; bottom:20px; right:10px; z-index:1;}
-#hp-slide-cont .slide-title a {color:#efefef; text-decoration:none;
+#hp-slide-cont .slide-title {opacity:0.75; font-size:32px; position:absolute; right:10px; top:10px; z-index:1; width:730px; height:380px;}
+#hp-slide-cont .slide-title a, #hp-slide-cont .slide-title {color:#efefef; text-decoration:none; vertical-align:bottom; text-align:right;
 	text-shadow: 0.1em 0.1em 0.05em #333}
-#hp-slide-cont .slide-title a:hover {color:#fff;}
+#hp-slide-cont .slide-title a:hover, #hp-slide-cont .slide-title:hover {color:#fff;}
 .slide-thumb .entry-content a {pointer-events: none;}
 
 #hp-playlist-title {position:relative; float:left; width:750px; margin-top:20px; border:1px solid #333; border-bottom:none;}
