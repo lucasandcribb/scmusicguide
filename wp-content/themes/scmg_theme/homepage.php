@@ -11,24 +11,44 @@ Template Name: Homepage
 
 <div id="banner-slideshow" class="hp-slideshow">
 	<div id="slide-next" class="slide-btn"></div>
-	<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 10, 'order' => 'DESC' ) ); ?>
-	<?php $count = 0; ?>
+
+	<?php $slide_array = array(); ?>
+		
+	<?php $slide_loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 100, 'order' => 'DESC' ) ); ?>
+	<?php while ( $slide_loop->have_posts() ) : $slide_loop->the_post(); $slide_id = get_the_ID(); ?>
+		<?php array_push($slide_array, $slide_id); ?>
+	<?php endwhile; ?>
+	<?php $totalSlideCount = 0; foreach ($slide_array as $singleSlide) {$totalSlideCount++;} ?>
+	<?php $slide_numbers = range(0,$totalSlideCount-1);
+	shuffle($slide_numbers);
+	$slideRandNumbers = array_slice($slide_numbers, 0, 10);?>
+	
 	<div id="hp-slide-cont">
-		<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
-				<div id="slide-<?php echo $count; ?>" class="slide-main" rel="<?php echo $count; ?>">
-					<a href="<?php echo $url; ?>"><?php get_template_part( 'content', 'page' ); ?></a>
-					<a href="<?php echo $url; ?>"><div class="slide-title"><?php the_title(); ?></div></a>
-				</div>
-				<?php $count++; ?>
-		<?php endwhile; ?>
+		<?php for($s=0;$s<10;$s++) {
+			$slide_num = $slideRandNumbers[$s]; 
+			$slide_id = $slide_array[$slide_num]; 
+			$slideOne = get_post($slide_id); 
+			$slide_title = $slideOne->post_title; 
+			$slide_permalink = get_permalink($slide_id); 
+			$slide_content = $slideOne->post_content;?>
+			<div id="slide-<?php echo $s; ?>" class="slide-main" rel="<?php echo $s; ?>">
+				<a href="<?php echo $slide_permalink; ?>"><?php echo $slide_content; ?></a>
+				<a href="<?php echo $slide_permalink; ?>"><div class="slide-title"><?php echo $slide_title; ?></div></a>
+			</div>
+		<?php } ?>
 	</div>
 	<div id="hp-slidethumb-cont">
-		<?php $count = 0; ?>
-		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				<div class="slide-thumb" rel="<?php echo $count; ?>"><?php get_template_part( 'content', 'page' ); ?></div>
-				<?php $count++; ?>
-		<?php endwhile; ?>
+		<?php for($t=0;$t<10;$t++) {
+			$thumb_num = $slideRandNumbers[$t]; 
+			$thumb_id = $slide_array[$thumb_num]; 
+			$thumbOne = get_post($thumb_id); 
+			$thumb_permalink = get_permalink($thumb_id);
+			$thumb_content = $thumbOne->post_content;
+			?>
+			<div class="slide-thumb" rel="<?php echo $t; ?>"><?php echo $thumb_content; ?></div>
+		<?php } ?>
 	</div>
+
 </div>
 
 <div id="featured-review">
