@@ -353,7 +353,8 @@ ul.wpuf_customs {display: none;}
 .page-template-album-reviews-php .album-review-info span {font-weight:bold;}
 .page-template-album-reviews-php .album-review-info .ratings {height:50px; padding-top:25px;}
 .page-template-album-reviews-php .album-review-info .ratings article {height:50px;}
-.page-template-album-reviews-php .album-review-info .ratings article .entry-content img, .single-reviews .review-info .entry-content img {margin-right:5px; background:#0101DF;}
+.page-template-album-reviews-php .album-review-info .ratings article .entry-content img, .single-reviews .review-info .entry-content img {margin-right:5px; background:#000;
+	padding:5px; width:25px;}
 .page-template-album-reviews-php article .entry-header {display:none;}
 .page-template-album-reviews-php .album-review-content {position:relative; float:left; width:100%; margin-top:20px; overflow:hidden; display:none; line-height:25px}
 .page-template-album-reviews-php .expand-review, .page-template-album-reviews-php .retract-review {float:left; margin-top:10px; cursor:pointer;}
