@@ -9,7 +9,7 @@ Template Name: Artist Index
 	<?php $genre_array = array("Acoustic","Alternative","Americana","Bluegrass","Blues","Country","Folk","Funk","Indie","Pop","Punk","Reggae","Rock","Roots","Singer-Songwriter","Soul","Stompgrass","World"); ?>
 
 	<div id="artist-index">
-		<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 15, 'order' => 'ASC' ) ); ?>
+		<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 500, 'order' => 'ASC' ) ); ?>
 
 		<?php 	
 			$genreCount = 0;
