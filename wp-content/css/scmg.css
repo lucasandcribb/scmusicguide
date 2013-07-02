@@ -1,5 +1,6 @@
 /* GENERAL STYLING */
 html {margin-top:0px !important;}
+body.custom-font-enabled {font-family:"Trebuchet MS";}
 #page {margin-top:10px; min-width:1000px;
   -moz-box-shadow:    0px 5px 5px 0px #000;
   -webkit-box-shadow: 0px 5px 5px 0px #000;
@@ -31,8 +32,11 @@ header.site-header {padding-bottom:20px; padding-top:0px !important; position:re
 #header-social-links {position:relative; float:right; margin-top:0px; margin-right:20px; margin-bottom:20px; width:250px;}
 #header-social-links div {position:relative; float:left; margin-right:10px; width:100%; margin-bottom:5px;}
 #header-social-title {width:100%; margin-bottom:5px;}
-hgroup {z-index:5000; position:absolute; top:-25px; left:-35px;}
-hgroup img#logo {width:200px;}
+hgroup {z-index:5000; position:absolute; top:-24px; left:-40px; background:#cfb24e;
+	-moz-box-shadow:    0px 2px 5px 0px #000;
+  	-webkit-box-shadow: 0px 2px 5px 0px #000;
+  	box-shadow:         0px 2px 5px 0px #000;}
+hgroup img#logo {width:190px;}
 #header-top-links {position:relative; float:right; margin-top:-10px; margin-bottom:5px;}
 #header-top-links .header-top-links {padding-left:5px; padding-right:5px; color:#666; font-size:11px;}
 #header-top-links .header-top-links:hover {color:#000;}
@@ -40,9 +44,10 @@ hgroup img#logo {width:200px;}
 #social-links {width:100%; margin-left:35px;}
 #social-links img {margin:5px; width:30px; margin-left:15px;}
 
-#header-title {position:absolute; width:403px; top:20px; left:180px; color:#000; font-size:44px; font-family:"Cooper Std"; z-index:5;}
-#header-title a {color:#000; font-size:44px; font-family:"Cooper Std"; text-decoration:none;}
+#header-title {position:absolute; width:403px; top:0px; left:170px; color:#000; font-size:44px; font-family:"Trebuchet MS"; font-weight:bold; z-index:5;}
+#header-title a {color:#000; font-size:44px; font-family:"Trebuchet MS"; text-decoration:none; font-weight:bold;}
 #header-title div {position:relative; float:left; width:100%;}
+#header-title .music-red {color:#781919;}
 
 #f-login {position:relative; float:right; margin-top:10px; margin-right:5px; margin-bottom:5px}
 
@@ -67,7 +72,7 @@ header #searchform input#searchsubmit {width:100px; color:#fff; border:none; fon
 .nav-menu li {margin-right:0px; z-index:500;}
 .nav-menu li a {color:#666; text-align:center;}
 
-.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border-top:1px solid #999; background:url('/wp-content/images/nav-bg.jpg');
+.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border-top:1px solid #999; border-bottom:1px solid #999; background:url('/wp-content/images/nav-bg.jpg');
 	margin-left:150px; width:850px; }
 #header-nav-divider {width:885px; position:relative; float:right; height:1px; background:#999; margin-top:-1px;}
 
@@ -93,7 +98,8 @@ header #searchform input#searchsubmit {width:100px; color:#fff; border:none; fon
 	#menu-main-nav-container .current_page_item > a, #menu-main-nav-container .current_page_ancestor > a {color:#000;}
 #menu-main-nav-container .nav-menu li a:hover {color:#fff; text-decoration:underline; background:#111;}
 .main-navigation .current-menu-item > a, .main-navigation .current-menu-ancestor > a, .main-navigation .current_page_item > a, 
-	.main-navigation .current_page_ancestor > a, .nav-menu li a {font-size:16px; font-family:Helvetica; line-height:2.51; padding-left:15px; padding-right:15px;}
+	.main-navigation .current_page_ancestor > a, .nav-menu li a {font-size:16px; font-family:"Trebuchet MS"; line-height:2.51; padding-left:15px; padding-right:15px;
+	font-weight:bold;}
 
 
 /*FOOTER*/
@@ -274,7 +280,7 @@ ul.wpuf_customs {display: none;}
 	letter-spacing:2px; font-weight:bold; padding-left:20px;}
 .mc-nav, .mc-nav div {position:relative; float:left;}
 .mc-nav {width:730px; margin-left:10px; height:20px;}
-.mc-nav-tabs {width:242px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
+.mc-nav-tabs {width:241px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
 	text-align:center; border-right:1px solid #666; border-left:1px solid #666; border-bottom:2px solid #666;}
 .mc-nav-tabs:hover {background:#999; color:#000;}
 .mc-nav-current {background:#fff; color:#000; font-weight:bold; border-bottom:none; border-right:none; border-left:none;}
