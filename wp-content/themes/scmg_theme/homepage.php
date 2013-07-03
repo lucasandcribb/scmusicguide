@@ -119,56 +119,104 @@ Template Name: Homepage
 </div>
 
 
-<div id="featured-spotlight">
-	<div class="fr-title">SPOTLIGHT</div>
-	<div class="fr-reveiws">
-
-		<?php $spotlight_array = array(); ?>
-
-		<?php $s_loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 100, 'order' => 'DESC', 'category_name' => 'Spotlight' ) ); $cats = wp_get_post_categories(); ?>
-		<?php while ( $s_loop->have_posts() ) : $s_loop->the_post(); $s_id = get_the_ID(); ?>
-			<?php array_push($spotlight_array, $s_id); ?>
-		<?php endwhile; ?>
-		<?php $spotlightCount = 0; foreach ($spotlight_array as $spotlights) {$spotlightCount++;} ?>
-
-		<?php $s_numbers = range(0,$spotlightCount-1);
-		shuffle($s_numbers);
-		$threeSpotRandNumbers = array_slice($s_numbers, 0, 3); ?>
-
-		<?php $s = $threeSpotRandNumbers[0];
-			$s_id = $spotlight_array[$s];
-			$spotlightOne = get_post($s_id); 
-			$s_title = $spotlightOne->post_title;
-			$s_permalink = get_permalink($s_id);
-			$s_content = get_post_meta($s_id, 'spotlight_content', true);
-		?>
-
-		<div class="fr-review-one-cont" rel="<?php echo $s_id; ?>">
-			<a class="fr-review-img" href="<?php echo $s_permalink; ?>"><?php echo get_the_post_thumbnail($s_id); ?></a>
-			<div class="fr-review-title"><a href="<?php echo $s_permalink; ?>"><?php echo $s_title; ?></a></div>
-			<div class="review-one-body">
-				<?php echo substr($s_content, 0, 500).'...'; ?>
-			</div>
-			<div class="fr-read-more"><a href="<?php echo $s_permalink; ?>">Read More</a></div>
+<div id="featured-spot-ss-guest">
+	<div class="fr-title">FEATURED ARTICLES</div>
+	<div class="s-nav">
+		<div id="tab-nav-spot" class="s-nav-tabs s-nav-current" rel="Spotlight">Spotlight</div>
+		<div id="tab-nav-ss" class="s-nav-tabs" rel="Sights and Sounds">Sights and Sounds</div>
+		<div id="tab-nav-guest" class="s-nav-tabs" rel="Guest List">Guest List</div>
+	</div>
+	<div id="hp-spotlight-tab" class="spotlight-tabs">
+		<h2 class="widgettitle">Spotlight</h2>
+		<div class="fr-reveiws">
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'DESC', 'category_name' => 'Spotlight' ) ); 
+				   $cats = wp_get_post_categories(); ?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); $spoturl = get_permalink();?>
+				<div class="fr-review-one-cont">
+					<a class="fr-review-img" href="<?php echo $spoturl; ?>"><?php echo the_post_thumbnail() ?></a>
+					<div class="fr-review-title"><a href="<?php echo $spoturl; ?>"><?php the_title(); ?></a></div>
+					<div class="review-one-body">
+						<?php echo substr(get_field('article_content'), 0, 500).'...'; ?>
+					</div>
+					<div class="fr-read-more"><a href="<?php echo $spoturl; ?>">Read More</a></div>
+				</div>
+			<?php endwhile; ?>
+			<div id="review-divider"></div>
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC', 'category_name' => 'Spotlight' ) ); 
+				  $rev_num = 1;?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); $spoturl = get_permalink(); ?>
+				<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
+					<a class="fr-review-sm-img" href="<?php echo $spoturl; ?>"><?php echo the_post_thumbnail() ?></a>
+					<div class="fr-review-sm-title"><a href="<?php echo $spoturl; ?>"><?php the_title(); ?></a></div>
+					<div class="fr-review-sm-body">
+						<?php echo substr(get_field('article_content'), 0, 300).'...'; ?>
+					</div>
+					<div class="fr-read-more"><a href="<?php echo $spoturl; ?>">Read More</a></div>
+				</div>
+				<?php $rev_num++; ?>
+			<?php endwhile; ?>
 		</div>
-
-		<div id="review-divider"></div>
-
-		<?php $s = $threeSpotRandNumbers[1];
-			$s_id = $spotlight_array[$s];
-			$spotlightOne = get_post($s_id); 
-			$s_title = $spotlightOne->post_title;
-			$s_permalink = get_permalink($s_id);
-			$s_content = get_post_meta($s_id, 'spotlight_content', true);
-		?>
-
-		<div class="fr-review-sm-cont" rel="<?php echo $s_id; ?>">
-			<a class="fr-review-sm-img" href="<?php echo $s_permalink; ?>"><?php echo get_the_post_thumbnail($s_id); ?></a>
-			<div class="fr-review-sm-title"><a href="<?php echo $s_permalink; ?>"><?php echo $s_title; ?></a></div>
-			<div class="fr-review-sm-body">
-				<?php echo substr($s_content, 0, 300).'...'; ?>
-			</div>
-			<div class="fr-read-more"><a href="<?php echo $s_permalink; ?>">Read More</a></div>
+	</div>
+	<div id="hp-sightsounds-tab" class="spotlight-tabs">
+		<h2 class="widgettitle">Sights and Sounds</h2>
+		<div class="fr-reveiws">
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'DESC', 'category_name' => 'Sights and Sounds' ) ); 
+				  $cats = wp_get_post_categories(); ?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
+				<div class="fr-review-one-cont">
+					<a class="fr-review-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
+					<div class="fr-review-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+					<div class="review-one-body">
+						<?php echo substr(get_field('article_content'), 0, 500).'...'; ?>
+					</div>
+					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
+				</div>
+			<?php endwhile; ?>
+			<div id="review-divider"></div>
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC', 'category_name' => 'Sights and Sounds' ) ); 
+				  $rev_num = 1;?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
+				<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
+					<a class="fr-review-sm-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
+					<div class="fr-review-sm-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+					<div class="fr-review-sm-body">
+						<?php echo substr(get_field('article_content'), 0, 300).'...'; ?>
+					</div>
+					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
+				</div>
+				<?php $rev_num++; ?>
+			<?php endwhile; ?>
+		</div>
+	</div>
+	<div id="hp-guest-tab" class="spotlight-tabs">
+		<h2 class="widgettitle">Guest List</h2>
+		<div class="fr-reveiws">
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'DESC', 'category_name' => 'Guest Article' ) ); 
+				  $cats = wp_get_post_categories(); ?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
+				<div class="fr-review-one-cont">
+					<a class="fr-review-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
+					<div class="fr-review-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+					<div class="review-one-body">
+						<?php echo substr(get_field('article_content'), 0, 500).'...'; ?>
+					</div>
+					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
+				</div>
+			<?php endwhile; ?>
+			<div id="review-divider"></div>
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC', 'category_name' => 'Guest Article' ) ); 
+				  $rev_num = 1;?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
+				<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
+					<a class="fr-review-sm-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
+					<div class="fr-review-sm-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+					<div class="fr-review-sm-body">
+						<?php echo substr(get_field('article_content'), 0, 300).'...'; ?>
+					</div>
+					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
+				</div>
+				<?php $rev_num++; ?>
+			<?php endwhile; ?>
 		</div>
 	</div>
 </div>

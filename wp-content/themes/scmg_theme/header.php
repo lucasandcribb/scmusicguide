@@ -42,7 +42,7 @@
    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   	})();
 </script>
-<div id="fb-root"></div>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -63,6 +63,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<a href="/"><img id="logo" src="/wp-content/images/logo/logo.png" /></a>
+
 		</hgroup>
 		<div id="header-title">
 			<a href="/">

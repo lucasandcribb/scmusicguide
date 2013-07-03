@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+    reorder();
+    var divs = $(".video-link-container").sort(function(){ 
+        return Math.round(Math.random())-1; //so we get the right +/- combo
+       }).slice(0,6);
+    $(divs).show();
+
 
 	$('.expand-review').click(function() {
 		var expandId = $(this).attr('rel');
@@ -110,6 +116,21 @@ $(document).ready(function() {
         });
     });
 
+    $('.s-nav-tabs').click(function() {
+        var tab = $(this).attr('rel');
+        $('.s-nav-tabs').removeClass('s-nav-current');
+        $(this).addClass('s-nav-current');
+        $('.spotlight-tabs .widgettitle').each(function() {
+            var title = $(this).html();
+            if (tab == title) {
+                $('.spotlight-tabs').hide();
+                $(this).parent().show();
+            }
+        });
+    });
+
+
+
 });
 
 function hpSlideNext() {
@@ -147,7 +168,19 @@ function hpSlideNext() {
 }
 
 
-
+ function reorder() {
+      var grp = $("#video-1").children(".video-link-container");
+      var cnt = grp.lengt
+      var temp,x;
+      for (var i = 0; i < cnt; i++) {
+          temp = grp[i];
+        x = Math.floor(Math.random() * cnt);
+        grp[i] = grp[x];
+        grp[x] = temp;
+    }
+    $(grp).remove();
+    $("#video-1").append($(grp));
+  }
 
 
 

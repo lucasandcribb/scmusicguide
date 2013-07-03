@@ -25,7 +25,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<div class="single-artist-cont">
 				<div class="single-artist-title"><?php the_title(); ?></div>
-				
+				<div class="artist-tracks artist-site-links"><?php the_field('artist_tracks') ?></div>
 				<div class="singel-artist-genre"><span>Genre: </span>
 					<?php
 					$categories = get_the_category();
@@ -46,13 +46,13 @@ get_header(); ?>
 				<div class="artist-reverbnation artist-site-links"><span>Reverbnation: </span><a href="<?php the_field('artist_reverbnation'); ?>"><?php the_field('artist_reverbnation'); ?></a></div>
 				<div class="artist-youtube artist-site-links"><span>YouTube: </span><a href="<?php the_field('artist_youtube'); ?>"><?php the_field('artist_youtube'); ?></a></div>
 				<div class="artist-itunes artist-site-links"><span>iTunes: </span><a href="<?php the_field('artist_itunes'); ?>"><?php the_field('artist_itunes'); ?></a></div>
-				<div class="artist-tracks artist-site-links"><?php the_field('artist_tracks') ?></div>
+				
 			</div>
 			<?php endwhile; ?>
 
 
 			<div class="single-artist-video-title"><span></span></div>
-			<?php get_template_part( 'content', get_post_format() ); ?>
+			
 
 		<?php endif; // end have_posts() check ?>
 
