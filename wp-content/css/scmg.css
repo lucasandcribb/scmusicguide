@@ -89,7 +89,7 @@ header #searchform input#searchsubmit {width:100px; color:#fff; border:none; fon
 #menu-main-nav-container ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666; font-size:16px;}
 
 
-.main-navigation .current-menu-item > a, .main-navigation .current_page_item > a {color:#fff; font-size:16px;}
+.main-navigation .current-menu-item > a, .main-navigation .current_page_item > a {color:#666; font-size:16px;}
 .main-navigation .nav-menu li a:hover {color:#fff; text-decoration:underline; background:#111;  font-size:16px;}
 .main-navigation .nav-menu li .sub-menu li a:hover {color:#000; text-decoration:underline; font-size:16px;
 	background:url("/wp-content/images/nav-bg.jpg") repeat scroll 0 0 transparent;}
