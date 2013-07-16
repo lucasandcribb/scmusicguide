@@ -225,7 +225,7 @@ ul.wpuf_customs {display: none;}
 
 .s-nav, .s-nav div {position:relative; float:left;}
 .s-nav {width:750px; height:20px; margin-bottom:20px;}
-.s-nav-tabs {width:247px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
+.s-nav-tabs {width:246px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
 	text-align:center; border-right:2px solid #666; border-left:3px solid #666; border-bottom:2px solid #666;}
 .spotlight-tabs .widgettitle {width:600px; margin-left:10px;}
 .s-nav-tabs:hover {background:url('/wp-content/images/nav-bg.jpg'); color:#000;}
@@ -296,7 +296,7 @@ ul.wpuf_customs {display: none;}
 	letter-spacing:2px; font-weight:bold; padding-left:20px;}
 .mc-nav, .mc-nav div {position:relative; float:left;}
 .mc-nav {width:750px; height:20px;}
-.mc-nav-tabs {width:247px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
+.mc-nav-tabs {width:246px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
 	text-align:center; border-right:2px solid #666; border-left:3px solid #666; border-bottom:2px solid #666;}
 .mc-nav-tabs:hover {background:url('/wp-content/images/nav-bg.jpg'); color:#000;}
 .mc-nav-current {background:#fff; color:#000; font-weight:bold; border:1px solid #000; height:16px;
