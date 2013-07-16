@@ -41,9 +41,9 @@ hgroup img#logo {width:135px;}
 #header-top-links {position:relative; float:right; margin-top:-10px; margin-bottom:5px;}
 #header-top-links .header-top-links {padding-left:5px; padding-right:5px; color:#666; font-size:11px;}
 #header-top-links .header-top-links:hover {color:#000;}
-#social-links, #social-links img {position:relative; float:right; margin-left:10px;}
+#social-links, #social-links img, .social-links a img {position:relative; float:right; margin-left:10px;}
 #social-links {width:100%; margin-left:35px; margin-top:10px;}
-#social-links img {margin:5px; width:30px; margin-left:15px;}
+#social-links img, .social-links a img {margin:5px; width:30px; margin-left:15px;}
 
 #header-title {position:absolute; width:360px; top:0px; left:225px; color:#000; font-size:44px; font-family:"Trebuchet MS"; font-weight:bold; z-index:5;}
 #header-title a {color:#000; font-size:50px; font-family:"Trebuchet MS"; text-decoration:none; font-weight:bold;}
@@ -105,10 +105,18 @@ header #searchform input#searchsubmit {width:100px; color:#fff; border:none; fon
 
 
 /*FOOTER*/
-footer {width:100%; height:200px; background:#000; margin-top:20px; margin-bottom:20px; }
+footer {position:relative;width:100%; height:200px; background:#000; margin-top:20px; margin-bottom:20px; }
 #footer-by-cat {position:relative; float:left; margin-top:20px; margin-left:20px; width:200px; height:150px;}
 .footer-cat-links {width:100px; position:relative; float:left; margin-bottom:10px;}
 .footer-cat-links a {color:#fff;}
+.footer-section {position:relative; float:left; width:170px; padding:20px;}
+.footer-section .footer-title, .footer-section .footer-link {width:100%; position:relative; float:left;}
+.footer-section .footer-title {margin-bottom:10px; font-size:20px; color:#fff;}
+.footer-section .footer-link {margin-bottom:10px; font-size:14px; color:#999;}
+.footer-section .footer-link:hover {color:#efefef;}
+.footer-copywrite {position:absolute; bottom:20px; right:20px;}
+.footer-sitecredit {position:absolute; bottom:20px; left:20px;}
+.footer-section.social-links {width:110px;}
 
 
 /* SIDEBAR */ 
