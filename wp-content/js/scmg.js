@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    centerTerms();
+
     reorder();
     var divs = $(".video-link-container").sort(function(){ 
         return Math.round(Math.random())-1; //so we get the right +/- combo
@@ -129,8 +131,20 @@ $(document).ready(function() {
         });
     });
 
+    $('.terms-link').click(function() {
+        $('#bg-fade').fadeIn(); 
+        $('#terms-of-use').fadeIn();
+    });
+    $('.x-out').click(function() {
+        $('#bg-fade').fadeOut(); 
+        $('#terms-of-use').fadeOut();
+    });
 
 
+});
+
+$(window).resize(function() {
+    centerTerms();
 });
 
 function hpSlideNext() {
@@ -183,7 +197,13 @@ function hpSlideNext() {
   }
 
 
-
+function centerTerms() {
+    var winW = $(window).width(),
+        winH = $(window).height(),
+        newTermLeft = (winW - 700) / 2,
+        newTermTop = (winH - 600) / 2;
+    $('#terms-of-use').css({'top':newTermTop, 'left':newTermLeft});
+}
 
 
 
