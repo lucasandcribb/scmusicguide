@@ -224,12 +224,12 @@ ul.wpuf_customs {display: none;}
 #featured-spot-ss-guest #hp-spotlight-tab {display:block;}
 
 .s-nav, .s-nav div {position:relative; float:left;}
-.s-nav {width:730px; margin-left:10px; height:20px; margin-bottom:20px;}
-.s-nav-tabs {width:241px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
-	text-align:center; border-right:1px solid #666; border-left:1px solid #666; border-bottom:2px solid #666;}
+.s-nav {width:750px; height:20px; margin-bottom:20px;}
+.s-nav-tabs {width:247px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
+	text-align:center; border-right:2px solid #666; border-left:3px solid #666; border-bottom:2px solid #666;}
 .spotlight-tabs .widgettitle {width:600px; margin-left:10px;}
-.s-nav-tabs:hover {background:#999; color:#000;}
-.s-nav-current {background:#fff; color:#000; font-weight:bold; border:1px solid #000; height:16px; width:240px;/*border-bottom:none; border-right:none; border-left:none;*/
+.s-nav-tabs:hover {background:url('/wp-content/images/nav-bg.jpg'); color:#000;}
+.s-nav-current {background:#fff; color:#000; font-weight:bold; border:1px solid #000; height:16px; 
   -moz-box-shadow:    0px 1px 1px 0px #000;
   -webkit-box-shadow: 0px 1px 1px 0px #000;
   box-shadow:         0px 1px 1px 0px #000;}
@@ -295,11 +295,11 @@ ul.wpuf_customs {display: none;}
 #musicians-corner-cont .musicians-corner-title {width:730px; background:#c39246; height:30px; padding-top:5px; font-size:24px; color:#fff;
 	letter-spacing:2px; font-weight:bold; padding-left:20px;}
 .mc-nav, .mc-nav div {position:relative; float:left;}
-.mc-nav {width:730px; margin-left:10px; height:20px;}
-.mc-nav-tabs {width:241px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
-	text-align:center; border-right:1px solid #666; border-left:1px solid #666; border-bottom:2px solid #666;}
-.mc-nav-tabs:hover {background:#999; color:#000;}
-.mc-nav-current {background:#fff; color:#000; font-weight:bold; border:1px solid #000; height:16px; width:240px;/*border-bottom:none; border-right:none; border-left:none;*/
+.mc-nav {width:750px; height:20px;}
+.mc-nav-tabs {width:247px; height:17px; padding-top:3px; background:#000; color:#fff; cursor:pointer; 
+	text-align:center; border-right:2px solid #666; border-left:3px solid #666; border-bottom:2px solid #666;}
+.mc-nav-tabs:hover {background:url('/wp-content/images/nav-bg.jpg'); color:#000;}
+.mc-nav-current {background:#fff; color:#000; font-weight:bold; border:1px solid #000; height:16px;
   -moz-box-shadow:    0px 1px 1px 0px #000;
   -webkit-box-shadow: 0px 1px 1px 0px #000;
   box-shadow:         0px 1px 1px 0px #000;}
