@@ -7,26 +7,16 @@ body.custom-font-enabled {font-family:"Trebuchet MS";}
   box-shadow:         0px 5px 5px 0px #000;
  }
 #primary {width:750px;}
-#secondary {width:230px; border:1px solid #999; padding:5px; margin-top:0px; 
-
-	 /* fallback */ 
-	 background-color: #d6d3d3; 
-	 background-repeat: repeat-x; 
-	 /* Safari 4-5, Chrome 1-9 */ 
-	 background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#d6d3d3)); 
-	 /* Safari 5.1, Chrome 10+ */ 
-	 background: -webkit-linear-gradient(top, #d6d3d3, #fff); 
-	 /* Firefox 3.6+ */ 
-	 background: -moz-linear-gradient(top, #d6d3d3, #fff); 
-	 /* IE 10 */ 
-	 background: -ms-linear-gradient(top, #d6d3d3, #fff); 
-	 /* Opera 11.10+ */ 
-	 background: -o-linear-gradient(top, #d6d3d3, #fff);}
+#secondary {width:230px; margin-top:0px; }
 header {position:relative;}
 header.site-header {padding-bottom:20px; padding-top:0px !important; position:relative;}
 #bg {position:fixed; top:0px; left:0px; width:100%; height:100%; background:url('/wp-content/images/backgrounds/black-linen.jpg'); z-index:-1; opacity:0.8;}
 .tribe_events .entry-meta, .page-id-196 .entry-meta {display:none;}
-
+.widget-area .widget {padding:2px; border:1px solid #666;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;}
 
 
 /* HEADER */
@@ -123,7 +113,7 @@ footer {position:relative;width:100%; height:200px; background:#000; margin-top:
 .widget_archive, .widget_categories {width:150px; overflow:hidden;}
 .widget select {width:237px; border:1px solid #999; height:25px; background:url(../images/select-arrow.png) no-repeat; 
 	background-position:194px 0px;}
-.widget-title {background:#333; color:#fff; width:220px; padding-left:5px; }
+.widget-title {background:#333; color:#fff; width:223px; padding-left:5px; margin-left:-2px; margin-top:-2px;}
 .widget_archive, .widget_categories {width:220px;}
 .ti_player_align_class {margin-bottom:10px;}
 .fb-like span, .fb-like table {width:220px !important;}
@@ -431,6 +421,7 @@ footer.entry-meta {height:25px; width:740px; padding-left:10px;}
 /* EVENTS */
 .page-template-default #comments {display:none;}
 #tribe-events-content {padding:0px;}
+article.tribe_events .entry-content {width:99%;}
 
 
 /* IMAGE GALLERY */
@@ -460,7 +451,7 @@ footer.entry-meta {height:25px; width:740px; padding-left:10px;}
 .terms-info ul li {list-style-type:lower-alpha; padding-left:0px; margin-left:20px; margin-bottom:5px; margin-top:10px;}
 .terms-info ul li ul li {list-style-type:lower-roman; padding-left:5px; margin-left:15px;}
 
-#bg-fade {position:absolute; width:100%; height:100%; background:#000; opacity:0.5; display:none; z-index:999; top:0px; left:0px;}
+#bg-fade {position:absolute; width:100%; height:100%; background:#000; opacity:0.5; display:none; z-index:999; top:0px; left:;}
 .x-out {position:absolute; top:3px; right:3px; width:15px; cursor:pointer; z-index:5;}
 
 

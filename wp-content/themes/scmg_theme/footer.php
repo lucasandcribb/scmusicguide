@@ -170,7 +170,7 @@
 			</ul>
 		</div>
 	
-		<div class="terms-subtitle">7. External Links Disclaime</div>
+		<div class="terms-subtitle">7. External Links Disclaimer</div>
 		<div class="terms-info">
 			South Carolina Music Guide Sites may contain links to external, third party websites. By providing links to other sites, South Carolina Music Guide does not 
 			guarantee, approve or endorse the information or products available at these sites, nor does a link indicate any association with or endorsement by the linked 
