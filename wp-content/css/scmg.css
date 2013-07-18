@@ -1,6 +1,7 @@
 /* GENERAL STYLING */
 html {margin-top:0px !important;}
 #main {z-index:5;}
+#masthead {z-index:10px;}
 body.custom-font-enabled {font-family:"Trebuchet MS";}
 #page {margin-top:10px; min-width:1000px;
   -moz-box-shadow:    0px 5px 5px 0px #000;
@@ -9,7 +10,7 @@ body.custom-font-enabled {font-family:"Trebuchet MS";}
  }
 #primary {width:750px;}
 #secondary {width:230px; margin-top:0px; }
-header {position:relative; z-index:10;}
+#masthead {position:relative; z-index:10;}
 header.site-header {padding-bottom:20px; padding-top:0px !important; position:relative;}
 #bg {position:fixed; top:0px; left:0px; width:100%; height:100%; background:url('/wp-content/images/backgrounds/black-linen.jpg'); z-index:-1; opacity:0.8;}
 .tribe_events .entry-meta, .page-id-196 .entry-meta {display:none;}
