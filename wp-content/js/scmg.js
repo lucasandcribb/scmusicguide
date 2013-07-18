@@ -1,8 +1,9 @@
 $(document).ready(function() {
 
     centerTerms();
-
     reorder();
+    hideUrlLink();
+
     var divs = $(".video-link-container").sort(function(){ 
         return Math.round(Math.random())-1; //so we get the right +/- combo
        }).slice(0,6);
@@ -183,7 +184,7 @@ function hpSlideNext() {
 
 
  function reorder() {
-      var grp = $("#video-1").children(".video-link-container");
+      var grp = $(".page-template-homepage-php #video-1").children(".video-link-container");
       var cnt = grp.lengt
       var temp,x;
       for (var i = 0; i < cnt; i++) {
@@ -193,7 +194,7 @@ function hpSlideNext() {
         grp[x] = temp;
     }
     $(grp).remove();
-    $("#video-1").append($(grp));
+    $(".page-template-homepage-php #video-1").append($(grp));
   }
 
 
@@ -205,7 +206,14 @@ function centerTerms() {
     $('#terms-of-use').css({'top':newTermTop, 'left':newTermLeft});
 }
 
-
+function hideUrlLink() {
+    $('.artist-site-links').each(function() {
+        var linkHtml = $(this).children('a').attr('href');
+        if (linkHtml == "" || linkHtml == " " || linkHtml == null) {
+            $(this).hide();
+        }
+    })
+}
 
 
 

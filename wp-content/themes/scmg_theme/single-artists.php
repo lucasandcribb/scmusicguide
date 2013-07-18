@@ -40,12 +40,12 @@ get_header(); ?>
 					?>
 				</div>
 				<div class="artist-bio"><span>Bio: </span><div class="single-artist-image"><?php the_post_thumbnail('full'); ?></div><?php the_field('bio'); ?></div>
-				<div class="artist-website artist-site-links"><span>Website: </span><a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a></div>
-				<div class="artist-facebook artist-site-links"><span>Facebook: </span><a href="<?php the_field('artist_facebook_page'); ?>"><?php the_field('artist_facebook_page'); ?></a></div>
-				<div class="artist-twitter artist-site-links"><span>Twitter: </span><a href="<?php the_field('artist_twitter'); ?>"><?php the_field('artist_twitter'); ?></a></div>
-				<div class="artist-reverbnation artist-site-links"><span>Reverbnation: </span><a href="<?php the_field('artist_reverbnation'); ?>"><?php the_field('artist_reverbnation'); ?></a></div>
-				<div class="artist-youtube artist-site-links"><span>YouTube: </span><a href="<?php the_field('artist_youtube'); ?>"><?php the_field('artist_youtube'); ?></a></div>
-				<div class="artist-itunes artist-site-links"><span>iTunes: </span><a href="<?php the_field('artist_itunes'); ?>"><?php the_field('artist_itunes'); ?></a></div>
+				<div class="artist-website artist-site-links"><a href="<?php the_field('artist_website'); ?>" target="blank"><?php the_title(); ?>&#39;s Website</a></div>
+				<div class="artist-facebook artist-site-links"><a href="<?php the_field('artist_facebook_page'); ?>" target="blank"><?php the_title(); ?> on Facebook</a></div>
+				<div class="artist-twitter artist-site-links"><a href="<?php the_field('artist_twitter'); ?>" target="blank">Follow <?php the_title(); ?> on Twitter</a></div>
+				<div class="artist-reverbnation artist-site-links"><a href="<?php the_field('artist_reverbnation'); ?>" target="blank"><?php the_title(); ?> Music on Reverbnation</a></div>
+				<div class="artist-youtube artist-site-links"><a href="<?php the_field('artist_youtube'); ?>" target="blank">View <?php the_title(); ?> YouTube Videos</a></div>
+				<div class="artist-itunes artist-site-links"><a href="<?php the_field('artist_itunes'); ?>" target="blank">Buy <?php the_title(); ?>&#39;s Music at iTunes</a></div>
 				
 			</div>
 			<?php endwhile; ?>

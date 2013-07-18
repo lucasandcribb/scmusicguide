@@ -317,7 +317,7 @@ ul.wpuf_customs {display: none;}
 #hp-video-title {position:relative; float:left; width:750px; border:1px solid #333; border-bottom:none;}
 .hp-video-title {width:730px; background:#77a8a6; height:30px; padding-top:0px; padding-bottom:7px; font-size:24px; color:#fff;
 	letter-spacing:2px; font-weight:bold; padding-left:20px;}
-.video-link-container {height:200px; display:none; font-weight:bold;}
+.page-template-homepage-php .video-link-container {height:200px; display:none; font-weight:bold;}
 
 
 /* ABOUT US */
@@ -414,6 +414,7 @@ ul.wpuf_customs {display: none;}
 .single-reviews .review-info div {position:relative; float:left;}
 .single-reviews .review-info div span {font-style:italic; font-weight:bold;}
 .single-reviews .review-info .single-review-img {width:200px;}
+.single-reviews .review-info .single-review-img a {pointer-events: none;}
 .single-reviews .review-info .single-review-title, .single-review-genre, .single-review-release-date, .single-review-by, .review-info article, .single-review-artist {width:500px; margin-bottom:10px;}
 .single-reviews .review-content {position:relative; float:left; width:700px; margin-top:20px; margin-bottom:50px; line-height:25px;}
 .single-reviews .review-info .single-review-title, .single-review-artist {font-size:16px; font-weight:bold; margin-bottom:10px;}
