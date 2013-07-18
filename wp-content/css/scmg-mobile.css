@@ -83,4 +83,8 @@
 	.footer-copywrite, .footer-sitecredit {font-size:10px;}
 	.footer-copywrite {bottom:25px; right:50px;}
 	.footer-sitecredit {bottom:5px; left:100px;}
+
+
+	#terms-of-use {width:260px; height:260px;}
+	#terms-container {width:230px; height:230px;}
 }

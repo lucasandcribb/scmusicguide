@@ -203,8 +203,16 @@ function centerTerms() {
         winH = $(window).height(),
         newTermLeft = (winW - 700) / 2,
         newTermTop = (winH - 600) / 2;
-    $('#terms-of-use').css({'top':newTermTop, 'left':newTermLeft});
+        newSmallLeft = (winW - 300) / 2,
+        newSmallTop = (winH - 300) / 2;
+    if (winW < 600) {
+        $('#terms-of-use').css({'top':newSmallTop, 'left':newSmallLeft});
+    } else {
+        $('#terms-of-use').css({'top':newTermTop, 'left':newTermLeft});
+    }
+    
 }
+
 
 function hideUrlLink() {
     $('.artist-site-links').each(function() {
