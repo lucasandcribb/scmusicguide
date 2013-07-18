@@ -1,0 +1,86 @@
+@media (max-width: 850px) {
+	
+}
+
+@media (max-width: 600px) {
+	.events-gridview body {min-width:600px;}
+	.events-gridview #page {min-width:580px;}
+	.events-gridview #secondary {display:none;}
+
+	body {min-width:320px; width:100%; margin-top:0px; padding-top:0px;}
+	#page {min-width:300px; width:100%; padding-left:0px; padding-right:0px;}
+	#primary {width:100%;}
+	.entry-content {font-size:12px;}
+	#header-top-links, #social-links, #searchform {display:none;}
+	#site-navigation {width:300px; position:relative; margin:auto; margin-top:15px;}
+	#site-navigation .menu-main-nav-container, #site-navigation #menu-main-nav {width:300px; background:none;}
+	#site-navigation #menu-main-nav li {background:#efefef; border:1px solid #333; margin-top:0px;
+		-moz-border-radius: 5px;
+    	-webkit-border-radius: 5px;
+    	-khtml-border-radius: 5px;
+    	border-radius: 5px;}
+	#site-navigation #menu-main-nav li ul {width:100%; border:none; display:none;}
+	#site-navigation #menu-main-nav li ul li {width:100%; border:1px solid #999;}
+	.nav-menu li a {text-decoration:none;}
+	.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {border:none;}
+	#main {width:96%; padding-left:2%; padding-right:2%;}
+
+	#masthead {width:100%;}
+	#masthead hgroup {position:relative; margin:auto; margin-top:25px; width:75px; top:5px;}
+	#masthead hgroup a img {width:75px;}
+	#masthead #header-title {position:relative; margin:auto; width:100%; left:none; left:0px; line-height:20px; text-align:center; margin-top:10px;}
+	#masthead #header-title a {width:200px; font-size:20px; width:100;}
+
+	#banner-slideshow, .fb-like, .fb-follow, .fb-comments, .widget_archive, .footer-section.social-links {display:none !important;}
+	.featured-section, #review-divider, #featured-review .fr-review-img img, #featured-review .fr-review-sm-img img {display:none;}
+
+	#featured-spot-ss-guest, #featured-review {display:block; width:100%; min-width:300px;}
+	#featured-spot-ss-guest .fr-title, #featured-review .fr-title {width:100%; padding-left:0px; text-align:center;}
+	.s-nav {width:100%;}
+	.s-nav-tabs {width:33.3%; border-left:none; border-right:none; font-size:11px;}
+	.spotlight-tabs, #featured-spot-ss-guest .fr-reveiws, #featured-spot-ss-guest .fr-review-title, #featured-spot-ss-guest .review-one-body, .spotlight-tabs .widgettitle {width:95%;}
+
+	#fr-review-one-cont {padding-bottom:10px; width:95%;}
+	#featured-review .fr-reveiws, #featured-review .fr-review-sm-body, #featured-review a, .fr-review-one-cont, #featured-review .fr-review-title, #featured-review .review-one-body {width:100%;}
+	#featured-review .fr-reveiws {margin-left:0px; width:95%;}
+	#featured-review .fr-review-title, #featured-review .fr-review-sm-title {font-size:14px; margin-left:0px; width:100%;}
+	#featured-review .review-one-body, #featured-review .fr-review-sm-body {font-size:12px; margin-left:0px; width:100%;}
+	#featured-review .fr-review-sm-body, .fr-review-sm-cont .fr-read-more {display:none;}
+	#featured-review .fr-read-more {font-size:11px; margin-right:20px;}
+
+	.tribe-events-events .tribe-events-event-list-meta {width:100%; margin-top:20px;}
+	.single-tribe_venue .upcoming .entry-title, .events-archive .upcoming .entry-title {font-size:16px;}
+	article.tribe_events .entry-content, .events-archive .tribe-events-event-entry p, .venue-events .tribe-events-event-entry p {font-size:12px;}
+	.tribe-events-calendar td a {font-size:10px;}
+
+	.profile-info {width:95%; padding-left:5px; padding-right:5%;}
+	.entry-meta, .page-id-35 #secondary {display:none;}
+	.profile-titles {width:100%;}
+
+	#menu-item-709 {display:none;}
+
+	.page-template-artist-index-php #secondary {display:none;}
+	#artist-index {width:100%;}
+
+	.page-template-album-reviews-php #secondary {display:none;}
+	.page-template-album-reviews-php .album-review-cont {width:95%;}
+	.page-template-album-reviews-php .album-review-cont div {width:97%;}
+	.page-template-album-reviews-php .album-review-img {text-align:center; margin-bottom:5px;}
+	.page-template-album-reviews-php .album-review-content {font-size:12px;}
+	.page-template-album-reviews-php .album-review-title a {font-size:15px;}
+
+	.page-id-196 #secondary {display:none;}
+	.page-id-196 .entry-content, .page-id-196 .entry-title {text-align:center;}
+	.page-id-196 .entry-content .wpcf7-form-control-wrap textarea {height:50px; width:210px;}
+	.page-id-196 .entry-content .wpcf7-form-control-wrap input {width:210px;}
+
+
+	#secondary {width:300px; position:relative; margin:auto;}
+	footer {width:100%;}
+	.footer-section {width:20%; padding:2%;}
+	.footer-section .footer-title {font-size:14px; margin-bottom:8px;}
+	.footer-section .footer-link {font-size:10px; margin-bottom:7px;}
+	.footer-copywrite, .footer-sitecredit {font-size:10px;}
+	.footer-copywrite {bottom:25px; right:50px;}
+	.footer-sitecredit {bottom:5px; left:100px;}
+}

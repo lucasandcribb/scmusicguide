@@ -52,7 +52,7 @@ Template Name: Homepage
 </div>
 
 
-<div id="featured-spot-ss-guest">
+<div id="featured-spot-ss-guest" class="featured-section">
 	<div class="fr-title">FEATURED ARTICLES</div>
 	<div class="s-nav">
 		<div id="tab-nav-spot" class="s-nav-tabs s-nav-current" rel="Spotlight">Spotlight</div>
@@ -157,7 +157,7 @@ Template Name: Homepage
 
 
 
-<div id="featured-review">
+<div id="featured-review" class="featured-section">
 	<a href="/album-reviews"><div class="fr-title">ALBUM REVIEWS</div></a>
 	<div class="fr-reveiws">
 		<?php $review_array = array(); ?>
@@ -229,7 +229,7 @@ Template Name: Homepage
 
 
 
-<div id="new-artists">
+<div id="new-artists" class="featured-section">
 	<div id="new-artists-title">FEATURED ARTISTS</div>
 	<div id="new-artists-cont">
 
@@ -264,20 +264,14 @@ Template Name: Homepage
 	</div>
 </div>
 
-<!-- <div id="vid-aud-titles">
-	<div class="vid-aud-title">FEATURED VIDEOS</div>
-</div> 
 
-<div id="hp-vid-list">
-  [easy-media med="97,98,102,106"][easy-media med="97,98,102,106"]
-</div>-->
 
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php get_template_part( 'content', 'page' ); ?>
 <?php endwhile; ?>
 
 
-<div id="musicians-corner-cont">
+<div id="musicians-corner-cont" class="featured-section">
 	<div class="musicians-corner-title">MUSICANS CORNER</div>
 	<div class="mc-nav">
 		<div id="mc-nav-news" class="mc-nav-tabs mc-nav-current" rel="News">NEWS</div>

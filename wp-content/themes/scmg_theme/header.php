@@ -33,6 +33,7 @@
   var $ = jQuery.noConflict();    
 </script>
 <link rel="stylesheet" type="text/css" media="all" href="/wp-content/css/scmg.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/css/scmg-mobile.css" />
 <script src="/wp-content/js/scmg.js"></script>
 
 <script type="text/javascript">
@@ -67,7 +68,7 @@
 		</hgroup>
 		<div id="header-title">
 			<a href="/">
-				South Carolina</br>
+				South Carolina
 				<span class="music-red">Music</span> Guide
 			</a>
 		</div>

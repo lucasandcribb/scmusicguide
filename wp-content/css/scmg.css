@@ -82,7 +82,8 @@ header #searchform input#searchsubmit {width:100px; color:#fff; border:none; fon
 #menu-main-nav-container ul li ul li a {padding-right:0px; padding-left:0px; border:1px solid #666; font-size:16px;}
 
 
-.main-navigation .current-menu-item > a, .main-navigation .current_page_item > a {color:#666; font-size:16px;}
+.main-navigation .sub-menu .current-menu-item > a {color:#fff; font-size:16px;}
+.main-navigation .current_page_item > a {color:#666; font-size:16px;}
 .main-navigation .nav-menu li a:hover {color:#fff; text-decoration:underline; background:#111;  font-size:16px;}
 .main-navigation .nav-menu li .sub-menu li a:hover {color:#000; text-decoration:underline; font-size:16px;
 	background:url("/wp-content/images/nav-bg.jpg") repeat scroll 0 0 transparent;}
@@ -188,7 +189,7 @@ ul.wpuf_customs {display: none;}
 #featured-review .fr-review-title {width:530px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
 #featured-review .fr-review-img {width:150px;}
 #featured-review .fr-review-img img {width:200px; height:150px;}
-#featured-review .review-one-body {width:550px; margin-left:20px; height:100px;}
+#featured-review .review-one-body {width:550px; margin-left:20px;}
 #featured-review .fr-read-more {margin-top:5px; margin-right:10px; float:right;}
 
 #featured-review .fr-review-sm-cont {width:100%; margin-top:10px;}
