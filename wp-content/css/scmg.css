@@ -322,8 +322,9 @@ ul.wpuf_customs {display: none;}
 /* ABOUT US */
 .about-us-profile {position:relative; float:left; padding:10px; background:#FAFAFA; border:1px solid #999; width:96%; margin-bottom:20px;}
 .about-us-profile a, .about-us-profile div {position:relative; float:left;}
+.about-us-profile a img {max-width:225px;}
 .profile-titles {width:475px; font-size:18px; font-weight:bold; margin-bottom:10px;}
-.profile-info {width:475px; padding:20px; padding-top:0px;}
+.profile-info {width:450px; padding:20px; padding-top:0px;}
 
 
 /* ARTIST INDEX */
