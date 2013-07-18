@@ -1,5 +1,6 @@
 /* GENERAL STYLING */
 html {margin-top:0px !important;}
+body {min-width:1100px;}
 #main {z-index:5;}
 #masthead {z-index:10px;}
 body.custom-font-enabled {font-family:"Trebuchet MS";}
