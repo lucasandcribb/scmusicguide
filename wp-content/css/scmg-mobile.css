@@ -74,6 +74,10 @@
 	.page-id-196 .entry-content .wpcf7-form-control-wrap textarea {height:50px; width:210px;}
 	.page-id-196 .entry-content .wpcf7-form-control-wrap input {width:210px;}
 
+	.single-artists {min-width:430px;}
+	.single-artists #secondary {display:none;}
+	.single-artist-cont .single-artist-title, .single-artist-cont div.artist-bio, .single-artist-cont div.artist-site-links {width:100%;}
+
 
 	#secondary {width:300px; position:relative; margin:auto;}
 	footer {width:100%;}

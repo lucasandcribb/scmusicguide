@@ -392,6 +392,7 @@ ul.wpuf_customs {display: none;}
 
 /* SINGLE ARTIST PAGE */
 .single-artist-cont div {position:relative; float:left; width:400px; margin-bottom:20px; line-height:150%;}
+.single-artist-cont .artist-tracks {width:100%;}
 .single-artist-cont {position:relative; float:left;}
 .single-artist-cont span, .single-artist-video-title span {font-weight:bold;}
 .single-artist-cont .single-artist-title {width:700px; font-weight:bold; font-size:24px; margin-bottom:20px;}

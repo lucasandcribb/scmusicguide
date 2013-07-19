@@ -25,7 +25,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<div class="single-artist-cont">
 				<div class="single-artist-title"><?php the_title(); ?></div>
-				<div class="artist-tracks artist-site-links"><?php the_field('artist_tracks') ?></div>
+				<div class="artist-tracks"><?php the_field('artist_tracks') ?></div>
 				<div class="singel-artist-genre"><span>Genre: </span>
 					<?php
 					$categories = get_the_category();
