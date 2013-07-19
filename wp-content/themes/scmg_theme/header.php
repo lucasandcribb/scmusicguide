@@ -75,7 +75,7 @@
 		<div id="header-top-links">
 			<a class="header-top-links" href="/contact">Contact</a>
 			<a class="header-top-links" href="/about-us">About Us</a>
-			<a class="header-top-links" href="/artists">Artists</a>
+			<a class="header-top-links" href="/artist-index-page">Artists</a>
 			<a class="header-top-links" href="/reviews">Reviews</a>
 		</div>
 		<div id="social-links">
