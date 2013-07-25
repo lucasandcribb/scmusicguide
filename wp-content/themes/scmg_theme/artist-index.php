@@ -6,7 +6,7 @@ Template Name: Artist Index
 <?php get_header(); ?>
 
 	<?php $alph_array = array("All","1-10","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"); ?>
-	<?php $genre_array = array("Acoustic","Alternative","Americana","Bluegrass","Blues","Country","Folk","Funk","Indie","Pop","Punk","Reggae","Rock","Roots","Singer-Songwriter","Soul","Stompgrass","World"); ?>
+	<?php $genre_array = array("All","Acoustic","Alternative","Americana","Bluegrass","Blues","Country","Folk","Funk","Indie","Pop","Punk","Reggae","Rock","Roots","Singer-Songwriter","Soul","Stompgrass","World"); ?>
 
 	<div id="artist-index">
 		<?php $loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 500, 'order' => 'ASC' ) ); ?>
@@ -18,7 +18,7 @@ Template Name: Artist Index
 			}
 		?>
 
-		<div class="index-links">
+<!-- 		<div class="index-links">
 			<?php for ($i = 0; $i < 28; $i++) {
     			echo "<a href='#index-".$alph_array[$i]."' class='alpha-link' rel='".$alph_array[$i]."'>".$alph_array[$i]."</a> ";
 			} ?>
@@ -27,7 +27,26 @@ Template Name: Artist Index
 			<?php for ($i = 0; $i < $genreCount; $i++) {
     			echo "<a href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</a> ";
 			} ?>
-		</div>
+		</div> -->
+
+
+		<!-- TEST FOR DROPDOWN -->
+		<select class="index-links index-link-dd">
+			<option>Filter by Letter</option>
+			<?php for ($i = 0; $i < 28; $i++) {
+    			echo "<option href='#index-".$alph_array[$i]."' class='alpha-link' rel='".$alph_array[$i]."'>".$alph_array[$i]."</option> ";
+			} ?>
+		</select>
+		<select class="index-links index-link-dd">
+			<option>Filter by Genre</option>
+			<?php for ($i = 0; $i < $genreCount; $i++) {
+    			echo "<option href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</option> ";
+			} ?>
+		</select>
+
+
+
+
 
 		<div class="filters">
 

@@ -337,17 +337,19 @@ ul.wpuf_customs {display: none;}
 #artist-index .artist-title {font-weight:bold;}
 #artist-index .artist-img, #artist-index .artist-img img {width:30px;}
 #artist-index .artist-img {margin-right:10px;}
-.index-links {width:100%; margin-bottom:20px; text-align:center;}
+.index-links {width:100%; text-align:center;}
 .index-links a.alpha-link {width:40px; position:relative; float:left; padding:5px; background:#000; color:#fff; border:1px solid #333;}
 .index-links a.alpha-link:hover {color:#333; background:#fff; border:1px solid #000;}
 .index-links a.genre-link {width:134px; position:relative; float:left; padding:5px; background:#000; color:#fff; border:1px solid #333;}
 .index-links a.genre-link:hover {color:#333; background:#fff; border:1px solid #000;}
 .genre-title, .artist-genre a {font-size:11px; margin-top:2px;}
 .artist-section {margin-top:5px; margin-bottom:5px; width:100%; height:30px;}
-.index-single-cont {position:relative; float:left; width:100%; margin-bottom:15px;}
-.index-single-cont .index-section-title {width:100%; font-weight:bold;}
+.index-single-cont {position:relative; float:left; width:100%;}
+.index-single-cont .index-section-title {width:100%; font-weight:bold; margin-top:20px;}
 .filter {position:relative; float:left; background:#999; color:#fff; width:75px; height:15px; margin-right:10px; margin-bottom:5px;}
-
+.filters {margin-bottom:20px; font-weight:bold; font-size:16px; margin-top:25px; width:100%;}
+.index-link-dd {position:relative; float:left; max-width:350px; height:25px; padding-top:2px; padding-bottom:2px; font-size:14px; font-weight:bold; margin-top:15px;
+	margin-right:10px;}
 
 
 /* BUSINESS LISTINGS PAGE */
@@ -369,7 +371,7 @@ ul.wpuf_customs {display: none;}
 #ui-datepicker-div {width:220px !important;}
 
 /* ALBUM REVIEWS */
-.page-template-album-reviews-php .album-review-cont {position:relative; float:left; width:725px; padding:10px; margin-bottom:25px;
+.page-template-album-reviews-php .album-review-cont {position:relative; float:left; width:725px; padding:10px; margin-top:25px; display:none;
 	border:1px solid #999;}
 .page-template-album-reviews-php .album-review-cont div {position:relative;}
 .page-template-album-reviews-php .album-review-title {position:relative; float:left; width:715px; margin-bottom:10px; background:#efefef; 
@@ -388,6 +390,7 @@ ul.wpuf_customs {display: none;}
 .page-template-album-reviews-php .expand-review, .page-template-album-reviews-php .retract-review {float:left; margin-top:10px; cursor:pointer;}
 .page-template-album-reviews-php .retract-review, .page-template-album-reviews-php .entry-meta {display:none;}
 
+.show-all-reviews {position:relative; float:left; font-size:16px; width:75%; margin-top:25px; cursor:pointer;}
 
 
 /* SINGLE ARTIST PAGE */

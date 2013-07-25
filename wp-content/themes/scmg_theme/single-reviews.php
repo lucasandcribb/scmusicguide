@@ -18,6 +18,8 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
+
+
 		<?php if ( have_posts() ) : ?>
 			<?php $band_name = get_field('artist_name'); $newBandName = str_replace(' ','-',$band_name); $band_url = strtolower($newBandName); ?>
 
@@ -50,7 +52,6 @@ get_header(); ?>
 			<?php endwhile; ?>
 			
 				
-
 		<?php endif; // end have_posts() check ?>
 
 		</div><!-- #content -->

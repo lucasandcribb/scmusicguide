@@ -6,13 +6,31 @@ Template Name: Album Reviews
 <?php get_header(); ?>
 
 	<?php get_sidebar(); ?>
+
+	<?php $alph_array = array("All","1-10","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"); ?>
+
+	<select class="index-links index-link-dd">
+		<option>Filter by Album Name</option>
+		<?php for ($i = 0; $i < 28; $i++) {
+    		echo "<option href='#index-".$alph_array[$i]."' class='album-filter' rel='".$alph_array[$i]."'>".$alph_array[$i]."</option> ";
+		} ?>
+	</select>
+	<select class="index-links index-link-dd">
+		<option>Filter by Band Name</option>
+		<?php for ($i = 0; $i < 28; $i++) {
+    		echo "<option href='#index-".$alph_array[$i]."' class='artist-filter' rel='".$alph_array[$i]."'>".$alph_array[$i]."</option> ";
+		} ?>
+	</select>
 	
-	<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 10, 'order' => 'DESC' ) ); ?>
+	<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 25, 'order' => 'DESC' ) ); ?>
 	<?php while ( $loop->have_posts() ) : $loop->the_post(); 
 		$url = get_permalink();
-		$name = get_field('artist_name'); $newUrl = str_replace(' ', '-',$name); $lowerUrl = strtolower($newUrl);?>
+		$name = get_field('artist_name'); $newUrl = str_replace(' ', '-',$name); $lowerUrl = strtolower($newUrl);
+		$album = get_field('album_name');
+		$name_index = $name[0];
+		$album_index = $album[0]?>
 		
-			<div class="album-review-cont">
+			<div class="album-review-cont" album-index="<?php echo $album_index; ?>" band-index="<?php echo $name_index; ?>">
 				<div class="album-review-title">
 					<a href="<?php echo $url ?>"><?php the_title(); ?></a>
 				</div>
@@ -32,6 +50,6 @@ Template Name: Album Reviews
 			</div>
 		
 	<?php endwhile; ?>
-
+	<div class="show-all-reviews">+ SHOW ALL REVIEWS</div>
 
 <?php get_footer(); ?>

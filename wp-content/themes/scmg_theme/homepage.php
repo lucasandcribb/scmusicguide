@@ -53,7 +53,7 @@ Template Name: Homepage
 
 
 <div id="featured-spot-ss-guest" class="featured-section">
-	<div class="fr-title">FEATURED ARTICLES</div>
+	<div class="fr-title">CURRENT ARTICLES</div>
 	<div class="s-nav">
 		<div id="tab-nav-spot" class="s-nav-tabs s-nav-current" rel="Spotlight">Spotlight</div>
 		<div id="tab-nav-ss" class="s-nav-tabs" rel="Sights and Sounds">Sights and Sounds</div>
@@ -155,6 +155,40 @@ Template Name: Homepage
 </div>
 
 
+<div id="new-artists" class="featured-section">
+	<div id="new-artists-title">FEATURED ARTISTS</div>
+	<div id="new-artists-cont">
+		<?php $artist_array = array(); ?>
+		<?php $a_loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 100, 'order' => 'DESC' ) ); ?>
+		<?php while ( $a_loop->have_posts() ) : $a_loop->the_post(); $a_id = get_the_ID(); ?>
+			<?php array_push($artist_array, $a_id); ?>
+		<?php endwhile; ?>
+		<?php $artistCount = 0; foreach ($artist_array as $artists) {$artistCount++;} ?>
+
+		<?php $a_numbers = range(0,$artistCount-1);
+		shuffle($a_numbers);
+		$fiveArtists = array_slice($a_numbers, 0, 5); ?>
+
+		<?php for($n=0;$n<5;$n++) {
+			$array_num = $fiveArtists[$n]; 
+			$a_id = $artist_array[$array_num]; 
+			$artistOne = get_post($a_id); 
+			$a_title = $artistOne->post_title; 
+			$a_permalink = get_permalink($a_id); ?>
+			<div class="new-artist" rel="<?php echo $a_id; ?>">
+				<a href="<?php echo $a_permalink; ?>">
+					<?php echo get_the_post_thumbnail($a_id); ?>
+					<div class="new-artist-name"><?php echo $a_title; ?></div>
+				</a>
+			</div>
+		<?php } ?>	
+	</div>
+</div>
+
+
+<?php while ( have_posts() ) : the_post(); ?>
+	<?php get_template_part( 'content', 'page' ); ?>
+<?php endwhile; ?>
 
 
 <div id="featured-review" class="featured-section">
@@ -224,51 +258,6 @@ Template Name: Homepage
 	</div>
 </div>
 
-
-
-
-
-
-<div id="new-artists" class="featured-section">
-	<div id="new-artists-title">FEATURED ARTISTS</div>
-	<div id="new-artists-cont">
-
-		<?php $artist_array = array(); ?>
-
-		<?php $a_loop = new WP_Query( array( 'post_type' => 'artists', 'posts_per_page' => 100, 'order' => 'DESC' ) ); ?>
-		<?php while ( $a_loop->have_posts() ) : $a_loop->the_post(); $a_id = get_the_ID(); ?>
-			<?php array_push($artist_array, $a_id); ?>
-		<?php endwhile; ?>
-		<?php $artistCount = 0; foreach ($artist_array as $artists) {$artistCount++;} ?>
-
-		<?php $a_numbers = range(0,$artistCount-1);
-		shuffle($a_numbers);
-		$fiveArtists = array_slice($a_numbers, 0, 5); ?>
-
-		<?php for($n=0;$n<5;$n++) {
-			$array_num = $fiveArtists[$n]; 
-			$a_id = $artist_array[$array_num]; 
-			$artistOne = get_post($a_id); 
-			$a_title = $artistOne->post_title; 
-			$a_permalink = get_permalink($a_id); ?>
-			<div class="new-artist" rel="<?php echo $a_id; ?>">
-				<a href="<?php echo $a_permalink; ?>">
-					<?php echo get_the_post_thumbnail($a_id); ?>
-					<div class="new-artist-name"><?php echo $a_title; ?></div>
-				</a>
-			</div>
-		<?php } ?>
-
-			
-
-	</div>
-</div>
-
-
-
-<?php while ( have_posts() ) : the_post(); ?>
-	<?php get_template_part( 'content', 'page' ); ?>
-<?php endwhile; ?>
 
 
 <div id="musicians-corner-cont" class="featured-section">

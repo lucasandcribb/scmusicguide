@@ -3,6 +3,7 @@ $(document).ready(function() {
     centerTerms();
     reorder();
     hideUrlLink();
+    showFirstTenReviews();
 
     var divs = $(".video-link-container").sort(function(){ 
         return Math.round(Math.random())-1; //so we get the right +/- combo
@@ -31,13 +32,16 @@ $(document).ready(function() {
 
     $('.alpha-link').click(function() {
     	var filter = $(this).attr('rel');
+        $('.filters').html('');
         $('.index-single-cont').hide();
+        $('index-section-title').show();
     	$('.index-single-cont').each(function() {
     		var alpha = $(this).attr('alpha');
     		if (filter == alpha) {
     			$(this).fadeIn('slow');
     		} else if (filter == 'All') {
-    			$(this).fadeIn('slow');
+    			$('.index-single-cont').show();
+                $('.artist-section').show();
     		} else {
     			$(this).hide();
     		}
@@ -46,20 +50,29 @@ $(document).ready(function() {
 
 
     $('.genre-link').click(function() {
-    	var filter = $(this).attr('rel');
-    	$('.index-single-cont').find('.artist-section').each(function() {
-    		
-    		if ( $(this).hasClass(filter) ) {
-    			$(this).parent().show();
-    		} else {
-    			$(this).parent().hide();
-    		}
-    	});
-    	$('.index-single-cont').each(function() {
-    		if ($(this).find('.artist-section').length == 0) {
-    			$(this).hide();
-    		}
-    	})
+        var filter = $(this).attr('rel');
+        if (filter == 'All') {
+                $('.index-single-cont').fadeIn();
+                $('.artist-section').show();
+        } else {
+            $('.filters').html(filter);
+            $('.index-single-cont').hide();
+            $('.artist-section').hide();
+            $('.artist-section').each(function() {
+                if ( $(this).hasClass(filter) ) {
+                    $(this).show();
+                    $(this).parent().fadeIn();
+                } else {
+                    
+                }
+            });
+            $('.index-single-cont').each(function() {
+                if ($(this).find('.artist-section').length == 0) {
+                    $(this).hide();
+                }
+            })
+        }
+    	
     });
 
     $('.slide-main').first().addClass('current');
@@ -139,6 +152,36 @@ $(document).ready(function() {
     $('.x-out').click(function() {
         $('#bg-fade').fadeOut(); 
         $('#terms-of-use').fadeOut();
+    });
+
+    $('.show-all-reviews').click(function() {
+        $('.album-review-cont').show();
+    });
+
+    $('.album-filter').click(function() { 
+        var filter = $(this).attr('rel');
+        $('.album-review-cont').hide();
+        $('.album-review-cont').each(function() {
+            var album = $(this).attr('album-index');
+            if (filter == album) {
+                $(this).fadeIn();
+            } else if (filter == 'All') {
+                $('.album-review-cont').fadeIn();
+            }
+        });
+    });
+
+    $('.artist-filter').click(function() { 
+        var filter = $(this).attr('rel');
+        $('.album-review-cont').hide();
+        $('.album-review-cont').each(function() {
+            var band = $(this).attr('band-index');
+            if (filter == band) {
+                $(this).fadeIn();
+            } else if (filter == 'All') {
+                $('.album-review-cont').fadeIn();
+            }
+        });
     });
 
 
@@ -223,6 +266,9 @@ function hideUrlLink() {
     })
 }
 
+function showFirstTenReviews() {
+    $('.album-review-cont:lt(5)').show();
+}
 
 
 
