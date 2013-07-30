@@ -36,6 +36,9 @@
 
 	#featured-spot-ss-guest, #featured-review {display:block; width:100%; min-width:300px;}
 	#featured-spot-ss-guest .fr-title, #featured-review .fr-title {width:100%; padding-left:0px; text-align:center;}
+	#featured-spot-ss-guest .fr-review-title, #featured-spot-ss-guest .fr-review-sm-title {font-size:14px; margin-left:0px; width:100%;}
+	#featured-spot-ss-guest .fr-review-sm-body {display:none;}
+	#featured-spot-ss-guest .review-one-body, #featured-spot-ss-guest .fr-review-sm-body {font-size:12px; margin-left:0px; width:100%;}
 	.s-nav {width:100%;}
 	.s-nav-tabs {width:33.3%; border-left:none; border-right:none; font-size:11px;}
 	.spotlight-tabs, #featured-spot-ss-guest .fr-reveiws, #featured-spot-ss-guest .fr-review-title, #featured-spot-ss-guest .review-one-body, .spotlight-tabs .widgettitle {width:95%;}

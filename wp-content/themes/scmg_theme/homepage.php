@@ -124,27 +124,27 @@ Template Name: Homepage
 	<div id="hp-guest-tab" class="spotlight-tabs">
 		<h2 class="widgettitle">Guest List</h2>
 		<div class="fr-reveiws">
-			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'DESC', 'category_name' => 'Guest Article' ) ); 
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'DESC', 'category_name' => 'The Guest List' ) ); 
 				  $cats = wp_get_post_categories(); ?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
 				<div class="fr-review-one-cont">
 					<a class="fr-review-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
 					<div class="review-one-body">
-						<?php echo substr(get_field('article_content'), 0, 500).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 400).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
 				</div>
 			<?php endwhile; ?>
 			<div id="review-divider"></div>
-			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC', 'category_name' => 'Guest Article' ) ); 
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC', 'category_name' => 'The Guest List' ) ); 
 				  $rev_num = 1;?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); $url = get_permalink(); ?>
 				<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
 					<a class="fr-review-sm-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-sm-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
 					<div class="fr-review-sm-body">
-						<?php echo substr(get_field('article_content'), 0, 300).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 200).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
 				</div>
