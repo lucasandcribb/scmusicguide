@@ -62,7 +62,7 @@ Template Name: Homepage
 	<div id="hp-spotlight-tab" class="spotlight-tabs">
 		<h2 class="widgettitle">Spotlight</h2>
 		<div class="fr-reveiws">
-			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'DESC', 'category_name' => 'Spotlight' ) ); 
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 1, 'order' => 'DESC', 'category_name' => 'In The Spotlight' ) ); 
 				   $cats = wp_get_post_categories(); ?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); $spoturl = get_permalink();?>
 				<div class="fr-review-one-cont">
