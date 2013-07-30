@@ -69,20 +69,20 @@ Template Name: Homepage
 					<a class="fr-review-img" href="<?php echo $spoturl; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-title"><a href="<?php echo $spoturl; ?>"><?php the_title(); ?></a></div>
 					<div class="review-one-body">
-						<?php echo substr(get_the_content(), 0, 500).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 400).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $spoturl; ?>">Read More</a></div>
 				</div>
 			<?php endwhile; ?>
 			<div id="review-divider"></div>
-			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC', 'category_name' => 'Spotlight' ) ); 
+			<?php $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3, 'order' => 'DESC', 'category_name' => 'In The Spotlight' ) ); 
 				  $rev_num = 1;?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); $spoturl = get_permalink(); ?>
 				<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
 					<a class="fr-review-sm-img" href="<?php echo $spoturl; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-sm-title"><a href="<?php echo $spoturl; ?>"><?php the_title(); ?></a></div>
 					<div class="fr-review-sm-body">
-						<?php echo substr(get_the_content(), 0, 300).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 200).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $spoturl; ?>">Read More</a></div>
 				</div>
@@ -100,7 +100,7 @@ Template Name: Homepage
 					<a class="fr-review-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
 					<div class="review-one-body">
-						<?php echo substr(get_the_content(), 0, 500).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 400).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
 				</div>
@@ -113,7 +113,7 @@ Template Name: Homepage
 					<a class="fr-review-sm-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-sm-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
 					<div class="fr-review-sm-body">
-						<?php echo substr(get_the_content(), 0, 300).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 200).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
 				</div>
