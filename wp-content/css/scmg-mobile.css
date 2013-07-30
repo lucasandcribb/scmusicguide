@@ -78,6 +78,7 @@
 	.page-id-196 .entry-content .wpcf7-form-control-wrap input {width:210px;}
 
 	.index-single-cont {width:100%;}
+	#artist-index .artist-img, #artist-index .artist-img img {width:30px;}
 
 	.single-artists {min-width:430px;}
 	.single-artists #secondary {display:none;}

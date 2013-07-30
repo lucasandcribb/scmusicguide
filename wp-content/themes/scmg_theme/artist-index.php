@@ -71,20 +71,17 @@ Template Name: Artist Index
 					if ($index == $array_val) { ?>
 					
 						<div class="artist-section <?php $categories = get_the_category(); if($categories){ foreach($categories as $category) {echo $category->cat_name." "; }}?>" alpha="<?php echo $alph_array[$i];?>"  >
-							<a href="<?php echo $url; ?>">
-								<div class="artist-img"><?php the_post_thumbnail('thumbnail'); ?></div>
-								<div class="artist-title"><?php the_title(); ?></div>
-							</a>
-							</br>
-							<div class="artist-genre">
-								<a class='genre-title'>Genre: </a>
+							<div class="artist-img artist-index-detail"><a href="<?php echo $url; ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
+							<div class="artist-title artist-index-detail"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
+							<div class="artist-genre artist-index-detail">
+								<div class='genre-title'>Genre: </div>
 								<?php
 								$categories = get_the_category();
 								$separator = ' ';
 								$output = '';
 								if($categories){
 									foreach($categories as $category) {
-										$output .= '<a href="#" class="genre-each" rel="'.$category->cat_name.'">'.$category->cat_name.'</a>'.$separator;
+										$output .= '<div class="genre-each" rel="'.$category->cat_name.'">'.$category->cat_name.'</div>'.$separator;
 									}
 									echo trim($output, $separator);
 								}
