@@ -332,22 +332,30 @@ ul.wpuf_customs {display: none;}
 
 /* ARTIST INDEX */
 #artist-index {width:750px;}
+#artist-index .genre-index-links {margin-top:20px;}
+#artist-index .index-dd-btn {padding:5px; text-transform:uppercase; font-weight:bold; cursor:pointer; border:1px solid #333; background:url('/wp-content/images/nav-bg.jpg');
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;}
+#artist-index #alpha-index-cont, #artist-index #genre-index-cont {display:none; margin-top:5px;}
 #artist-index, .artist-content {position:relative; float:left; margin-bottom:20px;}
 #artist-index div {position:relative; float:left;}
 #artist-index .artist-title {font-weight:bold;}
 #artist-index .artist-img, #artist-index .artist-img img {width:30px;}
 #artist-index .artist-img {margin-right:10px;}
 .index-links {width:100%; text-align:center;}
-.index-links a.alpha-link {width:40px; position:relative; float:left; padding:5px; background:#000; color:#fff; border:1px solid #333;}
-.index-links a.alpha-link:hover {color:#333; background:#fff; border:1px solid #000;}
-.index-links a.genre-link {width:134px; position:relative; float:left; padding:5px; background:#000; color:#fff; border:1px solid #333;}
-.index-links a.genre-link:hover {color:#333; background:#fff; border:1px solid #000;}
+.index-links a.alpha-link {width:40px; position:relative; float:left; padding:5px; background:url('/wp-content/images/nav-bg.jpg'); color:#333; border:1px solid #333;}
+.index-links a.alpha-link:hover {color:#fff; background:#111; border:1px solid #000;}
+.index-links a.genre-link {width:134px; position:relative; float:left; padding:5px; background:url('/wp-content/images/nav-bg.jpg'); color:#333; border:1px solid #333;
+	font-size:12px;}
+.index-links a.genre-link:hover {color:#fff; background:#111; border:1px solid #000;}
 .genre-title, .artist-genre a {font-size:11px; margin-top:2px;}
 .artist-section {margin-top:5px; margin-bottom:5px; width:100%; height:30px;}
 .index-single-cont {position:relative; float:left; width:100%;}
 .index-single-cont .index-section-title {width:100%; font-weight:bold; margin-top:20px;}
 .filter {position:relative; float:left; background:#999; color:#fff; width:75px; height:15px; margin-right:10px; margin-bottom:5px;}
-.filters {margin-bottom:20px; font-weight:bold; font-size:16px; margin-top:25px; width:100%;}
+.filters {margin-bottom:0px; font-weight:bold; font-size:16px; margin-top:20px; width:100%;}
 .index-link-dd {position:relative; float:left; max-width:350px; height:25px; padding-top:2px; padding-bottom:2px; font-size:14px; font-weight:bold; margin-top:15px;
 	margin-right:10px;}
 

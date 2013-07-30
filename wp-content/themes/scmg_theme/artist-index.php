@@ -18,31 +18,37 @@ Template Name: Artist Index
 			}
 		?>
 
-<!-- 		<div class="index-links">
+		<div class="index-links alpha-index-links">
+			<div id="alpha-index-dd" class="index-dd-btn">Filter by Name</div>
+			<div id="alpha-index-cont">
 			<?php for ($i = 0; $i < 28; $i++) {
-    			echo "<a href='#index-".$alph_array[$i]."' class='alpha-link' rel='".$alph_array[$i]."'>".$alph_array[$i]."</a> ";
+			     echo "<a href='#index-".$alph_array[$i]."' class='alpha-link' rel='".$alph_array[$i]."'>".$alph_array[$i]."</a> ";
 			} ?>
+			</div>
 		</div>
-		<div class="index-links">
+		<div class="index-links genre-index-links">
+			<div id="genre-index-dd" class="index-dd-btn">Filter by Genre</div>
+			<div id="genre-index-cont">
 			<?php for ($i = 0; $i < $genreCount; $i++) {
-    			echo "<a href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</a> ";
+			     echo "<a href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</a> ";
 			} ?>
-		</div> -->
+			</div>
+		</div>
 
 
-		<!-- TEST FOR DROPDOWN -->
-		<select class="index-links index-link-dd">
+		<!-- INDEX DROPDOWN -->
+		<!-- <select class="index-links index-link-dd">
 			<option>Filter by Letter</option>
-			<?php for ($i = 0; $i < 28; $i++) {
+			<//?php for ($i = 0; $i < 28; $i++) {
     			echo "<option href='#index-".$alph_array[$i]."' class='alpha-link' rel='".$alph_array[$i]."'>".$alph_array[$i]."</option> ";
 			} ?>
 		</select>
 		<select class="index-links index-link-dd">
 			<option>Filter by Genre</option>
-			<?php for ($i = 0; $i < $genreCount; $i++) {
+			<//?php for ($i = 0; $i < $genreCount; $i++) {
     			echo "<option href='#index-".$genre_array[$i]."' class='genre-link' rel='".$genre_array[$i]."'>".$genre_array[$i]."</option> ";
 			} ?>
-		</select>
+		</select> -->
 
 
 

@@ -30,6 +30,26 @@ $(document).ready(function() {
     	$('#featured-name').css({'opacity':0.7});
     });
 
+    $('#alpha-index-dd').click(function() {
+        if ($('#alpha-index-cont').hasClass('open')) {
+            $('#alpha-index-cont').fadeOut();
+            $('#alpha-index-cont').removeClass('open');
+        } else {
+            $('#alpha-index-cont').fadeIn();
+            $('#alpha-index-cont').addClass('open');
+        }
+    });
+
+    $('#genre-index-dd').click(function() {
+        if ($('#genre-index-cont').hasClass('open')) {
+            $('#genre-index-cont').fadeOut();
+            $('#genre-index-cont').removeClass('open');
+        } else {
+            $('#genre-index-cont').fadeIn();
+            $('#genre-index-cont').addClass('open');
+        }
+    });
+
     $('.alpha-link').click(function() {
     	var filter = $(this).attr('rel');
         $('.filters').html('');
