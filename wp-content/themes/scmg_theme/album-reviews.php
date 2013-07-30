@@ -9,18 +9,36 @@ Template Name: Album Reviews
 
 	<?php $alph_array = array("All","1-10","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"); ?>
 
-	<select class="index-links index-link-dd">
-		<option>Filter by Album Name</option>
+	<div class="index-links album-index-links">
+		<div id="album-index-dd" class="index-dd-btn">Filter by Album Name</div>
+		<div id="album-index-cont">
 		<?php for ($i = 0; $i < 28; $i++) {
+    		echo "<a href='#index-".$alph_array[$i]."' class='album-link' rel='".$alph_array[$i]."'>".$alph_array[$i]."</a> ";
+		} ?>
+		</div>
+	</div>
+	<div class="index-links artist-index-links">
+		<div id="artist-index-dd" class="index-dd-btn">Filter by Artist Name</div>
+		<div id="artist-index-cont">
+		<?php for ($i = 0; $i < 28; $i++) {
+    		echo "<a href='#index-".$alph_array[$i]."' class='artist-link' rel='".$alph_array[$i]."'>".$alph_array[$i]."</a> ";
+		} ?>
+		</div>
+	</div>
+
+
+<!-- 	<select class="index-links index-link-dd">
+		<option>Filter by Album Name</option>
+		<//?php for ($i = 0; $i < 28; $i++) {
     		echo "<option href='#index-".$alph_array[$i]."' class='album-filter' rel='".$alph_array[$i]."'>".$alph_array[$i]."</option> ";
 		} ?>
 	</select>
 	<select class="index-links index-link-dd">
 		<option>Filter by Band Name</option>
-		<?php for ($i = 0; $i < 28; $i++) {
+		<//?php for ($i = 0; $i < 28; $i++) {
     		echo "<option href='#index-".$alph_array[$i]."' class='artist-filter' rel='".$alph_array[$i]."'>".$alph_array[$i]."</option> ";
 		} ?>
-	</select>
+	</select> -->
 	
 	<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 25, 'order' => 'DESC' ) ); ?>
 	<?php while ( $loop->have_posts() ) : $loop->the_post(); 

@@ -50,6 +50,26 @@ $(document).ready(function() {
         }
     });
 
+    $('#album-index-dd').click(function() {
+        if ($('#album-index-cont').hasClass('open')) {
+            $('#album-index-cont').fadeOut();
+            $('#album-index-cont').removeClass('open');
+        } else {
+            $('#album-index-cont').fadeIn();
+            $('#album-index-cont').addClass('open');
+        }
+    });
+
+    $('#artist-index-dd').click(function() {
+        if ($('#artist-index-cont').hasClass('open')) {
+            $('#artist-index-cont').fadeOut();
+            $('#artist-index-cont').removeClass('open');
+        } else {
+            $('#artist-index-cont').fadeIn();
+            $('#artist-index-cont').addClass('open');
+        }
+    });
+
     $('.alpha-link').click(function() {
     	var filter = $(this).attr('rel');
         $('.filters').html('');
@@ -178,7 +198,7 @@ $(document).ready(function() {
         $('.album-review-cont').show();
     });
 
-    $('.album-filter').click(function() { 
+    $('.album-link').click(function() { 
         var filter = $(this).attr('rel');
         $('.album-review-cont').hide();
         $('.album-review-cont').each(function() {
@@ -191,7 +211,7 @@ $(document).ready(function() {
         });
     });
 
-    $('.artist-filter').click(function() { 
+    $('.artist-link').click(function() { 
         var filter = $(this).attr('rel');
         $('.album-review-cont').hide();
         $('.album-review-cont').each(function() {
