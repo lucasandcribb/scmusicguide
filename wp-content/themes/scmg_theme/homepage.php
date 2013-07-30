@@ -69,7 +69,7 @@ Template Name: Homepage
 					<a class="fr-review-img" href="<?php echo $spoturl; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-title"><a href="<?php echo $spoturl; ?>"><?php the_title(); ?></a></div>
 					<div class="review-one-body">
-						<?php echo substr(get_field('article_content'), 0, 500).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 500).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $spoturl; ?>">Read More</a></div>
 				</div>
@@ -82,7 +82,7 @@ Template Name: Homepage
 					<a class="fr-review-sm-img" href="<?php echo $spoturl; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-sm-title"><a href="<?php echo $spoturl; ?>"><?php the_title(); ?></a></div>
 					<div class="fr-review-sm-body">
-						<?php echo substr(get_field('article_content'), 0, 300).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 300).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $spoturl; ?>">Read More</a></div>
 				</div>
@@ -100,7 +100,7 @@ Template Name: Homepage
 					<a class="fr-review-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
 					<div class="review-one-body">
-						<?php echo substr(get_field('article_content'), 0, 500).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 500).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
 				</div>
@@ -113,7 +113,7 @@ Template Name: Homepage
 					<a class="fr-review-sm-img" href="<?php echo $url; ?>"><?php echo the_post_thumbnail() ?></a>
 					<div class="fr-review-sm-title"><a href="<?php echo $url; ?>"><?php the_title(); ?></a></div>
 					<div class="fr-review-sm-body">
-						<?php echo substr(get_field('article_content'), 0, 300).'...'; ?>
+						<?php echo substr(get_the_content(), 0, 300).'...'; ?>
 					</div>
 					<div class="fr-read-more"><a href="<?php echo $url; ?>">Read More</a></div>
 				</div>
