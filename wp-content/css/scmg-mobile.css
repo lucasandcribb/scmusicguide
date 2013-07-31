@@ -62,7 +62,7 @@
 
 	#menu-item-709 {display:none;}
 
-	.page-template-artist-index-php #secondary {display:none;}
+	.page-template-artist-index-php #secondary, .page-template-submit-artist-php #secondary {display:none;}
 	#artist-index {width:100%;}
 
 	.page-template-album-reviews-php #secondary {display:none;}

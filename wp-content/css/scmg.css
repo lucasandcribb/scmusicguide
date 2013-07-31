@@ -369,9 +369,9 @@ ul.wpuf_customs {display: none;}
 
 /* ADD ARTIST */
 #add-artist, #add-artist div {position:relative; float:left;}
-#add-artist-title {font-size:16px; font-weight:bold;}
+#add-artist #add-artist-title {font-size:16px; font-weight:bold;}
 #add-artist {width:100%; margin-bottom:20px; max-width:750px;}
-#add-artist div {width:100%; margin-bottom:10px; font-size:12px;}
+#add-artist div {width:100%; margin-bottom:10px; font-size:12px; line-height:14px;}
 .add-text-bold {font-weight:bold;}
 
 
