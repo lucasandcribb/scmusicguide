@@ -76,7 +76,7 @@
 			<a class="header-top-links" href="/contact">Contact</a>
 			<a class="header-top-links" href="/about-us">About Us</a>
 			<a class="header-top-links" href="/artist-index-page">Artists</a>
-			<a class="header-top-links" href="/reviews">Reviews</a>
+			<a class="header-top-links" href="/album-reviews">Reviews</a>
 		</div>
 		<div id="social-links">
 			<a href="http://www.facebook.com/sharer.php?u=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?> " target="_blank"><img class="social-link" src="/wp-content/images/social-icons/fb.jpg" /></a>
