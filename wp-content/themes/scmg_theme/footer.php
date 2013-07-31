@@ -28,13 +28,13 @@
 		</div>
 		<div class="footer-section">
 			<div class="footer-title">Articles</div>
-			<a href="/category/spotlight/" class="footer-link">In the Spotlight</a>
+			<a href="/category/in-the-spotlight/" class="footer-link">In the Spotlight</a>
 			<a href="/category/sights-and-sounds/" class="footer-link">Sights and Sounds</a>
-			<a href="/category/guest-article/" class="footer-link">The Guest List</a>
+			<a href="/category/the-guest-list/" class="footer-link">The Guest List</a>
 		</div>
 		<div class="footer-section">
 			<div class="footer-title">Artists</div>
-			<a href="/artists-index-page" class="footer-link">Artist Index</a>
+			<a href="/artist-index-page" class="footer-link">Artist Index</a>
 		</div>
 		<div class="footer-section">
 			<div class="footer-title">More Info</div>
