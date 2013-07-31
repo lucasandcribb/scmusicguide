@@ -367,6 +367,13 @@ ul.wpuf_customs {display: none;}
 #artist-index .artist-genre .genre-each {font-size:14px; text-decoration:underline;}
 #artist-index .genre-title {margin-right:10px;}
 
+/* ADD ARTIST */
+#add-artist, #add-artist div {position:relative; float:left;}
+#add-artist-title {font-size:16px; font-weight:bold;}
+#add-artist {width:100%; margin-bottom:20px; max-width:750px;}
+#add-artist div {width:100%; margin-bottom:10px; font-size:12px;}
+.add-text-bold {font-weight:bold;}
+
 
 /* BUSINESS LISTINGS PAGE */
 .wpbdp-msg {display:none;}

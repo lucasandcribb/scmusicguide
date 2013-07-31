@@ -80,6 +80,8 @@
 	.index-single-cont {width:100%;}
 	#artist-index .artist-img, #artist-index .artist-img img {width:30px;}
 
+	#add-artist div {font-size:10px;}
+
 	.single-artists {min-width:430px;}
 	.single-artists #secondary {display:none;}
 	.single-artist-cont .single-artist-title, .single-artist-cont div.artist-bio, .single-artist-cont div.artist-site-links {width:100%;}
