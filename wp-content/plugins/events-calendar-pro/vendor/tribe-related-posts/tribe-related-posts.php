@@ -4,12 +4,12 @@
  Description: Template tags and shortcode to display related posts by taxonomy.
  Author: Modern Tribe, Inc., Paul Hughes
  Version: 1.1
- Author URI: http://tri.be
+ Author URI: http://m.tri.be/4p
  */
 
 // Include plugin files.
-include( 'tribe-related-posts.class.php' );
-include( 'tribe-related-posts-widget.php' );
-include( 'template-tags.php' );
+require_once( 'tribe-related-posts.class.php' );
+require_once( 'tribe-related-posts-widget.php' );
+require_once( 'template-tags.php' );
 
 TribeRelatedPosts::instance();

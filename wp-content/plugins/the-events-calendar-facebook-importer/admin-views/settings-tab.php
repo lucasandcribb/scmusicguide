@@ -7,24 +7,21 @@ if ( !defined( 'ABSPATH' ) )
 $facebook_tab = array(
 	'priority' => 37,
 	'fields' => array(
-		'fb-sync-instructions' => array(
+		'fb-import-instructions' => array(
 			'type' => 'html',
 			'html' =>
 				'<div id="modern-tribe-info">' .
 					'<h2>' . __( 'Import Facebook Events', 'tribe-fb-import' ) . '</h2>' .
 					'<h3>' . __( 'Getting Started', 'tribe-fb-import' ) . '</h3>' .
-				 	'<p>' . __( "You need your Facebook App ID and App Secret to access data via the Facebook Graph API to import your events from Facebook. We've provided a default set of API credentials, however we encourage you to create your own Facebook App and enter your credentials below.", 'tribe-fb-import' ) . '</p>' .
+				 	'<p>' . __( "You need a Facebook App ID and App Secret to access data via the Facebook Graph API to import your events from Facebook.", 'tribe-fb-import' ) . '</p>' .
 				 	'<ul class="admin-list">' .
 				 		'<li>' . sprintf( __( '%s to learn more about Facebook Apps', 'tribe-fb-import' ), '<a href="http://developers.facebook.com/docs/guides/canvas/" target="_blank">' . __( 'Click here', 'tribe-fb-import' ) . '</a>' ) . '</li>' .
 				 		'<li>' . sprintf( __( '%s to view or create Facebook Apps', 'tribe-fb-import' ), '<a href="https://developers.facebook.com/apps" target="_blank">' . __( 'Click here', 'tribe-fb-import' ) . '</a>' ) . '</li>' .
 				 	'</ul>' .
-			 		'<h3>' . __( 'Selecting pages or users to sync events with', 'tribe-fb-import' ) . '</h3>' .
-			 		'<p>' . __( 'You can import events belonging to a Facebook organization or a Facebook page. You will need the username(s) or ID of each organization or page that you want to fetch events from. We do not currently support importing events from personal profiles.', 'tribe-fb-import' ) . '</p>' .
-				 	'<ul class="admin-list">' .
-				 		'<li>' . sprintf( __( "A page or organization's username or ID can be found in the URL used to access its profile. Modern Tribe's page is %s and the username is 'ModernTribeInc'. If a page or organization doesn't have a username, you will see the ID (numerical) in the URL.", 'tribe-fb-import' ), '<a href="https://www.facebook.com/ModernTribeInc">https://www.facebook.com/ModernTribeInc</a>' ).
-				 		'<li>' . sprintf( __( "You can also find the ID of an organization or page by visiting the Graph API. For example, to find Modern Tribe's ID, visit %s. You will get a json response with information about the user or page. The first result should be the ID.", 'tribe-fb-import' ), '<a href="https://graph.facebook.com/ModernTribeInc" target="_blank">https://graph.facebook.com/ModernTribeInc</a>' ). '</li>' .
-				 	'</ul>' .
-			 	'</div>',
+			 		'<h3>' . __( 'Selecting pages or organizations to import events with', 'tribe-fb-import' ) . '</h3>' .
+			 		'<p>' . __( 'You can retrieve and import events belonging to a Facebook organization or a Facebook page. You will need the username(s) or ID of each organization or page that you want to fetch events from. We do not currently support retrieving events from personal profiles. If you want to import an event from an individual, you can do that with the event ID on the', 'tribe-fb-import' ) . ' <a href="' . get_admin_url() . 'edit.php?post_type=tribe_events&page=import-fb-events">' . __('Import: Facebook page', 'tribe-fb-import') . '</a></p>' .
+				 	'<p>' . sprintf( __( "A page or organization's username or ID can be found in the URL used to access its profile. Modern Tribe's page is %s and the username is 'ModernTribeInc'. If a page or organization doesn't have a username, you will see the ID (numerical) in the URL.</p>", 'tribe-fb-import' ), '<a href="https://www.facebook.com/ModernTribeInc">https://www.facebook.com/ModernTribeInc</a>' ).
+				'</div>',
 		),
 		'tribe-form-content-start' => array(
 			'type' => 'html',
@@ -37,7 +34,7 @@ $facebook_tab = array(
 		'fb_api_key' => array(
 			'type' => 'text',
 			'label' => __( 'Facebook App ID', 'tribe-fb-import' ),
-			'tooltip' => __( 'This information is optional.', 'tribe-fb-import' )  . '<br>' . __( 'Follow the instructions above to create or find your Facebook App ID.', 'tribe-fb-import' ),
+			'tooltip' =>  sprintf( __( '<p>%s to view or create your Facebook Apps', 'tribe-fb-import' ), '<a href="https://developers.facebook.com/apps" target="_blank"></p>' . __( 'Click here', 'tribe-fb-import' ) . '</a>' ),
 			'size' => 'medium',
 			'validation_type' => 'alpha_numeric',
 			'can_be_empty' => true,
@@ -46,7 +43,7 @@ $facebook_tab = array(
 		'fb_api_secret' => array(
 			'type' => 'text',
 			'label' => __( 'Facebook App secret', 'tribe-fb-import' ),
-			'tooltip' => __( 'This information is optional.', 'tribe-fb-import' )  . '<br>' . __( 'Follow the instructions above to create or find your App Secret.', 'tribe-fb-import' ),
+			'tooltip' =>  sprintf( __( '<p>%s to view or create your App Secret', 'tribe-fb-import' ), '<a href="https://developers.facebook.com/apps" target="_blank"></p>' . __( 'Click here', 'tribe-fb-import' ) . '</a>' ),
 			'size' => 'medium',
 			'validation_type' => 'alpha_numeric',
 			'can_be_empty' => true,
@@ -54,8 +51,8 @@ $facebook_tab = array(
 		),
 		'fb_uids' => array(
 			'type' => 'textarea',
-			'label' => __( 'Organization and page usernames / IDs to sync with', 'tribe-fb-import' ),
-			'tooltip' => __( 'Please put one entry per line.', 'tribe-fb-import' )  . '<br>' . __( 'Follow the instructions above to find usernames or IDs.', 'tribe-fb-import' ),
+			'label' => __( 'Organization and page usernames / IDs to fetch events from', 'tribe-fb-import' ),
+			'tooltip' => __( 'Please put one entry per line.', 'tribe-fb-import' )  . '<br>' . __( 'Follow the instructions above to find usernames or IDs.', 'tribe-fb-import' ) . '<br />' . __( 'Events can only be fetched from organizations and page, not individuals.', 'tribe-fb-import'),
 			'size' => 'medium',
 			'validation_type' => 'alpha_numeric_multi_line_with_dots_and_dashes',
 			'can_be_empty' => true,

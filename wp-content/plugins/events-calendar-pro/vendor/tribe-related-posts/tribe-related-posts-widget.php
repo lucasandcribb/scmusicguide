@@ -5,8 +5,8 @@
 // Don't load directly
 if ( !defined( 'ABSPATH' ) ) { die( '-1' ); }
 
-if( !class_exists( 'TribeRelatedPostsWidget' ) ) {
-	class TribeRelatedPostsWidget extends WP_Widget {
+if( !class_exists( 'Tribe_Related_Posts_Widget' ) ) {
+	class Tribe_Related_Posts_Widget extends WP_Widget {
 		
 		/**
 		 * Class instantiation function
@@ -15,7 +15,7 @@ if( !class_exists( 'TribeRelatedPostsWidget' ) ) {
 		 * @author Paul Hughes
 		 * @return void
 		 */
-		function TribeRelatedPostsWidget() {
+		function Tribe_Related_Posts_Widget() {
 			// Widget settings.
 			$widget_ops = array( 'classname' => 'tribe_related_posts_widget', 'description' => __( 'Displays posts related to the post.', 'tribe-events-calendar-pro' ) );
 			// Create the widget.
@@ -33,10 +33,18 @@ if( !class_exists( 'TribeRelatedPostsWidget' ) ) {
 		 */
 		function widget($args, $instance) {
 			extract($args);
-			echo $before_widget;
-			$title = $before_title.apply_filters( 'widget_title', $instance['title'] ).$after_title;
-			tribe_related_posts( false, $instance['count'], false, $instance['only_display_related'], $instance['thumbnails'], $instance['post_type'] );
-			echo $after_widget;
+			ob_start();
+			tribe_related_posts( false, false, $instance['count'], false, $instance['only_display_related'], $instance['thumbnails'], $instance['post_type'] );
+			$related = ob_get_clean();
+			if ( $related ) {
+				echo $before_widget;
+				$title = apply_filters( 'widget_title', $instance['title'] );
+				if ( !empty($title) ) {
+					echo $before_title.$title.$after_title;
+				}
+				echo $related;
+				echo $after_widget;
+			}
 		}
 
 		/**
@@ -61,7 +69,7 @@ if( !class_exists( 'TribeRelatedPostsWidget' ) ) {
 			?>
 			<p><label for="<?php echo $this->get_field_id( 'title '); ?>"><?php _e( 'Title:','tribe-events-calendar-pro' ); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" /></p>
-			<p><label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Count:','tribe-events-calendar-pro' );?>
+			<p><label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Count:','tribe-events-calendar-pro' );?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" value="<?php echo $instance['count']; ?>" >
 			<?php for ($i=1; $i<=5; $i++)
 				{ ?>
@@ -75,7 +83,7 @@ if( !class_exists( 'TribeRelatedPostsWidget' ) ) {
 			<p><label for="<?php echo $this->get_field_id( 'only_display_related' ); ?>"><?php _e( 'Only Display Related Posts?','tribe-events-calendar-pro' ); ?></label>
 			<input class="checkbox" type="checkbox" value="1" <?php checked( $instance['only_display_related'], true ); ?> id="<?php echo $this->get_field_id( 'only_display_related' ); ?>" name="<?php echo $this->get_field_name( 'only_display_related' ); ?>" />
 			</p>
-			<p><label for="<?php echo $this->get_field_id( 'post_type' ); ?>"><?php _e( 'Post Type:','tribe-events-calendar-pro' );?>
+			<p><label for="<?php echo $this->get_field_id( 'post_type' ); ?>"><?php _e( 'Post Type:','tribe-events-calendar-pro' );?></label>
 			<select class="widefat" id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" value="<?php echo $instance['post_type']; ?>" >
 			<?php foreach( $post_types as $post_type )
 				{ ?>
@@ -119,6 +127,6 @@ if( !class_exists( 'TribeRelatedPostsWidget' ) ) {
 	 * @return void
 	 */
 	function tribe_related_posts_register_widget() {
-		register_widget ( 'TribeRelatedPostsWidget' );
+		register_widget ( 'Tribe_Related_Posts_Widget' );
 	}
 }

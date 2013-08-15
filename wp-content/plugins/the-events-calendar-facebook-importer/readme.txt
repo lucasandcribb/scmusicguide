@@ -1,18 +1,22 @@
-=== Facebook Events ===
+=== The Events Calendar: Facebook Events ===
 Contributors:  ModernTribe, roblagatta, codearachnid, PaulHughes01, peterchester, reid.peifer, shane.pearlman
 Tags: modern tribe, tribe, facebook, events, calendar, recurring, event, venue, import, importer, api, dates, date, plugin, posts, conference, workshop, concert, meeting, seminar, summit
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QA7QZM4CNQ342
-Requires at least: 3.3
-Tested up to: 3.5.1
-Stable tag: 1.0.5
+Donate link: http://m.tri.be/29
+Requires at least: 3.5
+Tested up to: 3.6
+Stable tag: 3.0.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Import events into The Events Calendar from a Facebook organization or page.
 
 == Description ==
 
-Import individual Facebook events into <a href="http://wordpress.org/extend/plugins/the-events-calendar/" target="_blank">The Events Calendar</a>, or choose to bulk import them from Facebook user(s) or page(s) that you define.
+With the Facebook Events add-on, you can tap into the growing number of events Facebook users are organizing by importing public events from a specific organization or page directly into your WordPress site.
 
-Make sure to get the free <a href="http://wordpress.org/extend/plugins/the-events-calendar/" target="_blank">The Events Calendar</a> plugin first.
+Import individual Facebook events into <a href="http://m.tri.be/2x">The Events Calendar</a>, or choose to bulk import them from Facebook organization(s) or page(s) that you define. Imported events are automagically created as entries in The Events Calendar. Basic event data along with venue & organizer are populated appropriately. No more entering information in two places, or having to recreate someone else’s listing for a public event you want to include on your WordPress calendar.
+
+Make sure to get the free <a href="http://m.tri.be/2x">The Events Calendar</a> plugin first.
 
 == Screenshots ==
 
@@ -23,26 +27,31 @@ Make sure to get the free <a href="http://wordpress.org/extend/plugins/the-event
 
 = Install =
 
-1. Ensure The Events Calendar plugin 2.0.7 or higher is installed and configured - http://wordpress.org/extend/plugins/the-events-calendar/.
-2. Install the plugin like you would any other plugin.
+1. From the dashboard of your site, navigate to Plugins --> Add New.
+2. Select the Upload option and hit "Choose File."
+3. When the popup appears select the the-events-calendar-facebook.importer.x.x.zip file from your desktop. (The 'x.x' will change depending on the current version number).
+4. Follow the on-screen instructions and wait as the upload completes.
+5. When it's finished, activate the plugin via the prompt. A message will show confirming activation was successful.
+6. For access to new updates, make sure you have added your valid License Key under Events --> Settings --> Licenses.
 
 = Activate =
 
 1. Activate from the plugins list as you would any other plugin.
-2. Navigate to Settings -> The Events Calendar section within WordPress and follow the instructions on the "Facebook" tab.
-3. Or, simply visit the Import FB Events section under Events on the left-hand admin menu to start importing individual events.
+2. Navigate to Events --> Settings and go to the Facebook tab.
+3. Before you can do bulk import or automatically import events from Facebook, you'll need to get a Facebook ID and enter it here. Follow the instructions on the Facebook settings tab or check out <a href="http://m.tri.be/2y">our tutorial</a>.
+3. Once you have your Facebook App ID and Facebook App Secret entered, you're ready to go.
 
 = Requirements =
 
 * PHP 5.2 or above
-* WordPress 3.3 or above
-* The Events Calendar 2.0.11 or above
+* WordPress 3.5 or above
+* The Events Calendar 3.0 or above
 
 == Frequently Asked Questions ==
 
 1. Q: What is the Facebook App ID and App Secret, and where do I find them?
 
-A: Facebook requires a Facebook App ID and App Secret to access data via the Facebook graph API in order to import your events from Facebook. Provided with the plugin is a default set of API credentials, however we encourage you to create your own Facebook App and enter your credentials on the settings page. For more, please see this tutorial: http://tri.be/how-to-create-a-facebook-app-id/.
+A: Facebook requires a Facebook App ID and App Secret to access data via the Facebook graph API in order to import your events from Facebook. Provided with the plugin is a default set of API credentials, however we encourage you to create your own Facebook App and enter your credentials on the settings page. For more, please see this tutorial: http://m.tri.be/2y.
 
 2. Q: Where can I find a user's or page's username or ID?
 
@@ -54,19 +63,19 @@ A: You can determine an event's Facebook ID by looking at the URL of the event. 
 
 4. Q: Where can I get support if I encounter problems or bugs?
 
-A: Please visit the Facebook Events support forum at <a href="http://tri.be/support/forums/forum/events/facebook-importer/" target="_blank">http://tri.be/support/forums/forum/events/facebook-importer/.</a>
+A: Please visit the Facebook Events support forum at <a href="http://m.tri.be/2z">http://m.tri.be/2z.</a>
 
 == Documentation ==
 
-Looking for filters & hooks related to Facebook Events? Start <a href="http://tri.be/support/documentation-facebook-importer/facebook-importer-filters?ref=tec-readme" target="_blank">http://tri.be/support/documentation-facebook-importer/facebook-importer-filters/.</a>Otherwise, all of our additional documentation can be found at <a href="http://tri.be/support/documentation?ref=tec-readme" target="_blank">http://tri.be/support/documentation</a>
+Looking for filters & hooks related to Facebook Events? Take a look at our <a href="http://m.tri.be/51">hooks and filters docs</a>. Otherwise, all of our additional documentation can be found at <a href="http://m.tri.be/30">http://m.tri.be/30</a>
 
-For support, please see question #4 above. If you have any questions about the core The Events Calendar plugin, please take look at the dedicated forum here on WordPress.org at <a href="http://wordpress.org/tags/the-events-calendar">http://wordpress.org/tags/the-events-calendar</a>. Please search before opening a new thread.
+For support, please see question #4 above. If you have any questions about the core The Events Calendar plugin, please take look at the dedicated forum here on WordPress.org at <a href="http://wordpress.org/support/plugin/the-events-calendar">http://wordpress.org/support/plugin/the-events-calendar</a>. Please search before opening a new thread.
 
-If you want, you can read the <a href="http://tri.be/support/forums/?ref=tec-readme">Modern Tribe PRO support forums</a> in case that helps, although you won't be able to post a message, unless you have purchase a PRO license.
+If you want, you can read the <a href="http://m.tri.be/31">Modern Tribe PRO support forums</a> in case that helps, although you won't be able to post a message, unless you have purchase a PRO license.
 
 == Contributors ==
 
-The plugin is produced by <a href="http://tri.be/?ref=tec-readme">Modern Tribe Inc</a>.
+The plugin is produced by <a href="http://m.tri.be/32">Modern Tribe Inc</a>.
 
 = Current Contributors =
 
@@ -84,29 +93,75 @@ The plugin is produced by <a href="http://tri.be/?ref=tec-readme">Modern Tribe I
 
 = Translators =
 
-* German from Mark Galliath
+* Spanish from Frank Rondon and Patricio Campos
 * Czech from Petr Bastan
-* Polish from Marek Kosinski
+* German from Jan
+* Swedish from Andreas Bodin
+
+* Previous translators include Mark Galliath and Marek Kosinski
 
 == Add-Ons ==
 
-You can see a full list of Modern Tribe Products at <a href="http://tri.be/shop/?ref=tec-readme" target="_blank">http://tri.be/shop/</a>
+But wait: there's more! We've got a whole stable of plugins available to help you kick ass at what you do. Check out a full list of the products below, and over at the <a href="http://m.tri.be/33">Modern Tribe website.</a>
 
 Our Free Plugins:
 
-* <a href="http://wordpress.org/extend/plugins/the-events-calendar/" target="_blank">The Events Calendar</a>
-* <a href="http://wordpress.org/extend/plugins/advanced-post-manager/" target="_blank">Advanced Post Manager</a>
+* <a href="http://wordpress.org/extend/plugins/advanced-post-manager/?ref=tec-readme" target="_blank">Advanced Post Manager</a>
+* <a href="http://wordpress.org/plugins/blog-copier/?ref=tec-readme" target="_blank">Blog Copier</a>
+* <a href="http://wordpress.org/plugins/image-rotation-repair/?ref=tec-readme" target="_blank">Image Rotation Widget</a>
+* <a href="http://wordpress.org/plugins/widget-builder/?ref=tec-readme" target="_blank">Widget Builder</a>
 
 Our Premium Plugins:
 
-* <a href="http://tri.be/wordpress-events-calendar-pro/?ref=tec-readme" target="_blank">The Events Calendar PRO</a>
-* <a href="http://tri.be/shop/wordpress-eventbrite-tickets/?ref=tec-readme" target="_blank">The Events Calendar: Eventbrite Tickets</a>
-* <a href="http://tri.be/shop/wordpress-community-events/?ref=tec-readme" target="_blank">The Events Calendar: Community Events</a>
-* <a href="http://tri.be/shop/wootickets/?ref=tec-readme" target="_blank">The Events Calendar: WooTickets</a>
-* <a href="http://tri.be/shop/conference-manager/?ref=tec-readme" target="_blank">The Events Calendar: Conference Manager (coming later in 2012)</a>
+* <a href="http://m.tri.be/34">The Events Calendar PRO</a>
+* <a href="http://m.tri.be/35">The Events Calendar: Eventbrite Tickets</a>
+* <a href="http://m.tri.be/36">The Events Calendar: Community Events</a>
+* <a href="http://m.tri.be/37">The Events Calendar: WooCommerce Tickets</a>
+* The Events Calendar: Filter Bar (coming summer 2013)
 
+== Upgrade Notice ==
+
+This upgrade requires The Events Calendar 3.0+
 
 == Changelog ==
+
+= IMPORTANT NOTICE =
+
+3.0 is a complete overhaul of the plugin, and as a result we're starting the changelog fresh. For release notes from the 2.x lifecycle, see <a href="http://m.tri.be/k">our 2.x release notes.</a>
+
+= 3.0.1 =
+
+* Improved error handling for Facebook event photos
+* Performance improvements to the plugin update engine
+
+= 3.0 =
+
+Updated version number to 3.0.x for plugin version consistency
+
+= 1.0.7 =
+
+* Fix plugin update system on multisite installations
+
+= 1.0.6 =
+
+*Small features, UX and Content Tweaks:*
+
+* We removed the default App Secret & App ID. Users will need to create a new Facebook App Secret/ID before they can continue using the plugin!
+* Code modifications to ensure compatibility with The Events Calendar/Events Calendar PRO 3.0.
+* Clarification tweaks to tooltips that appear within the plugin.
+* Fixed a spelling error on the Import page (oops!).
+* Incorporated new French translation files, courtesy of Frederic-Xavier DuBois.
+* Incorporated new Dutch translation files, courtesy of Walter Fass.
+* Incorporated new Swedish translation files, courtesy of Andreas Bodin.
+
+*Bug Fixes:*
+
+* Updated auto-import to work in all circumstances.
+* Fatal errors no longer show when importing after a failed import of a private or all-day event.
+* Fixed hour range events no longer import mislabeled as All Day.
+* Nonexistent usernames no longer return an ugly error.
+* When importing a picture from Facebook fails, it is now handled more gracefully than in previous versions.
+* Import errors that arose with certain multi-day events are no longer appearing.
 
 = 1.0.5 =
 
@@ -124,9 +179,9 @@ Our Premium Plugins:
 * Fixed an issue with unreachable code in Tribe_FB_Importer::json_retrieve().
 * Various improvements & enhancements to improve integration with the forthcoming The Events Calendar 3.0 release.
 
-= 1.0.4 = 
+= 1.0.4 =
 
-Various bug fixes.
+Minor tweaks to accommodate release of & ensure smooth integration with The Events Calendar 2.0.11 / Events Calendar PRO 2.0.11.
 
 = 1.0.3 =
 
@@ -150,15 +205,11 @@ Various bug fixes.
 
 *Bug Fixes:*
 
-* Deleted events no longer continue to be re-imported when auto import is enabled. 
+* Deleted events no longer continue to be re-imported when auto import is enabled.
 * Facebook user IDs with dashes are now accepted across the board.
 * Fixed some untranslatable strings found in the 1.0.1 POT file.
 
 = 1.0.1 =
-
-*Small features, UX and Content Tweaks:*
-
-* Integration with Presstrends (<a href="http://www.presstrends.io/">http://www.presstrends.io/</a>).
 
 *Bug Fixes:*
 

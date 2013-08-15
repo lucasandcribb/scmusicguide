@@ -1,19 +1,12 @@
 <?php
 /*
 Plugin Name: The Events Calendar: Facebook Events
-Plugin URI: http://tri.be/products
 Description: Import events into The Events Calendar from a Facebook organization or page.
-Version: 1.0.5
+Version: 3.0.1
 Author: Modern Tribe, Inc.
-Author URI: http://tri.be
+Author URI: http://m.tri.be/22
 License: GPLv2
 */
-
-/**
- * @package Tribe_FB_Importer
- * @author Modern Tribe Inc.
- * @version 1.0.5
- */
 
 /*
 Copyright 2012 Modern Tribe Inc. and the Collaborators
@@ -34,7 +27,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 require_once( dirname( __FILE__ ) . '/vendor/tribe-common-libraries/tribe-common-libraries.class.php' );
-require_once( dirname( __FILE__ ) . '/tribe-presstrends-facebook-importer.php' );
 
 // Don't load directly
 if ( !defined( 'ABSPATH' ) )
@@ -46,19 +38,18 @@ if ( !defined( 'ABSPATH' ) )
 class Tribe_FB_Importer {
 
 	protected static $instance;
-	const VERSION = '1.0.5';
-	const REQUIRED_TEC_VERSION = '2.0.11';
+	const VERSION = '3.0.1';
+	const REQUIRED_TEC_VERSION = '3.0';
 	static $fb_graph_url = 'https://graph.facebook.com/';
 	static $default_app_id = '404935409546807';
 	static $default_app_secret = 'a1300fded85f77fc64f14fdb69395545';
 	public static $origin = 'facebook-importer';
 	static $valid_reccurence_patterns = array( 'weekly' => 604800, 'daily' => 86400, 'twicedaily' => 43200, 'hourly' => 3600 );
 	public $errors = array();
+	public $errors_images = array();
 	public $success = false;
-	static $pue_slug = 'events-facebook-importer';
-	static $update_url = 'http://tri.be/';
-	public $install_key; 
 	public $imported_total = 0;
+	public $empty_key_notice = false;
 
 	/**
 	 * class constructor
@@ -69,24 +60,18 @@ class Tribe_FB_Importer {
 	 */
 	function __construct() {
 		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'admin_init', array( $this, 'reset_default_app' ) );
 		add_action( 'admin_menu', array( $this, 'add_import_page' ) );
 		add_action( 'tribe_settings_do_tabs', array( $this, 'add_setting_page' ) );
 		add_action( 'tribe_fb_auto_import', array( $this, 'do_auto_import' ) );
 		add_action( 'tribe_settings_after_save_fb-import', array( $this, 'manage_import_schedule' ) );
 		add_filter( 'cron_schedules', array( $this, 'cron_add_weekly' ) );
 		add_action( 'wp_before_admin_bar_render', array( $this, 'addFacebookToolbarItems' ), 30 );
-		add_action( 'tribe_helper_activation_complete', array( $this, 'loadPue' ) );
-		$this->install_key = get_option( 'pue_install_key_events_facebook_importer' );	
 		add_action( 'plugin_action_links_' . plugin_basename(__FILE__), array( $this, 'addLinksToPluginActions' ) );
 		add_action( 'before_delete_post', array( $this, 'setDeletedEventArrayOption'), 10, 1 );
 		add_filter( 'tribe_help_tab_forums_url', array( $this, 'helpTabForumsLink' ), 100 );
-
-		// PressTrends WordPress Action
-		if ( tribe_get_option( 'sendPressTrendsData', false ) ) {
-			add_action('admin_init', 'presstrends_plugin_tribe_events_facebook_importer');
-		}
-		
-		TribeCommonLibraries::register( 'pue-client', '1.2', dirname( __FILE__ ) . '/vendor/pue-client/pue-client.php' );
+		add_filter( 'tribe_fb_get_app_id', array( $this, 'check_empty_app_keys' ) );
+		add_filter( 'tribe_fb_get_app_secret', array( $this, 'check_empty_app_keys' ) );
 	}
 
 	/**
@@ -101,19 +86,6 @@ class Tribe_FB_Importer {
 	}
 
 	/**
-	 * Load the Plugin Update Engine
-	 *
-	 * @since 1.0
-	 * @author PaulHughes01
-	 * @return void
-	 */
-	public function loadPue() {
-		if ( apply_filters( 'tribe_enable_pue', TRUE, self::$pue_slug ) ) {
-			new PluginUpdateEngineChecker( self::$update_url, self::$pue_slug, array(), plugin_basename( __FILE__ ) );
-		}
-	}
-
-	/**
 	 * get the url used for the FB graph API
 	 *
 	 * @since 1.0
@@ -125,6 +97,75 @@ class Tribe_FB_Importer {
 	}
 
 	/**
+	 * If in admin check that app id & secret are not default,
+	 * remove and notify if they are.
+	 * @since  1.0.6
+	 * @author tim@imaginesimplicity.com
+	 * @return bool
+	 */
+	function reset_default_app(){
+		if( !is_admin() )
+			return false;
+		$reset_default = false;
+		if( $this->get_app_id() == self::$default_app_id ){
+			$reset_default = true;
+			TribeEvents::setOption( 'fb_api_key', '' );
+		}
+		if( $this->get_app_secret() == self::$default_app_secret ){
+			$reset_default = true;
+			TribeEvents::setOption( 'fb_api_secret', '' );
+		}
+		if( $reset_default ){
+			add_action( 'admin_notices', array( $this, 'default_app_notices' ) );
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Notice for removing default app strings
+	 *
+	 * @since 1.0.6
+	 * @author Reid
+	 * @return void
+	 */
+	function default_app_notices(){
+		$tribe_facebook_settings_url = admin_url('edit.php?post_type=tribe_events&page=tribe-events-calendar&tab=fb-import');
+		echo '<div class="error"><p>';
+		printf( __('As of version 1.0.6, you need to enter your own Facebook App ID and App secret. Visit %s to generate yours. Enter your App ID and App Secret on the <a href=\'%s\'>event\'s settings page</a>. '), '<a href="https://developers.facebook.com/apps">https://developers.facebook.com/apps</a>', $tribe_facebook_settings_url);
+		echo '</p></div>';
+	}
+
+	/**
+	 * check if Facebook app keys are empty and notify on the admin
+	 * @since  1.0.6
+	 * @author tim@imaginesimplicity.com
+	 * @param  string $key
+	 * @return string $key
+	 */
+	function check_empty_app_keys( $key ){
+		if( empty($key) && !$this->empty_key_notice ){
+			add_action( 'admin_notices', array( $this, 'empty_app_notices' ) );
+			$this->empty_key_notice = true;
+		}
+		return $key;
+	}
+
+	/**
+	 * Translation Strings for App & Secret requirement
+	 * @since 1.0.6
+	 * @author Reid
+	 * @return void
+	 */
+	function empty_app_notices(){
+		echo '<div class="updated notice"><p>';
+		printf( __('Signing up for a Facebook App ID and Secret only takes a second. Visit %s to create yours. '), '<a href="https://developers.facebook.com/apps">https://developers.facebook.com/apps</a>');
+		printf( __('Visit %s to learn more about Facebook App Ids and Secrets. '), '<a href="https://developers.facebook.com/docs/guides/canvas/">https://developers.facebook.com/docs/guides/canvas/</a>');
+		printf( __('You must enter a Facebook App ID and App Secret to continue importing events from Facebook. Visit %s to create yours. '), '<a href="https://developers.facebook.com/apps">https://developers.facebook.com/apps</a>');
+		echo '</p></div>';
+	}
+
+	/**
 	 * get the APP ID stored in the database or the default
 	 *
 	 * @since 1.0
@@ -132,7 +173,7 @@ class Tribe_FB_Importer {
 	 * @return string the APP ID
 	 */
 	function get_app_id() {
-		return apply_filters( 'tribe_fb_get_app_id', TribeEvents::getOption( 'fb_app_id', self::$default_app_id ) );
+		return apply_filters( 'tribe_fb_get_app_id', TribeEvents::getOption( 'fb_api_key' ) );
 	}
 
 	/**
@@ -143,7 +184,7 @@ class Tribe_FB_Importer {
 	 * @return string the APP secret
 	 */
 	function get_app_secret() {
-		return apply_filters( 'tribe_fb_get_app_secret', TribeEvents::getOption( 'fb_app_secret', self::$default_app_secret ) );
+		return apply_filters( 'tribe_fb_get_app_secret', TribeEvents::getOption( 'fb_api_secret' ) );
 	}
 
 	/**
@@ -263,28 +304,43 @@ class Tribe_FB_Importer {
 	}
 
 	/**
-	 * retrieve a facebook event photo url (after redirect) along with photo data
-	 * example: https://graph.facebook.com/331218348435/?fields=picture&type=large
+	 * Retrieve a facebook event photo url (after redirect) along with photo data
+	 * @example https://graph.facebook.com/331218348435/?fields=picture&type=large
+	 * @param string $object_id
 	 *
-	 * @param string $object_id the object to retrieve
-	 * @param string $size the size of the photo to retrieve (small, normal, large)
-	 * @return array the image url
+	 * @return mixed|void the image url
 	 */
-	function get_facebook_photo( $object_id, $size = 'large') {
-		// $api_url = $this->build_url_with_access_token( $object_id . '/picture', array('type' => $size) );
-		$api_url = $this->build_url_with_access_token( $object_id . '/', array( 'fields' => 'picture', 'type' => $size, 'return_ssl_resources' => 1 ) );
-
+	function get_facebook_photo( $object_id ) {
+		$photo_error = false;
+		$api_url = $this->build_url_with_access_token( $object_id . '/', array( 'fields' => 'cover', 'return_ssl_resources' => 1 ) );
 		$api_request =  $this->json_retrieve( $api_url );
+		if( !empty( $api_request->cover->source ) ) {
+			$new_path = $api_request->cover->source;
+			$get_photo = wp_remote_get( $api_request->cover->source );
+		} else {
+			$photo_error = true;
+		}
 
-		// hardcoding the size for now since Facebook isn't returning what we request
-		$new_path = str_replace("_q.", "_n.", $api_request->picture->data->url);
-		$get_photo = wp_remote_get( $new_path );
+		// hat tip to @jessebrede (github) for suggesting a tweak to import old fb image formats if erroring
+		if( $photo_error || !empty( $get_photo->errors ) ){
+			$api_url = $this->build_url_with_access_token( $object_id . '/', array( 'fields' => 'picture', 'type' => 'large', 'return_ssl_resources' => 1 ) );
+			$api_request =  $this->json_retrieve( $api_url );
+			$new_path = str_replace("_q.", "_n.", $api_request->picture->data->url );
+			$get_photo = wp_remote_get( $new_path );
+		}
 
-		// setup return object
-		$photo['url'] = $new_path;
-		$photo['source'] = $get_photo['body'];
-
-		return apply_filters( 'tribe_fb_get_facebook_photo', $photo, $api_url, $api_request );
+		if ( ! is_wp_error($get_photo) && !$photo_error ) {
+			// setup return object
+			$photo['url'] = $new_path;
+			$photo['source'] = $get_photo['body'];
+			return apply_filters( 'tribe_fb_get_facebook_photo', $photo, $api_url, $api_request );			
+		} else {
+			if ( is_wp_error($get_photo) ) {
+				$this->errors_images[] = $get_photo->get_error_message();
+			} else {
+				$this->errors_images[] = __('Could not successfully import the image for unknown reasons.', 'tribe-fb-import' );
+			}
+		}
 	}
 
 	/**
@@ -557,18 +613,18 @@ class Tribe_FB_Importer {
 	}
 
 	/**
-	 * create or update an event given a Facebook ID
-	 *
-	 * @since 1.0
-	 * @author jkudish
+	 * Create or update an event given a Facebook ID
 	 * @param int $facebook_event_id the Facebook ID of the event
-	 * @param array $args the params for the event
-	 * @return array|WP_Error array of created event ID, organizer ID and venue ID or WP_Error on failure
+	 *
+	 * @return array|WP_Error
+	 * @author jkudish
+	 * @since 1.0
 	 */
 	function create_local_event( $facebook_event_id ) {
 
 		// get the facebook event
 		$facebook_event = $this->get_facebook_object( $facebook_event_id );
+		$event_picture = $this->get_facebook_photo( $facebook_event_id );
 
 		if ( isset( $facebook_event->id ) ) {
 
@@ -579,7 +635,7 @@ class Tribe_FB_Importer {
 
 			// parse the event
 			$args = $this->parse_facebook_event( $facebook_event );
-			
+
 			if ( !$this->find_local_object_with_fb_id( $args['FacebookID'], 'event' ) ) {
 				// filter the origin trail
 				add_filter( 'tribe-post-origin', array( $this, 'origin_filter' ) );
@@ -592,52 +648,53 @@ class Tribe_FB_Importer {
 
 				// set the featured photo if available.
 				$event_picture = $this->get_facebook_photo( $facebook_event->id );
-				// print_r($event_picture);
-				if ( !empty($event_picture) ) {
+
+				if ( !empty( $event_picture ) ) {
+
 					// setup clean vars to import the photo
 					$event_picture['url'] = stripslashes($event_picture['url']);
 					$uploads = wp_upload_dir();
 					$wp_filetype = wp_check_filetype($event_picture['url'], null );
 					$filename = wp_unique_filename( $uploads['path'], basename('facebook_event_' . $facebook_event->id), $unique_filename_callback = null ) . '.' . $wp_filetype['ext'];
 					$full_path_filename = $uploads['path'] . "/" . $filename;
-					
-					if ( !substr_count($wp_filetype['type'], "image") ) {
-						return new WP_Error( 'event_wrong_image_type', sprintf( __(  ' "%s" is not a valid image. %s', 'tribe-fb-import' ), basename($event_picture['url']), $wp_filetype['type'] ) );
-					}
-					
-					// push the actual picture data to the local file system
-					$file_saved = file_put_contents($uploads['path'] . "/" . $filename, $event_picture['source']);
 
-					if ( !$file_saved ) {
-						return new WP_Error( 'event_image_save_fail', __(  'The file cannot be saved.', 'tribe-fb-import' ) );
-					} else {
-					
-						// setup attachment params
-						$attachment = array(
-							 'post_mime_type' => $wp_filetype['type'],
-							 'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
-							 'post_content' => '',
-							 'post_status' => 'inherit',
-							 'guid' => $uploads['url'] . "/" . $filename
-						);
+					if ( substr_count( $wp_filetype['type'], "image" ) ) {
 
-						// attach photo to post obj (event)
-						$attach_id = wp_insert_attachment( $attachment, $full_path_filename, $event_id );
+						// push the actual picture data to the local file system
+						$file_saved = file_put_contents($uploads['path'] . "/" . $filename, $event_picture['source']);
 
-						if ( ! $attach_id ) {
-							return new WP_Error( 'event_image_db_fail', __(  'Failed to save record into database.', 'tribe-fb-import' ) );
+						if ( $file_saved ) {
+
+							// setup attachment params
+							$attachment = array(
+								 'post_mime_type' => $wp_filetype['type'],
+								 'post_title' => preg_replace('/\.[^.]+$/', '', $filename),
+								 'post_content' => '',
+								 'post_status' => 'inherit',
+								 'guid' => $uploads['url'] . "/" . $filename
+							);
+
+							// attach photo to post obj (event)
+							$attach_id = wp_insert_attachment( $attachment, $full_path_filename, $event_id );
+
+							if ( $attach_id ) {
+								// set the thumbnail (featured image)
+								set_post_thumbnail($event_id, $attach_id);
+
+								// attach metadata for attachment
+								require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+								$attach_data = wp_generate_attachment_metadata( $attach_id, $full_path_filename );
+								wp_update_attachment_metadata( $attach_id,  $attach_data );
+
+							} else {
+								$this->errors_images[] = sprintf( __( '%s. Event Image Error: Failed to save record into database.', 'tribe-fb-import' ), $facebook_event->name);
+							}
 						} else {
-							// set the thumbnail (featured image)
-							set_post_thumbnail($event_id, $attach_id);
-
-							// attach metadata for attachment
-							require_once(ABSPATH . "wp-admin" . '/includes/image.php');
-							$attach_data = wp_generate_attachment_metadata( $attach_id, $full_path_filename );
-							wp_update_attachment_metadata( $attach_id,  $attach_data );
-
+							$this->errors_images[] = sprintf( __( '%s. Event Image Error: The file cannot be saved.', 'tribe-fb-import' ), $facebook_event->name);
 						}
+					} else {
+						$this->errors_images[] = sprintf( __( '%s. Event Image Error: "%s" is not a valid image. %s', 'tribe-fb-import' ), $facebook_event->name, basename($event_picture['url']), $wp_filetype['type'] );
 					}
-				
 				}
 
 				// set the event's Facebook ID meta
@@ -651,7 +708,7 @@ class Tribe_FB_Importer {
 				// get the created organizer/venue IDs
 				$organizer_id = tribe_get_organizer_id( $event_id );
 				$venue_id = tribe_get_venue_id( $event_id );
-				
+
 				// Set the post status to publish for the organizer and venue.
 				if ( get_post_status( $organizer_id ) != 'publish' ) {
 					wp_publish_post( $organizer_id );
@@ -681,6 +738,7 @@ class Tribe_FB_Importer {
 			return new WP_Error( 'invalid_event', sprintf( __( "Either the event with ID %s does not exist, is marked as private on Facebook or we couldn't reach the Facebook API", 'tribe-fb-import' ), $facebook_event_id ) );
 		}
 	}
+
 
 	/**
 	 * origin/trail filter
@@ -730,14 +788,14 @@ class Tribe_FB_Importer {
 	 * @return void
 	 */
 	function add_import_page() {
-		add_submenu_page( '/edit.php?post_type=' . TribeEvents::POSTTYPE, __( 'Import FB Events', 'tribe-fb-import' ), __( 'Import FB Events', 'tribe-fb-import' ), 'edit_posts', 'import-fb-events', array( $this, 'do_import_page' ) );
+		add_submenu_page( '/edit.php?post_type=' . TribeEvents::POSTTYPE, __( 'Import: Facebook', 'tribe-fb-import' ), __( 'Import: Facebook', 'tribe-fb-import' ), 'edit_posts', 'import-fb-events', array( $this, 'do_import_page' ) );
 	}
 
 	/**
 	 * offset_date_to_timezone useful for adjusting an imported DateTime to your site GMT/UTC offset
-	 * 
+	 *
 	 * @link https://gist.github.com/4704496
-	 * 
+	 *
 	 * @param string $datetime
 	 * @param string $timezone default GMT
 	 * @param string $return_format default ISO 8601
@@ -748,11 +806,11 @@ class Tribe_FB_Importer {
 		// get site timezone offset
 		$gmt_offset = get_option( 'gmt_offset' );
 		$gmt_offset = str_replace( array( '.25', '.5', '.75' ), array( ':15', ':30', ':45' ), $gmt_offset );
-		
+
 		// set DateTime obj
 		$datetime_obj = new DateTime( $datetime, new DateTimeZone( $timezone ) );
 
-		// reset date timezone to be neutral for offset 
+		// reset date timezone to be neutral for offset
 		$datetime_obj->setTimezone(new DateTimeZone('GMT'));
 
 		// modify the timezone with offset
@@ -847,27 +905,34 @@ class Tribe_FB_Importer {
 		foreach ( $fb_uids as $fb_uid ) {
 			$facebook_object = $this->get_facebook_object( $fb_uid );
 			if ( !empty( $facebook_object ) && !is_wp_error( $facebook_object ) ) {
-				if( !empty( $facebook_object->name )) {
-					echo '<h4>' . sprintf( _x( 'Events from %s:', '%s is the name of the Facebook user or page', 'tribe-fb-import' ), $facebook_object->name ) . '</h4>';	
-				}
-				$fb_events = $this->get_events_for_object( $facebook_object->id, 'object' );
-				if ( !empty( $fb_events ) ) {
-					echo '<ul class="admin-indent">';
-					foreach ( $fb_events as $fb_event ) {
-						$html_id = esc_attr( 'tribe-fb-import-event-' . $fb_event->id );
-						$event_exists_locally = $this->find_local_object_with_fb_id( $fb_event->id );
-						$imported = ( $event_exists_locally ) ? ' ' . __( '(previously imported)', 'tribe-fb-import' ) : '';
-						$start_date = date( $date_time_format, strtotime( $fb_event->start_time ) );
-						$title = $start_date . ' &mdash; ' . $fb_event->name . $imported;
-						$title = apply_filters( 'tribe_fb_event_checkbox_label', $title, $start_date, $fb_event, $imported );
-						echo '<li><label for="' . $html_id . '"><input class="checkbox" name="tribe-fb-import-events[]" type="checkbox" id="' . $html_id . '" type="tribe-fb-import-event" value="' . esc_attr( $fb_event->id ) . '" ';
-						checked( (bool) $event_exists_locally );
-						disabled( (bool) $event_exists_locally );
-						echo '> ' . $title . '</label></li>';
+				if( !empty( $facebook_object->error ) ) {
+					printf( '<p>%s%s</p>',
+						__( 'Facebook API Error: ', 'tribe-fb-import' ),
+						$facebook_object->error->message
+						);
+				} else {
+					if( !empty( $facebook_object->name )) {
+						echo '<h4>' . sprintf( _x( 'Events from %s:', '%s is the name of the Facebook user or page', 'tribe-fb-import' ), $facebook_object->name ) . '</h4>';
 					}
-					echo '</ul>';
-				} else if( !empty( $facebook_object->name )) {
-					echo '<div class="admin-indent"><p>' . sprintf( _x( '%s does not have any Facebook events', '%s is the name of the Facebook user or page', 'tribe-fb-import' ), $facebook_object->name ) . '</p></div>';
+					$fb_events = $this->get_events_for_object( $facebook_object->id, 'object' );
+					if ( !empty( $fb_events ) ) {
+						echo '<ul>';
+						foreach ( $fb_events as $fb_event ) {
+							$html_id = esc_attr( 'tribe-fb-import-event-' . $fb_event->id );
+							$event_exists_locally = $this->find_local_object_with_fb_id( $fb_event->id );
+							$imported = ( $event_exists_locally ) ? ' ' . __( '(previously imported)', 'tribe-fb-import' ) : '';
+							$start_date = date( $date_time_format, strtotime( $fb_event->start_time ) );
+							$title = $start_date . ' &mdash; ' . $fb_event->name . $imported;
+							$title = apply_filters( 'tribe_fb_event_checkbox_label', $title, $start_date, $fb_event, $imported );
+							echo '<li><label for="' . $html_id . '"><input class="checkbox" name="tribe-fb-import-events[]" type="checkbox" id="' . $html_id . '" type="tribe-fb-import-event" value="' . esc_attr( $fb_event->id ) . '" ';
+							checked( (bool) $event_exists_locally );
+							disabled( (bool) $event_exists_locally );
+							echo '> ' . $title . '</label> (<a href="https://www.facebook.com/events/' . $fb_event->id . '/" target="_blank">link</a>)</li>';
+						}
+						echo '</ul>';
+					} else if( !empty( $facebook_object->name )) {
+						echo '<p>' . sprintf( _x( '%s does not have any Facebook events', '%s is the name of the Facebook user or page', 'tribe-fb-import' ), $facebook_object->name ) . '</p>';
+					}
 				}
 			}
 		}
@@ -946,7 +1011,7 @@ class Tribe_FB_Importer {
 		}
 		return $schedules;
 	}
-	
+
 	/**
 	 * Add the facebook importer toolbar item.
 	 *
@@ -956,7 +1021,7 @@ class Tribe_FB_Importer {
 	 */
 	public function addFacebookToolbarItems() {
 		global $wp_admin_bar;
-		
+
 		if ( current_user_can( 'publish_tribe_events' ) ) {
 			$import_node = $wp_admin_bar->get_node( 'tribe-events-import' );
 			if ( !is_object( $import_node ) ) {
@@ -967,7 +1032,7 @@ class Tribe_FB_Importer {
 				) );
 			}
 		}
-		
+
 		if ( current_user_can( 'publish_tribe_events' ) ) {
 			$wp_admin_bar->add_menu( array(
 				'id' => 'tribe-facebook-import',
@@ -976,8 +1041,8 @@ class Tribe_FB_Importer {
 				'parent' => 'tribe-events-import'
 			) );
 		}
-		
-		if ( current_user_can( 'manage_options' ) ) {			
+
+		if ( current_user_can( 'manage_options' ) ) {
 			$wp_admin_bar->add_menu( array(
 				'id' => 'tribe-facebook-importer-settings-sub',
 				'title' => __( 'Facebook Events', 'tribe-events-calendar' ),
@@ -986,12 +1051,11 @@ class Tribe_FB_Importer {
 			) );
 		}
 	}
-	
+
 	/**
 	 * Return additional action for the plugin on the plugins page.
-	 *
+	 * @param array $actions
 	 * @since 2.0.8
-	 *
 	 * @return array
 	 */
 	public function addLinksToPluginActions( $actions ) {
@@ -1000,9 +1064,10 @@ class Tribe_FB_Importer {
 		}
 		return $actions;
 	}
-	
+
 	/**
 	 * Sets deleted events that were imported from Facebook so that it does not re-import them.
+	 * @param int $post_id
 	 *
 	 * @since 1.0.2
 	 * @author PaulHughes01
@@ -1018,17 +1083,17 @@ class Tribe_FB_Importer {
 			}
 		}
 	}
-	
+
 	/**
 	 * Return the forums link as it should appear in the help tab.
-	 *
-	 * @since 1.0.2
+	 * @param string $content
 	 *
 	 * @return string
+	 * @since 1.0.2
 	 */
 	public function helpTabForumsLink( $content ) {
-		$promo_suffix = '?utm_source=helptab&utm_medium=promolink&utm_campaign=plugin';
-		return 'http://tri.be/support/forums/' . $promo_suffix;
+		$promo_suffix = '?utm_source=helptab&utm_medium=plugin-facebook&utm_campaign=in-app';
+		return TribeEvents::$tribeUrl . 'support/forums/' . $promo_suffix;
 	}
 
 	/**
@@ -1047,13 +1112,14 @@ class Tribe_FB_Importer {
 	}
 
 	/**
-	* Add FB Importer to the list of add-ons to check required version.
-	*
-	* @author jkudish
-	* @since 1.0
-	* @return array $plugins the existing plugins
-	* @return array the pluggins
-	*/
+	 * Add FB Importer to the list of add-ons to check required version.
+	 *
+	 * @param array $plugins the existing plugins
+	 *
+	 * @return mixed
+	 * @author jkudish
+	 * @since 1.0
+	 */
 	static function init_addon( $plugins ) {
 		$plugins['TribeFBImporter'] = array( 'plugin_name' => 'The Events Calendar: Facebook Events', 'required_version' => Tribe_FB_Importer::REQUIRED_TEC_VERSION, 'current_version' => Tribe_FB_Importer::VERSION, 'plugin_dir_file' => basename( dirname( __FILE__ ) ) . '/the-events-calendar-facebook-importer.php' );
 		return $plugins;
@@ -1084,9 +1150,10 @@ class Tribe_FB_Importer {
 add_action( 'plugins_loaded', 'tribe_init_facebook_importer', 99 );
 function tribe_init_facebook_importer() {
 	add_filter( 'tribe_tec_addons', array( 'Tribe_FB_Importer', 'init_addon' ) );
-	if ( class_exists( 'TribeEvents' ) && defined( 'TribeEvents::VERSION' ) ) {
+	if ( class_exists( 'TribeEvents' ) && defined( 'TribeEvents::VERSION' ) && version_compare( TribeEvents::VERSION, Tribe_FB_Importer::REQUIRED_TEC_VERSION, '>=' ) ) {
 		Tribe_FB_Importer::instance();
-	} else {
+	}
+	if ( !class_exists( 'TribeEvents' ) ) {
 		add_action( 'admin_notices', array( 'Tribe_FB_Importer', 'fail_message' ) );
 	}
 }
@@ -1103,8 +1170,5 @@ function tribe_facebook_clear_schedule() {
 	wp_clear_scheduled_hook( 'tribe_fb_auto_import' );
 }
 
-function tribe_facebook_importer_uninstall() {
-	delete_option( 'pue_install_key_events_facebook_importer' );
-}
-
-register_uninstall_hook( __FILE__ , 'tribe_facebook_importer_uninstall' );
+require_once( 'lib/tribe-events-facebook-importer-pue.class.php' );
+new TribeEventsFacebookImporterPUE( __FILE__ );

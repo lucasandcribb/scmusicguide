@@ -13,8 +13,8 @@
  * @param string $post_type the type of post to return.
  * @return array the related posts.
  */
-function tribe_get_related_posts( $tag = false, $count = 5, $blog = false, $only_display_related = false, $post_type = 'post' ) {
-	return apply_filters( 'tribe-get-related-posts', TribeRelatedPosts::getPosts( $tag, $count, $blog, $only_display_related, $post_type ) );
+function tribe_get_related_posts( $tag = false, $category = false, $count = 5, $blog = false, $only_display_related = false, $post_type = 'post' ) {
+	return apply_filters( 'tribe-get-related-posts', TribeRelatedPosts::getPosts( $tag, $category, $count, $blog, $only_display_related, $post_type ) );
 }
 
 /** 
@@ -30,8 +30,8 @@ function tribe_get_related_posts( $tag = false, $count = 5, $blog = false, $only
  * @param string $post_type the type of post to return.
  * @return void
  */
-function tribe_related_posts( $tag = false, $count = 5, $blog = false, $only_display_related = false, $thumbnails = false, $post_type = 'post' ) {
-	apply_filters( 'tribe-related-posts', TribeRelatedPosts::displayPosts( $tag, $count, $blog, $only_display_related, $thumbnails, $post_type ) );
+function tribe_related_posts( $tag = false, $category = false, $count = 5, $blog = false, $only_display_related = false, $thumbnails = false, $post_type = 'post' ) {
+	apply_filters( 'tribe-related-posts', TribeRelatedPosts::displayPosts( $tag, $category, $count, $blog, $only_display_related, $thumbnails, $post_type ) );
 }
 
 /** 
@@ -46,7 +46,7 @@ function tribe_related_posts( $tag = false, $count = 5, $blog = false, $only_dis
  * @param string $post_type the type of post to return.
  * @return bool whether the current post has related posts or not.
  */
-function tribe_has_related_posts( $tag = false, $count = 5, $blog = false, $only_display_related = false, $post_type = 'post' ) {
+function tribe_has_related_posts( $tag = false, $category = false, $count = 5, $blog = false, $only_display_related = false, $post_type = 'post' ) {
 	$posts = get_related_posts( $tag, $count, $blog, $only_display_related, $post_type );
 	return apply_filters( 'tribe-has-related-posts', count( $posts ) > 0 );
 }
