@@ -505,3 +505,7 @@ article.tribe_events .entry-content {width:99%;}
 
 
 
+/* PRODUCTS */
+.post-type-archive-product #container, .single-product #container {max-width:750px; position:relative; float:left; width:100%;}
+
+
