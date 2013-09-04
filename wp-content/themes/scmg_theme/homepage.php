@@ -52,6 +52,38 @@ Template Name: Homepage
 </div>
 
 
+<div id="exclusive-container" class="featured-section">
+	<div id="exclusive-title" class="fr-title">NEWS AND UPDATES</div>
+	<div id="exclusive-content">
+		<?php $artist_array = array(); ?>
+		<?php $e_loop = new WP_Query( array( 'post_type' => 'exclusive', 'posts_per_page' => 1, 'order' => 'DESC' ) ); ?>
+		<?php while ( $e_loop->have_posts() ) : $e_loop->the_post(); $excl_url = get_permalink();?>
+
+			<div class="exclusive-article">
+				<div class="exclusive-article-title"><?php the_title(); ?></div>
+				<div class="exclusive-article-divider"></div>
+				<div class="exclusive-article-content"><?php get_template_part( 'content', get_post_format() ); ?></div>
+				<!-- <div class="exclusive-read-more"><a href="<//?php echo $excl_url; ?>">View Full Article</a></div> -->
+			</div>
+			
+			<div class="exclusive-video">
+				<div class="exclusive-vid-title"><?php the_field('exclusive_video_title') ?></div>
+				<div class="exclusive-vid-holder"><?php the_field('exclusive_videos') ?></div>
+			</div>
+
+			<div class="music-player">
+
+			</div>
+			
+
+			
+			
+		<?php endwhile; ?>
+
+	</div>
+</div>
+
+
 <div id="featured-spot-ss-guest" class="featured-section">
 	<div class="fr-title">CURRENT ARTICLES</div>
 	<div class="s-nav">

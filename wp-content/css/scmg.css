@@ -180,6 +180,32 @@ ul.wpuf_customs {display: none;}
 #header-slideshow .video-gallery-thumbnail-box-outer {display:none;}
 
 
+/* EXCLUSIVE */
+#exclusive-container {position:relative; float:left; width:744px; border:1px solid #222; margin-bottom:20px;}
+#exclusive-container #exclusive-title {width:724px; height:30px; background:#54a890; border-bottom:1px solid #999; padding-left:20px;
+	padding-top:5px; font-weight:bold; font-size:24px; color:#fff; letter-spacing:2px; text-decoration:none;}
+#exclusive-container #exclusive-content {padding:10px; position:relative; float:left;}
+
+#exclusive-container .exclusive-video {position:relative; float:left; width:350px; margin-right:10px; margin-top:25px; margin-left:10px;}
+#exclusive-container .exclusive-video div {position:relative; float:left;}
+#exclusive-container .exclusive-video .exclusive-vid-title {width:100%; text-align:center; font-size:18px; font-weight:bold;}
+#exclusive-container .exclusive-video .exclusive-vid-holder {width:350px; height:250px; text-align:center; border:1px solid #999; margin-top:5px;}
+
+#exclusive-container .exclusive-article {position:relative; float:right; width:350px; margin-top:15px;}
+#exclusive-container .exclusive-article div {position:relative; float:left;}
+#exclusive-container .exclusive-article-title {width:100%; text-align:center; font-size:18px; font-weight:bold;}
+#exclusive-container .exclusive-article-divider {width:100%; height:1px; background:#999; margin-top:15px; margin-bottom:5px;}
+#exclusive-container .exclusive-article-content {width:100%; font-size:11px; line-height:11px;}
+#exclusive-container .exclusive-article-content article {width:100%; padding:5px;}
+#exclusive-container .exclusive-article-content article .entry-content p {line-height:14px;}
+#exclusive-container .exclusive-article .exclusive-read-more {float:right; margin-top:10px; font-size:12px;}
+
+#exclusive-container .music-player {position:relative; float:left; width:350px; height:75px; margin-right:10px; border:1px solid #999; margin-top:25px; 
+	 margin-left:10px; margin-right:10px;}
+
+#exclusive-container .exclusive-title, #exclusive-container .exclusive-body, .exclusive-album-name {width:500px; margin-bottom:10px;}
+
+
 /*HP ALBUM REVIEW*/
 #featured-review {position:relative; float:left; width:750px; border:1px solid #333; margin-bottom:20px;}
 #featured-review div, #featured-review a {position:relative; float:left;}
@@ -189,14 +215,15 @@ ul.wpuf_customs {display: none;}
 #featured-review .fr-reveiws {width:730px; padding:10px;}
 #featured-review .fr-review-cont {width:100%;}
 #featured-review .fr-review-title {width:530px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
-#featured-review .fr-review-img {width:150px;}
-#featured-review .fr-review-img img {width:200px; height:150px;}
+#featured-review .fr-review-title a {font-size:16px;}
+#featured-review .fr-review-img {width:125px;}
+#featured-review .fr-review-img img {width:125px; height:125px;}
 #featured-review .review-one-body {width:550px; margin-left:20px;}
 #featured-review .fr-read-more {margin-top:5px; margin-right:10px; float:right;}
 
 #featured-review .fr-review-sm-cont {width:100%; margin-top:10px;}
 #featured-review .fr-review-sm-img {width:100px;}
-#featured-review .fr-review-sm-img img {width:100px; height:75px;}
+#featured-review .fr-review-sm-img img {width:100px; height:100px;}
 #featured-review .fr-review-sm-title {width:600px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
 #featured-review .fr-review-sm-body {width:600px; margin-left:20px; height:55px;}
 #featured-review .fr-reveiws .rev-1 {display:none;}
@@ -212,14 +239,15 @@ ul.wpuf_customs {display: none;}
 #featured-spot-ss-guest .fr-reveiws {width:730px; padding:10px;}
 #featured-spot-ss-guest .fr-review-cont {width:100%;}
 #featured-spot-ss-guest .fr-review-title {width:530px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
-#featured-spot-ss-guest .fr-review-img {width:150px;}
-#featured-spot-ss-guest .fr-review-img img {width:200px; height:150px;}
+#featured-spot-ss-guest .fr-review-title a {font-size:16px;}
+#featured-spot-ss-guest .fr-review-img {width:100px;}
+#featured-spot-ss-guest .fr-review-img img {width:100px; height:100px;}
 #featured-spot-ss-guest .review-one-body {width:550px; margin-left:20px; height:100px;}
 #featured-spot-ss-guest .fr-read-more {margin-top:5px; margin-right:10px; float:right;}
 
 #featured-spot-ss-guest .fr-review-sm-cont {width:100%; margin-top:10px;}
-#featured-spot-ss-guest .fr-review-sm-img {width:100px;}
-#featured-spot-ss-guest .fr-review-sm-img img {width:100px; height:75px;}
+#featured-spot-ss-guest .fr-review-sm-img {width:100px; height:100px;}
+#featured-spot-ss-guest .fr-review-sm-img img {width:100px;  height:100px;}
 #featured-spot-ss-guest .fr-review-sm-title {width:600px; margin-left:20px; margin-bottom:5px; font-weight:bold;}
 #featured-spot-ss-guest .fr-review-sm-body {width:600px; margin-left:20px; height:55px;}
 #featured-spot-ss-guest .fr-reveiws .rev-1 {display:none;}

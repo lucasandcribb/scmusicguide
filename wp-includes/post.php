@@ -187,12 +187,24 @@ function create_post_type() {
 		'rewrite' => array('slug' => 'reviews'),
 		'supports' => array( 'title', 'editor', 'thumbnail', 'price' )
 	);
+	$args3 = array(
+		'labels' => array(
+		'name' => __( 'Exclusive' ),
+		'singular_name' => __( 'Exclusive' )
+	),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'exclusive'),
+		'supports' => array( 'title', 'editor', 'thumbnail', 'price' )
+	);
 
 	register_post_type( 'artists', $args1);
 	register_post_type( 'reviews', $args2);
+	register_post_type( 'exclusive', $args3);
 
 	register_taxonomy_for_object_type('category', 'artists');
 	register_taxonomy_for_object_type('category', 'reviews');
+	register_taxonomy_for_object_type('category', 'exclusive');
 	
 	register_taxonomy_for_object_type('post_tag', 'page');
 	register_taxonomy_for_object_type('category', 'page');
