@@ -188,7 +188,7 @@ ul.wpuf_customs {display: none;}
 
 #exclusive-container .exclusive-video {position:relative; float:left; width:350px; margin-right:10px; margin-top:25px; margin-left:10px;}
 #exclusive-container .exclusive-video div {position:relative; float:left;}
-#exclusive-container .exclusive-video .exclusive-vid-title {width:100%; text-align:center; font-size:18px; font-weight:bold;}
+.exclusive-vid-title {width:100%; text-align:center; font-size:18px; font-weight:bold; margin-bottom:5px;}
 #exclusive-container .exclusive-video .exclusive-vid-holder {width:350px; height:250px; text-align:center; border:1px solid #999; margin-top:5px;}
 
 #exclusive-container .exclusive-article {position:relative; float:right; width:350px; margin-top:15px;}
@@ -197,12 +197,12 @@ ul.wpuf_customs {display: none;}
 #exclusive-container .exclusive-article-divider {width:100%; height:1px; background:#999; margin-top:15px; margin-bottom:5px;}
 #exclusive-container .exclusive-article-content {width:100%; font-size:11px; line-height:11px;}
 #exclusive-container .exclusive-article-content article {width:100%; padding:5px;}
-#exclusive-container .exclusive-article-content article .entry-content p {line-height:14px;}
+.exclusive-article-content article .entry-content p {line-height:14px; display:none;}
 #exclusive-container .exclusive-article .exclusive-read-more {float:right; margin-top:10px; font-size:12px;}
+#exclusive-container .exclusive-article-content article .entry-content p:nth-child(1), #exclusive-container .exclusive-article-content article .entry-content p:nth-child(2) {display:block;}
 
-#exclusive-container .music-player {position:relative; float:left; width:350px; margin-right:10px; border:1px solid #999; margin-top:25px; 
+#exclusive-container .music-player {position:relative; float:left; width:350px; margin-right:10px; margin-top:25px; 
 	 margin-left:10px; margin-right:10px;}
-.sc-media .sc-media-right {display:none;}
 
 #exclusive-container .exclusive-title, #exclusive-container .exclusive-body, .exclusive-album-name {width:500px; margin-bottom:10px;}
 

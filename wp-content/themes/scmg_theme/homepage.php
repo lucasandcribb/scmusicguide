@@ -62,8 +62,11 @@ Template Name: Homepage
 			<div class="exclusive-article">
 				<div class="exclusive-article-title"><?php the_title(); ?></div>
 				<div class="exclusive-article-divider"></div>
-				<div class="exclusive-article-content"><?php get_template_part( 'content', get_post_format() ); ?></div>
-				<!-- <div class="exclusive-read-more"><a href="<//?php echo $excl_url; ?>">View Full Article</a></div> -->
+				<div class="exclusive-article-content">
+					<?php echo get_template_part('content',get_post_format()); ?>
+					<a href="<?php echo $excl_url; ?>">...Read More</a>
+				</div>
+				
 			</div>
 			
 			<div class="exclusive-video">
@@ -72,6 +75,7 @@ Template Name: Homepage
 			</div>
 
 			<div class="music-player">
+				<div class="exclusive-vid-title"><?php the_field('exclusive_track_title') ?></div>
 				<div class="exclusive-vid-holder"><?php the_field('exclusive_music_track') ?></div>
 			</div>
 
