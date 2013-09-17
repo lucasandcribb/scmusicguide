@@ -202,6 +202,7 @@ ul.wpuf_customs {display: none;}
 
 #exclusive-container .music-player {position:relative; float:left; width:350px; margin-right:10px; border:1px solid #999; margin-top:25px; 
 	 margin-left:10px; margin-right:10px;}
+.sc-media .sc-media-right {display:none;}
 
 #exclusive-container .exclusive-title, #exclusive-container .exclusive-body, .exclusive-album-name {width:500px; margin-bottom:10px;}
 
