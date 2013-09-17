@@ -72,12 +72,9 @@ Template Name: Homepage
 			</div>
 
 			<div class="music-player">
-
+				<div class="exclusive-vid-holder"><?php the_field('exclusive_music_track') ?></div>
 			</div>
-			
 
-			
-			
 		<?php endwhile; ?>
 
 	</div>

@@ -200,7 +200,7 @@ ul.wpuf_customs {display: none;}
 #exclusive-container .exclusive-article-content article .entry-content p {line-height:14px;}
 #exclusive-container .exclusive-article .exclusive-read-more {float:right; margin-top:10px; font-size:12px;}
 
-#exclusive-container .music-player {position:relative; float:left; width:350px; height:75px; margin-right:10px; border:1px solid #999; margin-top:25px; 
+#exclusive-container .music-player {position:relative; float:left; width:350px; margin-right:10px; border:1px solid #999; margin-top:25px; 
 	 margin-left:10px; margin-right:10px;}
 
 #exclusive-container .exclusive-title, #exclusive-container .exclusive-body, .exclusive-album-name {width:500px; margin-bottom:10px;}
@@ -506,7 +506,7 @@ article.tribe_events .entry-content {width:99%;}
 /* IMAGE GALLERY */
 .page-template-image-gallery-php article {width:750px; position:relative; float:left;}
 .page-template-image-gallery-php article .comments-link, .page-template-image-gallery-php article .entry-meta {display:none;}
-
+.video-gallery-thumbnail-box-outer .video-link-container  {height:200px;}
 
 
 /* ARTICLES */
