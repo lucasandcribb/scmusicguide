@@ -190,7 +190,6 @@ function create_post_type() {
 	$args3 = array(
 		'labels' => array(
 		'name' => __( 'Exclusive' ),
-		'singular_name' => __( 'Exclusive' )
 	),
 		'public' => true,
 		'has_archive' => true,

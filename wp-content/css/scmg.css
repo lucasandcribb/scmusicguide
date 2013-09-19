@@ -540,3 +540,10 @@ article.tribe_events .entry-content {width:99%;}
 .post-type-archive-product #container, .single-product #container {max-width:750px; position:relative; float:left; width:100%;}
 
 
+
+/* EXCLUSIVE SINGLE POST */
+.exclusive-post-video {text-align:center;}
+.exclusive-post-track {margin-top:20px; margin-bottom:25px;}
+.single-exclusive-cont {margin-top:25px;}
+.single-exclusive-cont div.artist-site-links {width:100%; margin-bottom:10px; text-align:center;}
+

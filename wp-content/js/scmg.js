@@ -4,6 +4,7 @@ $(document).ready(function() {
     reorder();
     hideUrlLink();
     showFirstTenReviews();
+    removeExclPostLinks();
 
     var divs = $(".video-link-container").sort(function(){ 
         return Math.round(Math.random())-1; //so we get the right +/- combo
@@ -310,6 +311,14 @@ function showFirstTenReviews() {
     $('.album-review-cont:lt(5)').show();
 }
 
+function removeExclPostLinks() {
+    $('.artist-site-links').each(function() {
+        var link = $(this).attr('href');
+        if (link == '' || link == ' ') {
+            $(this).parent('.artist-site-links').hide();
+        }
+    });
+}
 
 
 

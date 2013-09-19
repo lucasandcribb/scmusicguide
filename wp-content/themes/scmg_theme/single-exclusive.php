@@ -18,34 +18,39 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
-
-
 		<?php if ( have_posts() ) : ?>
-			<?php $excl_title = get_title(); ?>
 
-			<div class="review-info">
-				<div class="single-review-img"><a href="<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); echo $image[0]; ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
-				<div class="single-review-title"><?php echo $excl_title; ?></div>
-				
-			</div>
-			<div class="review-content" rel="<?php echo get_the_ID(); ?>">
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			</div>
-			<div class="review-band-links">
-				<div>Artist Website:</div>
-				<a href="<?php the_field('artist_website'); ?>"><?php the_field('exclusive_website_link'); ?></a>
-				<div>Artist Facebook:</div>
-				<a href="<?php the_field('artist_facebook'); ?>"><?php the_field('exclusive_facebook_link'); ?></a>
-				<div>Artist YouTube:</div>
-				<a href="<?php the_field('artist_youtube'); ?>"><?php the_field('exclusive_youtube_link'); ?></a>
-				<div>Artist iTunes:</div>
-				<a href="<?php the_field('artist_itunes'); ?>"><?php the_field('exclusive_itunes_link'); ?></a>
-			</div>
+			<?php /* Start the Loop */ ?>
+			<?php $loop = new WP_Query( array( 'post_type' => 'exclusive' ) ); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php comments_template(); ?>
+			<div class="single-exclusive-cont">
+				<div class="exclusive-title-cont">
+					<div class="single-exclusive-title"><?php echo $excl_title; ?></div>
+				</div>
+				<div class="exclusive-content" rel="<?php echo get_the_ID(); ?>">
+					<?php get_template_part( 'content', get_post_format() ); ?>
+				</div>
+				<div class="exclusive-post-video">
+					<div class="exclusive-vid-title"><?php the_field('exclusive_video_title') ?></div>
+					<div class="exclusive-vid-holder"><?php the_field('exclusive_videos') ?></div>
+				</div>
+	
+				<div class="exclusive-post-track">
+					<div class="exclusive-vid-title"><?php the_field('exclusive_track_title') ?></div>
+					<div class="exclusive-vid-holder"><?php the_field('exclusive_music_track') ?></div>
+				</div>
+	
+				
+				<div class="artist-website artist-site-links"><a href="<?php the_field('exclusive_website_link'); ?>" target="blank"><?php the_field('exclusive_artist_name'); ?>&#39;s Website</a></div>
+				<div class="artist-facebook artist-site-links"><a href="<?php the_field('exclusive_facebook_link'); ?>" target="blank"><?php the_field('exclusive_artist_name'); ?> on Facebook</a></div>
+				<div class="artist-twitter artist-site-links"><a href="<?php the_field('exclusive_twitter_link'); ?>" target="blank">Follow <?php the_field('exclusive_artist_name'); ?> on Twitter</a></div>
+				<div class="artist-reverbnation artist-site-links"><a href="<?php the_field('exclusive_reverbnation_link'); ?>" target="blank"><?php the_field('exclusive_artist_name'); ?> Music on Reverbnation</a></div>
+				<div class="artist-youtube artist-site-links"><a href="<?php the_field('exclusive_youtube_link'); ?>" target="blank">View <?php the_field('exclusive_artist_name'); ?> YouTube Videos</a></div>
+				<div class="artist-itunes artist-site-links"><a href="<?php the_field('exclusive_itunes_link'); ?>" target="blank">Buy <?php the_field('exclusive_artist_name'); ?>&#39;s Music at iTunes</a></div>
+			</div>
 			<?php endwhile; ?>
 			
-				
+
 		<?php endif; // end have_posts() check ?>
 
 		</div><!-- #content -->
