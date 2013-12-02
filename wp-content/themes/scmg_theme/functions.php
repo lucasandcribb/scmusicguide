@@ -497,6 +497,64 @@ function namespace_add_custom_types( $query ) {
 }
 add_filter( 'pre_get_posts', 'namespace_add_custom_types' );
 
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+
+	$args1 = array(
+		'labels' => array(
+		'name' => __( 'Artists' ),
+		'singular_name' => __( 'Artist' )
+	),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'artists'),
+		'supports' => array( 'title', 'editor', 'thumbnail', 'price' )
+	);
+	$args2 = array(
+		'labels' => array(
+		'name' => __( 'Reviews' ),
+		'singular_name' => __( 'Review' )
+	),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'reviews'),
+		'supports' => array( 'title', 'editor', 'thumbnail', 'price' )
+	);
+	$args3 = array(
+		'labels' => array(
+		'name' => __( 'Exclusive' ),
+	),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'exclusive'),
+		'supports' => array( 'title', 'editor', 'thumbnail', 'price' )
+	);
+
+	$args4 = array(
+		'labels' => array(
+		'name' => __( 'Bio' ),
+	),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'bio'),
+		'supports' => array( 'title', 'editor', 'thumbnail', 'price' )
+	);
+
+	register_post_type( 'artists', $args1);
+	register_post_type( 'reviews', $args2);
+	register_post_type( 'exclusive', $args3);
+	register_post_type( 'bio', $args4);
+
+	register_taxonomy_for_object_type('category', 'artists');
+	register_taxonomy_for_object_type('category', 'reviews');
+	register_taxonomy_for_object_type('category', 'exclusive');
+	register_taxonomy_for_object_type('category', 'bio');
+	
+	register_taxonomy_for_object_type('post_tag', 'page');
+	register_taxonomy_for_object_type('category', 'page');
+	
+}
+add_theme_support( 'post-thumbnails', array( 'post' , 'page' ) ); // Add it for posts
 
 
 

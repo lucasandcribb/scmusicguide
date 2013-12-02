@@ -15,7 +15,7 @@ $facebook_tab = array(
 					'<h3>' . __( 'Getting Started', 'tribe-fb-import' ) . '</h3>' .
 				 	'<p>' . __( "You need a Facebook App ID and App Secret to access data via the Facebook Graph API to import your events from Facebook.", 'tribe-fb-import' ) . '</p>' .
 				 	'<ul class="admin-list">' .
-				 		'<li>' . sprintf( __( '%s to learn more about Facebook Apps', 'tribe-fb-import' ), '<a href="http://developers.facebook.com/docs/guides/canvas/" target="_blank">' . __( 'Click here', 'tribe-fb-import' ) . '</a>' ) . '</li>' .
+				 		'<li>' . sprintf( __( '%s to learn more about Facebook Apps', 'tribe-fb-import' ), '<a href="https://developers.facebook.com/docs/web/gettingstarted/" target="_blank">' . __( 'Click here', 'tribe-fb-import' ) . '</a>' ) . '</li>' .
 				 		'<li>' . sprintf( __( '%s to view or create Facebook Apps', 'tribe-fb-import' ), '<a href="https://developers.facebook.com/apps" target="_blank">' . __( 'Click here', 'tribe-fb-import' ) . '</a>' ) . '</li>' .
 				 	'</ul>' .
 			 		'<h3>' . __( 'Selecting pages or organizations to import events with', 'tribe-fb-import' ) . '</h3>' .

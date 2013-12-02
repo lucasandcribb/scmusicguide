@@ -87,7 +87,7 @@ class TribeEventsGeoLoc {
 		add_filter( 'tribe_settings_tab_fields',            array( $this, 'inject_settings'            ), 10, 2 );
 		add_filter( 'tribe-events-bar-filters',             array( $this, 'setup_geoloc_filter_in_bar' ),  1, 1 );
 		add_filter( 'generate_rewrite_rules',               array( $this, 'add_routes'                 )        );
-		add_filter( 'tribe_events_pre_get_posts',           array( $this, 'setup_geoloc_in_query'      )        );
+		add_action( 'tribe_events_pre_get_posts',           array( $this, 'setup_geoloc_in_query'      )        );
 		add_filter( 'tribe_events_list_inside_before_loop', array( $this, 'add_event_distance'         )        );
 
 	}
@@ -174,7 +174,7 @@ class TribeEventsGeoLoc {
 			$venues = $this->get_venues_without_geoloc_info();
 
 			// we want to inject the map default distance and unit into the map section directly after "enable Google Maps"
-			$args = TribeEventsPro::array_insert_after_key( 'embedGoogleMaps', $args, array(
+			$args = TribeEvents::array_insert_after_key( 'embedGoogleMaps', $args, array(
 					'geoloc_default_geofence' => array(
 						'type'            => 'text',
 						'label'           => __( 'Map view search distance limit', 'tribe-events-calendar-pro' ),
@@ -199,7 +199,7 @@ class TribeEventsGeoLoc {
 				)
 			);
 		} elseif ( $id == 'display' ) {
-			$args = TribeEventsPro::array_insert_after_key( 'tribeDisableTribeBar', $args, array(
+			$args = TribeEvents::array_insert_after_key( 'tribeDisableTribeBar', $args, array(
 				'hideLocationSearch' => array(
 					'type'            => 'checkbox_bool',
 					'label'           => __( 'Hide location search', 'tribe-events-calendar-pro' ),
@@ -308,11 +308,14 @@ class TribeEventsGeoLoc {
 	 *     so we can map them.
 	 *
 	 *
-	 * @param $query
+	 * @param WP_Query $query
 	 *
-	 * @return mixed
+	 * @return void
 	 */
 	public function setup_geoloc_in_query( $query ) {
+		if ( ( ! $query->is_main_query() && ! defined( 'DOING_AJAX' ) ) || ! $query->get( 'post_type' ) == TribeEvents::POSTTYPE ) {
+			return;
+		}
 
 		$force = false;
 		if ( ! empty( $_REQUEST['tribe-bar-geoloc-lat'] ) && ! empty( $_REQUEST['tribe-bar-geoloc-lng'] ) ) {
@@ -340,15 +343,6 @@ class TribeEventsGeoLoc {
 				$query->query_vars['meta_query'][] = $meta_query;
 			}
 		}
-
-		// forcing past display if set via navigation
-		if( !empty( $_REQUEST['tribe_event_display'] ) && $_REQUEST['tribe_event_display'] == 'past' ){
-			$query->tribe_is_past = true;
-			$query->set( 'tribe_is_past', true );
-		}
-
-		return $query;
-
 	}
 
 
@@ -561,25 +555,6 @@ class TribeEventsGeoLoc {
 	}
 
 	/**
-	 * Make the past pagination work in the map view
-	 * @param $query
-	 *
-	 * @return mixed
-	 */
-	public function set_past_events_query( $query ) {
-		$query->set( 'start_date', '' );
-		$query->set( 'eventDate', '' );
-		$query->set( 'order', 'DESC' );
-		if ( isset( $_POST["tribe-bar-date"] ) && $_POST["tribe-bar-date"] ) {
-			$query->set( 'end_date', $_POST["tribe-bar-date"] );
-		} else {
-			$query->set( 'end_date', date_i18n( TribeDateUtils::DBDATETIMEFORMAT ) );
-		}
-
-		return $query;
-	}
-
-	/**
 	 * AJAX handler for the Map view
 	 */
 	function ajax_tribe_geosearch() {
@@ -607,18 +582,23 @@ class TribeEventsGeoLoc {
 		/* if past view */
 		if ( ! empty( $_POST['tribe_event_display'] ) && $_POST['tribe_event_display'] == 'past' ) {
 			$view_state = 'past';
-			add_filter( 'tribe_events_pre_get_posts', array( $this, 'set_past_events_query' ) );
 		}
 
 		$query = TribeEventsQuery::getEvents( $defaults, true );
+		$have_events = ( 0 < $query->found_posts );
 
-		if ( $this->is_geoloc_query() && $query->found_posts > 0 ) {
+		if ( $have_events && $this->is_geoloc_query() ) {
 			$lat = isset( $_POST['tribe-bar-geoloc-lat'] ) ? $_POST['tribe-bar-geoloc-lat'] : 0;
 			$lng = isset( $_POST['tribe-bar-geoloc-lng'] ) ? $_POST['tribe-bar-geoloc-lng'] : 0;
 
 			$this->order_posts_by_distance( $query->posts, $lat, $lng );
 		}
-
+		elseif ( ! $have_events && isset($_POST['tribe-bar-geoloc']) ) {
+			TribeEvents::setNotice( 'event-search-no-results', sprintf( __( 'No results were found for events in or near <strong>"%s"</strong>.', 'tribe-events-calendar-pro' ), esc_html($_POST['tribe-bar-geoloc']) ) );
+		}
+		elseif ( ! $have_events ) {
+			TribeEvents::setNotice( 'event-search-no-results', __( 'There were no results found.', 'tribe-events-calendar-pro' ) );
+		}
 
 		$response = array( 'html'        => '',
 		                   'markers'     => array(),
@@ -629,16 +609,16 @@ class TribeEventsGeoLoc {
 		                   'view'        => $view_state,
 		);
 
-		if ( $query->found_posts > 0 ) {
+		if ( $have_events) {
 			global $wp_query, $post;
 			$data     = $query->posts;
 			$post     = $query->posts[0];
 			$wp_query = $query;
-			TribeEvents::instance()->setDisplay();
+			TribeEvents::instance()->displaying = 'map';
 
 			ob_start();
 
-			tribe_get_view( 'map/content' );
+			tribe_get_view( 'pro/map/content' );
 			$response['html'] .= ob_get_clean();
 			$response['markers'] = $this->generate_markers( $data );
 		} else {
@@ -648,7 +628,7 @@ class TribeEventsGeoLoc {
 
 			ob_start();
 
-			tribe_get_view( 'map/content' );
+			tribe_get_view( 'pro/map/content' );
 			$response['html'] .= ob_get_clean();
 		}
 
@@ -753,10 +733,12 @@ class TribeEventsGeoLoc {
 
 		$delta_lat = $lat_to - $lat_from;
 		$delta_lng = $lng_to - $lng_from;
-		$a         = sin( deg2rad( $delta_lat / 2 ) ) * sin( deg2rad( $delta_lat / 2 ) ) + cos( deg2rad( $lat_from ) ) * cos( deg2rad( $lat_to ) ) * sin( deg2rad( $delta_lng / 2 ) ) * sin( deg2rad( $delta_lng / 2 ) );
-		$c         = asin( min( 1, sqrt( $a ) ) );
-		$distance  = 2 * self::EARTH_RADIO * $c;
-		$distance  = round( $distance, 4 );
+
+
+		$a        = sin( deg2rad( (double) ( $delta_lat / 2 ) ) ) * sin( deg2rad( (double) ( $delta_lat / 2 ) ) ) + cos( deg2rad( (double) $lat_from ) ) * cos( deg2rad( (double) $lat_to ) ) * sin( deg2rad( (double) ( $delta_lng / 2 ) ) ) * sin( deg2rad( (double) ( $delta_lng / 2 ) ) );
+		$c        = asin( min( 1, sqrt( $a ) ) );
+		$distance = 2 * self::EARTH_RADIO * $c;
+		$distance = round( $distance, 4 );
 
 		return $distance;
 	}
@@ -878,6 +860,9 @@ class TribeEventsGeoLoc {
 	 * Check if there are venues without geo data and hook into admin_notices to show a message to the user.
 	 */
 	public function maybe_offer_generate_geopoints() {
+		if ( defined( 'DOING_AJAX' ) && DOING_AJAX )
+			return;
+
 		$done = get_option( '_tribe_geoloc_fixed' );
 
 		if ( ! empty( $done ) )

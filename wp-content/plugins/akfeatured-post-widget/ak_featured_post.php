@@ -1,9 +1,9 @@
-<?
+<?php
 /*
 Plugin Name: AK: Featured Post Sidebar Widget
 Plugin URI: http://cssboss.com/featured_post
 Description: Easily configure this widget to display any amount of posts (from 1 to 99) from a category into any widgetized area of your blog. Video is more my style, so check out this video tutorial I made for the plugin <a href="http://www.youtube.com/watch?v=eWhafkO7uJQ">Here</a>
-Version: 1.7
+Version: 1.8
 Author: Andrew Kaser
 Author URI: http://www.cssboss.com/about
 Text-Domain: ak-featured-posted
@@ -25,9 +25,10 @@ Text-Domain: ak-featured-posted
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-	class ak_featured_post_widget extends WP_Widget {
-
-		public function form( $instance ) {
+	class ak_featured_post_widget extends WP_Widget 
+	{
+		public function form( $instance )
+		{
 			// define all variables of the widget, and also set default values 
 			if ( isset( $instance[ 'category' ] ) ) { $category = $instance[ 'category' ]; } else { $category = __( 'Featured' , 'text_domain' ); }
 			if ( isset( $instance[ 'title' ] ) ) { $title = $instance[ 'title' ]; } else { $title = __( 'Featured Post' , 'text_domain' ); }
@@ -35,7 +36,7 @@ Text-Domain: ak-featured-posted
 			if ( isset( $instance[ 'show_post_limit' ] ) ) { $show_post_limit = $instance[ 'show_post_limit' ]; } else { $show_post_limit = __( '1' , 'text_domain' ); }
 			if ( isset( $instance[ 'order_post' ] ) ) { $order_post = $instance[ 'order_post' ]; } else { $order_post = __( 'DESC' , 'text_domain' ); }
 			
-			if ( isset( $instance[ 'link_title_to_cat' ] ) ) { $link_title_to_cat = $instance[ 'link_title_to_cat' ]; } else { $link_title_to_cat = __( 'checked' , 'text_domain' ); }
+			if ( isset( $instance[ 'link_title_to_cat' ] ) ) { $link_title_to_archive = $instance[ 'link_title_to_cat' ]; } else { $link_title_to_archive = __( 'checked' , 'text_domain' ); }
 			if ( isset( $instance[ 'show_post_title' ] ) ) { $show_post_title = $instance[ 'show_post_title' ]; } else { $show_post_title = __( 'checked' , 'text_domain' ); }
 			
 			if ( isset( $instance[ 'show_featured_image' ] ) ) { $show_featured_image = $instance[ 'show_featured_image' ]; } else { $show_featured_image = __( 'checked' , 'text_domain' ); }
@@ -48,6 +49,7 @@ Text-Domain: ak-featured-posted
 			if ( isset( $instance[ 'custom_post_type' ] ) ) { $custom_post_type = $instance[ 'custom_post_type' ]; } else { $custom_post_type = __( '' , 'text_domain' ); }
 			
 			if ( isset( $instance[ 'show_support_link' ] ) ) { $show_support_link = $instance[ 'show_support_link' ]; } else { $show_support_link = __( 'checked' , 'text_domain' ); }
+			if ( isset( $instance[ 'show_excerpt' ] ) ) { $show_excerpt = $instance[ 'show_excerpt' ]; } else { $show_excerpt = __( 'checked' , 'text_domain' ); }
 			
 			$post_type_id = $this->get_field_id( 'post_type' ); 
 			?>
@@ -60,8 +62,8 @@ Text-Domain: ak-featured-posted
 			<p>
 				<label for="<?php echo $this->get_field_id( 'post_type' ); ?>"> <?php _e( 'Post Type :' ); ?> </label> 
 				<select id="<?php echo $this->get_field_id( 'post_type' ); ?>" name="<?php echo $this->get_field_name( 'post_type' ); ?>" onchange="showOps(this)" class="post_type_option" style="width: 161px;">	
-					<option value="post" <? if ( $post_type == "post" ) { echo 'selected="selected"'; } ?> >Post</option>
-					<option value="custom" <? if ( $post_type == "custom" ) { echo 'selected="selected"'; } ?> >Custom Post Type</option>
+					<option value="post" <?php if ( $post_type == "post" ) { echo 'selected="selected"'; } ?> >Post</option>
+					<option value="custom" <?php if ( $post_type == "custom" ) { echo 'selected="selected"'; } ?> >Custom Post Type</option>
 				</select>
 			</p>
 			<p id="<?php echo $this->get_field_id( 'post_type' ); ?>_id"  <?php if ( $post_type != "custom") { echo 'style="display:none;"'; } ?> class="hidden_options">
@@ -79,6 +81,7 @@ Text-Domain: ak-featured-posted
 				<select id="<?php echo $this->get_field_id( 'order_post' ); ?>" name="<?php echo $this->get_field_name( 'order_post' ); ?>" style="width:154px;" >
 					<option value="ASC" <?php if ( $order_post == "ASC" ) { echo 'selected="selected"'; } ?>>Oldest to Newest</option>
 					<option value="DESC" <?php if ( $order_post == "DESC" ) { echo 'selected="selected"'; } ?>>Newest to Oldest</option>
+					<option value="rand" <?php if ( $order_post == "rand" ) { echo 'selected="selected"'; } ?>>Random</option>
 				</select>
 			</p>
 
@@ -88,11 +91,15 @@ Text-Domain: ak-featured-posted
 					<option value="none">All</option>
 					<?php
 						$categories_list = get_categories();
-						foreach ($categories_list as $list_category ) {
+						foreach ($categories_list as $list_category ) 
+						{
 
-							if ( $list_category->cat_ID == $category ) {
+							if ( $list_category->cat_ID == $category ) 
+							{
 								$selected = 'selected="selected"';
-							} else {
+							} 
+							else 
+							{
 								$selected = '';
 							}
 
@@ -108,8 +115,8 @@ Text-Domain: ak-featured-posted
 			</p>
 
 			<p id="<?php echo $this->get_field_id( 'show_post_title' ); ?>_id"  style="text-align:right;<?php if ( $show_post_title == false ) { echo 'display:none;'; } ?>" class="hidden_options">
-				<label for="<?php echo $this->get_field_id( 'link_title_to_cat' ); ?>"><?php _e( 'Link Title To Category :' ); ?></label> 
-				<input id="<?php echo $this->get_field_id( 'link_title_to_cat' ); ?>" name="<?php echo $this->get_field_name( 'link_title_to_cat' ); ?>" type="checkbox" value="<?php echo esc_attr( $link_title_to_cat ); ?>" <?php checked( (bool) $link_title_to_cat, true ); ?> />
+				<label for="<?php echo $this->get_field_id( 'link_title_to_cat' ); ?>"><?php _e( 'Make Widget Title A Link? :' ); ?></label> 
+				<input id="<?php echo $this->get_field_id( 'link_title_to_cat' ); ?>" name="<?php echo $this->get_field_name( 'link_title_to_cat' ); ?>" type="checkbox" value="<?php echo esc_attr( $link_title_to_archive ); ?>" <?php checked( (bool) $link_title_to_archive, true ); ?> />
 			</p>
 
 			<p style="text-align:right;">
@@ -120,20 +127,20 @@ Text-Domain: ak-featured-posted
 			<p <?php if ( $show_featured_image == false ) { echo 'style="display:none;"'; } ?> class="hidden_options">
 				<label for="<?php echo $this->get_field_id( 'image_align' ); ?>"><?php _e( 'Align Image :' ); ?></label> 
 				<select id="<?php echo $this->get_field_id( 'image_align' ); ?>" name="<?php echo $this->get_field_name( 'image_align' ); ?>" style="width:150px;">	
-					<option value="left" <? if ( $image_align == "left" ) { echo 'selected="selected"'; } ?>  style="text-align:left;">Left</option>
-					<option value="center" <? if ( $image_align == "center" ) { echo 'selected="selected"'; }  ?>   style="text-align:center;">Center</option>
-					<option value="right" <? if ( $image_align == "right" ) { echo 'selected="selected"'; }  ?>  style="text-align:right;" >Right</option>
+					<option value="left" <?php if ( $image_align == "left" ) { echo 'selected="selected"'; } ?>  style="text-align:left;">Left</option>
+					<option value="center" <?php if ( $image_align == "center" ) { echo 'selected="selected"'; }  ?>   style="text-align:center;">Center</option>
+					<option value="right" <?php if ( $image_align == "right" ) { echo 'selected="selected"'; }  ?>  style="text-align:right;" >Right</option>
 				</select>
 			</p>
 
 			<p <?php if ( $show_featured_image == false ) { echo 'style="display:none;"'; } ?> class="hidden_options">
 				<label for="<?php echo $this->get_field_id( 'image_size' ); ?>"><?php _e( 'Image Size :' ); ?></label> 
 				<select id="<?php echo $this->get_field_id( 'image_size' ); ?>" name="<?php echo $this->get_field_name( 'image_size' ); ?>" class="image_size_options" onchange="showOps(this)" style="width:154px;">	
-					<option value="custom" <? if ( $image_size == "custom" ) { echo 'selected="selected"'; } ?>  >Custom</option>
-					<option value="thumbnail" <? if ( $image_size == "thumbnail" ) { echo 'selected="selected"'; } ?> >Thumbnail</option>
-					<option value="medium" <? if ( $image_size == "medium" ) { echo 'selected="selected"'; } ?> >Medium</option>
-					<option value="large" <? if ( $image_size == "large" ) { echo 'selected="selected"'; } ?> >Large</option>
-					<option value="full" <? if ( $image_size == "full" ) { echo 'selected="selected"'; } ?> >Full</option>
+					<option value="custom" <?php if ( $image_size == "custom" ) { echo 'selected="selected"'; } ?>  >Custom</option>
+					<option value="thumbnail" <?php if ( $image_size == "thumbnail" ) { echo 'selected="selected"'; } ?> >Thumbnail</option>
+					<option value="medium" <?php if ( $image_size == "medium" ) { echo 'selected="selected"'; } ?> >Medium</option>
+					<option value="large" <?php if ( $image_size == "large" ) { echo 'selected="selected"'; } ?> >Large</option>
+					<option value="full" <?php if ( $image_size == "full" ) { echo 'selected="selected"'; } ?> >Full</option>
 				</select>
 			</p>
 
@@ -150,7 +157,15 @@ Text-Domain: ak-featured-posted
 			</p>
 
 			<p style="text-align:right;">
-				<a href="http://www.cssboss.com" target="_blank">CSSBoss.com</a> - <a href="http://www.youtube.com/subscription_center?add_user=thecssboss" target="_blank">Youtube</a> - <a href="http://www.csssboss.com/donate" target="_blank">Donate</a> <strong>&#9774;</strong>
+				<label for="<?php echo $this->get_field_id( 'show_excerpt' ); ?>"><?php _e( 'Show Text Excerpt? :' ); ?></label> 
+				<input id="<?php echo $this->get_field_id( 'show_excerpt' ); ?>" name="<?php echo $this->get_field_name( 'show_excerpt' ); ?>" type="checkbox" value="<?php echo esc_attr( $show_excerpt ); ?>" <?php checked( (bool) $show_excerpt, true ); ?> />
+			</p>
+
+			<p style="text-align:right;">
+				<a href="http://www.CSSBoss.com" target="_blank">CSSBoss.com</a> - 
+				<a href="http://www.youtube.com/subscription_center?add_user=thecssboss" target="_blank">Youtube</a> - 
+				<a href="http://www.CSSBoss.com/donate" target="_blank">Donate</a> 
+				<strong>&#9774;</strong>
 			</p>
 			<?php
 			
@@ -167,52 +182,89 @@ Text-Domain: ak-featured-posted
 			// setting all the args for the widget
 			$title = apply_filters( 'widget_title', $instance['title'] );
 			
-			// I hate when I can't select to display posts from ALL categories if I want to... so here you go :)
-			if ( $instance['category'] != "none" ) {
-				$category = '&cat='.$instance['category'];
-			} else {
+			// I hate using other people's websites when you can't select to display posts from ALL categories... so this is my way of making the world a better place :)
+			if ( $instance['category'] != "none" ) 
+			{
+				$category_id = $instance['category']; // added in 1.8, thanks for the positive feed back!
+				$category = 'cat='.$instance['category'].'&';
+			} 
+			else 
+			{
 				$category = '';
+				$category_id = $instance['custom_post_type'];
 			}
 
 			$post_type				= $instance['post_type'];
 			$custom_post_type 		= $instance['custom_post_type'];
 			$order_post 			= $instance['order_post'];
-			$link_title_to_cat 		= $instance['link_title_to_cat'];
+			$link_title_to_archive 	= $instance['link_title_to_cat'];
 			$show_post_title 		= $instance['show_post_title'];
 			$show_post_limit 		= $instance['show_post_limit'];
 			$show_featured_image 	= $instance['show_featured_image'];
 			$show_support_link 		= $instance['show_support_link'];
 			$image_size 			= $instance['image_size'];
 			$image_align 			= $instance['image_align'];
+			$show_excerpt			= $instance['show_excerpt'];
 
 			// build the size variable to use with wp_query
-			if ( $image_size == "custom" ) {
+			if ( $image_size == "custom" ) 
+			{
 				$image_width = $instance['image_width'];
 				$image_height = $instance['image_height'];
 				$size = array( $image_width, $image_height );
-			} else {
+			} 
+			else 
+			{
 				$size = $image_size;
 			}
 
 			// start the widget
 			echo $before_widget;
 
+			// for 1.8 we need to update the widget title, to allow for more flexible linking
+			
 			// Let's build the title of the widget
-			if ( $link_title_to_cat ) {
-				echo $before_title . '<a href="' . get_category_link($category) . '">'.$title.'</a>'.$after_title;
-			} else {
+			if ( $link_title_to_archive ) 
+			{
+				if ( $post_type == 'custom' ) 
+				{
+					$custom_post_link = get_post_type_archive_link($custom_post_type);
+					echo $before_title . '<a href="' . $custom_post_link .'">'.$title.'</a>'.$after_title;
+					$category = '';
+				}
+				else 
+				{
+					echo $before_title . '<a href="' . get_category_link($category_id) . '">'.$title.'</a>'.$after_title;
+				}
+			} 
+			else 
+			{
 				echo $before_title . $title . $after_title;
 			}
 
 			// some post type checks real quick
-			if ($post_type == "custom" ) {
+			if ($post_type == "custom" ) 
+			{
 				$post_type = $custom_post_type;
 			}
 
 			echo "<ul>"; // thanks Dan ;)
 
+			// we need to figure out what argument to use, order or orderby depending on what they select.
+			if ($order_post == 'rand' ) 
+			{
+				// in order to sort randomly, we need to use orderby instead of order, added july 9th 2013 at 2:04am ;)
+				$order_orderby = 'orderby='.$order_post;
+			} 
+			else 
+			{
+				$order_orderby = 'order='.$order_post;
+			}
+			//i'm going to forget to delete this before the release, watch... 
+			//echo $category.'showposts='.$show_post_limit.'&'.$order_orderby.'&post_type='.$post_type;
+			
 			// this is where all the magic happens.
-			$ak_featured_posts_query = new WP_Query( $category.'&showposts='.$show_post_limit.'&order='.$order_post.'&post_type='.$post_type ); // get new post data
+			$ak_featured_posts_query = new WP_Query( $category.'showposts='.$show_post_limit.'&'.$order_orderby.'&post_type='.$post_type); // get new post data
 
 			while ( $ak_featured_posts_query->have_posts() ) : $ak_featured_posts_query->the_post();
 				$image_title = get_the_title();  // The alt text for the featured image
@@ -220,17 +272,16 @@ Text-Domain: ak-featured-posted
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<?php
-								if ($show_post_title) // To show the title of the post, or not...
+								if ( $show_post_title ) // To show the title of the post, or not...
 								{
 									the_title();
 								}
-
 								if ( $show_featured_image )
 								{
 									if ( has_post_thumbnail() )
 									{
 										echo '<br />';
-										the_post_thumbnail($size,
+										the_post_thumbnail( $size,
 											array(
 												'class' => 'ak_featured_post_image align'.$image_align.' ',
 												'title' => $image_title
@@ -241,23 +292,20 @@ Text-Domain: ak-featured-posted
 							?>
 							<br style="clear:both;" />
 						</a>
+						<?php if ( $show_excerpt ) { the_excerpt(); } ?>
 					</li>
 				<?php
 			endwhile;
-
 			echo "</ul>";
-
 			if ( $show_support_link ) 
 			{ 
 				echo '<p>Powered By <a href="http://www.cssboss.com/featured_post" target="_blank">AK: Featured Post</a></p>'; 
 			}
-
 			echo $after_widget; // end widget
-
 			$post = $post_old; // finally, restoring the original post data, as if we never even touched it ;)
 		}
-		
-		//fun stuff is over
+
+		//PARTYS OVER GUYS no more fun stuff
 		public function __construct() 
 		{
 			parent::__construct(
@@ -266,7 +314,7 @@ Text-Domain: ak-featured-posted
 				array( 'description' => __( 'Display the latest post from a category', 'text_domain' ), ) // Args
 			);
 		}
-	
+
 		public function ak_featured_post()
 		{
 			$widget_ops = array(
@@ -279,7 +327,7 @@ Text-Domain: ak-featured-posted
 			);
 			$this->WP_Widget( 'ak_featured_post', 'AK: Featured Post', $widget_ops, $control_ops ); // "Example Widget" will be name in control panel
 		}
-		
+
 		public function update( $new_instance, $old_instance ) 
 		{
 			// save the widget info
@@ -298,15 +346,17 @@ Text-Domain: ak-featured-posted
 			$instance['show_post_title'] 	 = ( isset( $new_instance['show_post_title'] ) ? 1 : 0 );
 			$instance['show_featured_image'] = ( isset( $new_instance['show_featured_image'] ) ? 1 : 0 );
 			$instance['show_support_link'] 	 = ( isset( $new_instance['show_support_link'] ) ? 1 : 0 );
+			$instance['show_excerpt'] 		 = ( isset( $new_instance['show_excerpt'] ) ? 1 : 0 );
 			return $instance;
 		}
 	}
-	
-	function ak_admin_js_enque($hook) {
+
+	function ak_admin_js_enque( $hook )
+	{
 	    if( $hook == 'widgets.php' )
 	    wp_enqueue_script( 'my_custom_script', plugins_url('/akfp_admin_widget.js', __FILE__) , array( 'jquery' ) );
 	}
 	add_action( 'admin_enqueue_scripts', 'ak_admin_js_enque' );
 	add_action( 'widgets_init', create_function( '', 'register_widget( "ak_featured_post_widget" );' ) );
-
+	
 ?>

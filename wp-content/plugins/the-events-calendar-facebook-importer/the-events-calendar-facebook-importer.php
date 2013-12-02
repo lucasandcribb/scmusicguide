@@ -2,7 +2,7 @@
 /*
 Plugin Name: The Events Calendar: Facebook Events
 Description: Import events into The Events Calendar from a Facebook organization or page.
-Version: 3.0.1
+Version: 3.2
 Author: Modern Tribe, Inc.
 Author URI: http://m.tri.be/22
 License: GPLv2
@@ -38,8 +38,8 @@ if ( !defined( 'ABSPATH' ) )
 class Tribe_FB_Importer {
 
 	protected static $instance;
-	const VERSION = '3.0.1';
-	const REQUIRED_TEC_VERSION = '3.0';
+	const VERSION = '3.2';
+	const REQUIRED_TEC_VERSION = '3.2';
 	static $fb_graph_url = 'https://graph.facebook.com/';
 	static $default_app_id = '404935409546807';
 	static $default_app_secret = 'a1300fded85f77fc64f14fdb69395545';
@@ -210,7 +210,9 @@ class Tribe_FB_Importer {
 	 * @return string the URL
 	 */
 	function get_access_token_url() {
-		return apply_filters( 'tribe_fb_get_access_token_url', add_query_arg( array( 'grant_type' => 'client_credentials', 'client_id' => $this->get_app_id(), 'client_secret' => $this->get_app_secret() ), self::$fb_graph_url . 'oauth/access_token' ) );
+		$url = apply_filters( 'tribe_fb_get_access_token_url', add_query_arg( array( 'grant_type' => 'client_credentials', 'client_id' => $this->get_app_id(), 'client_secret' => $this->get_app_secret() ), self::$fb_graph_url . 'oauth/access_token' ) );
+		do_action( 'log', 'access token url', 'tribe-events-facebook', $url );
+		return $url;
 	}
 
 	/**
@@ -247,7 +249,9 @@ class Tribe_FB_Importer {
 	 */
 	function build_url_with_access_token( $path = '', $query_args = array() ) {
 		$query_args = array_merge( $query_args, array( 'access_token' => $this->get_access_token() ) );
-		return add_query_arg( $query_args, $this->get_graph_url() . $path );
+		$url = add_query_arg( $query_args, $this->get_graph_url() . $path );
+		do_action( 'log', 'url with access token', 'tribe-events-facebook', $url);
+		return $url;
 	}
 
 	/**
@@ -312,11 +316,21 @@ class Tribe_FB_Importer {
 	 */
 	function get_facebook_photo( $object_id ) {
 		$photo_error = false;
-		$api_url = $this->build_url_with_access_token( $object_id . '/', array( 'fields' => 'cover', 'return_ssl_resources' => 1 ) );
+
+		list($width, $height) = $this->get_desired_img_dimensions();
+		$api_url = $this->build_url_with_access_token( $object_id . '/picture', array(
+			'redirect' => 'false',
+			'return_ssl_resources' => 1,
+			'width' => $width,
+			'height' => $height
+		) );
+
+		do_action('log', 'api url', 'tribe-events-facebook', $api_url);
 		$api_request =  $this->json_retrieve( $api_url );
-		if( !empty( $api_request->cover->source ) ) {
-			$new_path = $api_request->cover->source;
-			$get_photo = wp_remote_get( $api_request->cover->source );
+
+		if( !empty( $api_request->data->url ) ) {
+			$new_path = $api_request->data->url;
+			$get_photo = wp_remote_get( $api_request->data->url );
 		} else {
 			$photo_error = true;
 		}
@@ -341,6 +355,43 @@ class Tribe_FB_Importer {
 				$this->errors_images[] = __('Could not successfully import the image for unknown reasons.', 'tribe-fb-import' );
 			}
 		}
+	}
+
+	/**
+	 * Requests for images from Facebook need an explicit width and height in order to get a reasonably sized
+	 * non-square image back. This function tries to determine a size that can be scaled/cropped to fit all registered
+	 * image sizes even where they each have a different ratio.
+	 *
+	 * @return array [ width, height ]
+	 */
+	protected function get_desired_img_dimensions() {
+		// We need to access default and theme/plugin registered sizes
+		$size_list = $GLOBALS['_wp_additional_image_sizes'];
+		$size_labels = get_intermediate_image_sizes();
+
+		// Reasonable defaults
+		$width = 600;
+		$height = 450;
+
+		// We want to determine the biggest width and height we'll require to satisfy all sizes
+		foreach ( $size_labels as $size ) {
+			// Plugin/theme registered size? Check this first to avoid a db hit
+			if ( isset($size_list[$size]['width']) && isset($size_list[$size]['width']) ) {
+				$this_width = absint( $size_list[$size]['width'] );
+				$this_height = absint( $size_list[$size]['height'] );
+			}
+			// Default size?
+			else {
+				$this_width = absint( get_option($size . '_size_w') );
+				$this_height = absint( get_option($size . '_size_h') );
+			}
+			
+			// Compare and keep the biggest
+			$height = $this_height > $height ? $this_height : $height;
+			$width = $this_width > $width ? $this_width : $width;
+		}
+
+		return array( $width, $height );
 	}
 
 	/**
@@ -629,9 +680,8 @@ class Tribe_FB_Importer {
 		if ( isset( $facebook_event->id ) ) {
 
 			// fix facebook date offsets -8
-			$timezone = 'America/Los_Angeles';
-			$this->offset_date_to_timezone( $facebook_event->start_time, $timezone );
-			$this->offset_date_to_timezone( $facebook_event->end_time, $timezone );
+			$this->offset_date_to_timezone( $facebook_event->start_time );
+			$this->offset_date_to_timezone( $facebook_event->end_time );
 
 			// parse the event
 			$args = $this->parse_facebook_event( $facebook_event );
@@ -735,6 +785,7 @@ class Tribe_FB_Importer {
 				return new WP_Error( 'event_already_exists', sprintf( __( 'The event "%s" was already imported from Facebook.', 'tribe-fb-import' ), $facebook_event->name, $facebook_event ) );
 			}
 		} else {
+			do_action('log', 'Facebook event', 'tribe-events-facebook', $facebook_event);
 			return new WP_Error( 'invalid_event', sprintf( __( "Either the event with ID %s does not exist, is marked as private on Facebook or we couldn't reach the Facebook API", 'tribe-fb-import' ), $facebook_event_id ) );
 		}
 	}
@@ -868,11 +919,11 @@ class Tribe_FB_Importer {
 			if ( !empty( $_POST['tribe-fb-import-events-by-id'] ) ) {
 				$events_to_import = array_merge( $events_to_import, $this->parse_events_from_textarea( $_POST['tribe-fb-import-events-by-id'] ) );
 			}
-
 			// loop through events and import them
 			if ( !empty( $events_to_import ) && empty( $this->errors ) ) {
 				foreach ( $events_to_import as $facebook_event_id ) {
 					$local_event = $this->create_local_event( $facebook_event_id );
+					do_action('log', 'local event', 'tribe-events-facebook', $local_event);
 					if ( is_wp_error( $local_event ) ) {
 						$this->errors[] = $local_event->get_error_message();
 					} else {
@@ -921,7 +972,8 @@ class Tribe_FB_Importer {
 							$html_id = esc_attr( 'tribe-fb-import-event-' . $fb_event->id );
 							$event_exists_locally = $this->find_local_object_with_fb_id( $fb_event->id );
 							$imported = ( $event_exists_locally ) ? ' ' . __( '(previously imported)', 'tribe-fb-import' ) : '';
-							$start_date = date( $date_time_format, strtotime( $fb_event->start_time ) );
+							$this->offset_date_to_timezone( $fb_event->start_time );
+							$start_date = date_i18n( $date_time_format, strtotime( $fb_event->start_time ) );
 							$title = $start_date . ' &mdash; ' . $fb_event->name . $imported;
 							$title = apply_filters( 'tribe_fb_event_checkbox_label', $title, $start_date, $fb_event, $imported );
 							echo '<li><label for="' . $html_id . '"><input class="checkbox" name="tribe-fb-import-events[]" type="checkbox" id="' . $html_id . '" type="tribe-fb-import-event" value="' . esc_attr( $fb_event->id ) . '" ';

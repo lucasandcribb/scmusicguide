@@ -1,4 +1,0 @@
-scmusicguide
-============
-
-SC Music Guide

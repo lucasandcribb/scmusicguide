@@ -5,6 +5,7 @@ $(document).ready(function() {
     hideUrlLink();
     showFirstTenReviews();
     removeExclPostLinks();
+    checkExclusiveContent();
 
     var divs = $(".video-link-container").sort(function(){ 
         return Math.round(Math.random())-1; //so we get the right +/- combo
@@ -264,6 +265,8 @@ function hpSlideNext() {
             }
         });
     }
+
+
 }
 
 
@@ -320,6 +323,20 @@ function removeExclPostLinks() {
     });
 }
 
+function checkExclusiveContent() {
+    var vidContent = $('#exclusive-vid-holder').html();
+    if (vidContent == "") {
+        $('#exclusive-vid-container').hide();
+    }
 
+    var trackContent = $('#exclusive-track-holder').html();
+    if (trackContent == "") {
+        $('#exclusive-track-container').hide();
+    }
+
+    if (vidContent == "" && trackContent == "") {
+        $('.exclusive-article').css({'width':'100%'});
+    }
+}
 
 

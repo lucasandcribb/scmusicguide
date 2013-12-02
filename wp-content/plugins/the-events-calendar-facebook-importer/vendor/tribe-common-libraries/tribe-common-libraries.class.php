@@ -10,9 +10,10 @@
  */
 
 // Don't load directly
-if ( !defined('ABSPATH') ) { die('-1'); }
+if ( ! defined('ABSPATH') ) { die('-1'); }
 
-if( !class_exists( 'TribeCommonLibraries' ) ) {
+if ( ! class_exists( 'TribeCommonLibraries' ) ) {
+
 	class TribeCommonLibraries {
 
 		private static $tribe_registered_plugins;
@@ -21,11 +22,14 @@ if( !class_exists( 'TribeCommonLibraries' ) ) {
 		 * Enforce Singleton Pattern
 		 */
 		private static $instance;
-		public function getInstance() {
-			if(null == self::$instance) {
-				$className = __CLASS__;
+
+
+		public static function getInstance() {
+			if ( null == self::$instance ) {
+				$className      = __CLASS__;
 				self::$instance = new $className;
 			}
+
 			return self::$instance;
 		}
 
@@ -38,15 +42,15 @@ if( !class_exists( 'TribeCommonLibraries' ) ) {
 		/**
 		 * Register a plugin / helper class
 		 *
-		 * @param string $slug - slug specific to the helper class / plugin
+		 * @param string $slug    - slug specific to the helper class / plugin
 		 * @param string $version - version of the helper class / plugin
-		 * @param string $path - absolute path of the helper class / plugin file
+		 * @param string $path    - absolute path of the helper class / plugin file
 		 */
-		public static function register($slug,$version,$path) {
-			if ( !isset( self::$tribe_registered_plugins[$slug] ) || version_compare( self::$tribe_registered_plugins[$slug]['version'], $version, '<' ) ) {
+		public static function register( $slug, $version, $path ) {
+			if ( ! isset( self::$tribe_registered_plugins[$slug] ) || version_compare( self::$tribe_registered_plugins[$slug]['version'], $version, '<' ) ) {
 				self::$tribe_registered_plugins[$slug] = array(
-					'version'=>$version,
-					'path'=>$path,
+					'version' => $version,
+					'path'    => $path,
 				);
 			}
 		}
@@ -55,14 +59,13 @@ if( !class_exists( 'TribeCommonLibraries' ) ) {
 		 * Activate all plugins.
 		 */
 		public function activate_plugins() {
-			foreach(self::$tribe_registered_plugins as $k => $v) {
-				require_once($v['path']);
-				do_action('tribe_helper_activate_'.$k);
+			foreach ( self::$tribe_registered_plugins as $k => $v ) {
+				require_once( $v['path'] );
+				do_action( 'tribe_helper_activate_' . $k );
 			}
-			do_action('tribe_helper_activation_complete');
+			do_action( 'tribe_helper_activation_complete' );
 		}
 	}
-
-	TribeCommonLibraries::getInstance();
 }
-?>
+
+TribeCommonLibraries::getInstance();

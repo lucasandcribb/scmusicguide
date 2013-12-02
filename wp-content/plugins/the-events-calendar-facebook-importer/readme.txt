@@ -2,9 +2,9 @@
 Contributors:  ModernTribe, roblagatta, codearachnid, PaulHughes01, peterchester, reid.peifer, shane.pearlman
 Tags: modern tribe, tribe, facebook, events, calendar, recurring, event, venue, import, importer, api, dates, date, plugin, posts, conference, workshop, concert, meeting, seminar, summit
 Donate link: http://m.tri.be/29
-Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 3.0.1
+Requires at least: 3.6
+Tested up to: 3.7.1
+Stable tag: 3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Import events into The Events Calendar from a Facebook organization or page.
 
 With the Facebook Events add-on, you can tap into the growing number of events Facebook users are organizing by importing public events from a specific organization or page directly into your WordPress site.
 
-Import individual Facebook events into <a href="http://m.tri.be/2x">The Events Calendar</a>, or choose to bulk import them from Facebook organization(s) or page(s) that you define. Imported events are automagically created as entries in The Events Calendar. Basic event data along with venue & organizer are populated appropriately. No more entering information in two places, or having to recreate someone else’s listing for a public event you want to include on your WordPress calendar.
+Import individual Facebook events into <a href="http://m.tri.be/2x">The Events Calendar</a>, or choose to bulk import them from Facebook organization(s) or page(s) that you define. Imported events are automagically created as entries in The Events Calendar. Basic event data along with venue & organizer are populated appropriately. No more entering information in two places, or having to recreate someone else‚Äôs listing for a public event you want to include on your WordPress calendar.
 
 Make sure to get the free <a href="http://m.tri.be/2x">The Events Calendar</a> plugin first.
 
@@ -44,8 +44,8 @@ Make sure to get the free <a href="http://m.tri.be/2x">The Events Calendar</a> p
 = Requirements =
 
 * PHP 5.2 or above
-* WordPress 3.5 or above
-* The Events Calendar 3.0 or above
+* WordPress 3.6 or above
+* The Events Calendar 3.2 or above
 
 == Frequently Asked Questions ==
 
@@ -79,16 +79,18 @@ The plugin is produced by <a href="http://m.tri.be/32">Modern Tribe Inc</a>.
 
 = Current Contributors =
 
-* <a href="http://profiles.wordpress.org/users/paulhughes01">Paul Hughes</a>
 * <a href="http://profiles.wordpress.org/users/roblagatta">Rob La Gatta</a>
-* <a href="http://profiles.wordpress.org/users/codearachnid">Timothy Wood</a>
 * <a href="http://profiles.wordpress.org/users/leahkoerper">Leah Koerper</a>
+* <a href="http://profiles.wordpress.org/users/barryhughes">Barry Hughes</a>
+* <a href="http://profiles.wordpress.org/users/jazbek">Jessica Yazbek</a>
 * <a href="http://profiles.wordpress.org/users/peterchester">Peter Chester</a>
 * <a href="http://profiles.wordpress.org/users/reid.peifer">Reid Peifer</a>
 * <a href="http://profiles.wordpress.org/users/shane.pearlman">Shane Pearlman</a>
 
 = Past Contributors =
 
+* <a href="http://profiles.wordpress.org/users/paulhughes01">Paul Hughes</a>
+* <a href="http://profiles.wordpress.org/users/codearachnid">Timothy Wood</a>
 * <a href="http://profiles.wordpress.org/users/jkudish">Joachim Kudish</a>
 
 = Translators =
@@ -97,6 +99,10 @@ The plugin is produced by <a href="http://m.tri.be/32">Modern Tribe Inc</a>.
 * Czech from Petr Bastan
 * German from Jan
 * Swedish from Andreas Bodin
+* Romanian from Mihai Burcea
+* Polish from Arkadiusz ≈önie≈ºek
+* Brazilian Portuguese by Dionizio Bonfim Bach
+* French by Ali Senhaji
 
 * Previous translators include Mark Galliath and Marek Kosinski
 
@@ -117,7 +123,9 @@ Our Premium Plugins:
 * <a href="http://m.tri.be/35">The Events Calendar: Eventbrite Tickets</a>
 * <a href="http://m.tri.be/36">The Events Calendar: Community Events</a>
 * <a href="http://m.tri.be/37">The Events Calendar: WooCommerce Tickets</a>
-* The Events Calendar: Filter Bar (coming summer 2013)
+* The Events Calendar: Filter Bar (coming late 2013)
+* The Events Calendar: EDD Tickets (coming late 2013)
+* The Events Calendar: WPEC Tickets (coming late 2013)
 
 == Upgrade Notice ==
 
@@ -127,7 +135,18 @@ This upgrade requires The Events Calendar 3.0+
 
 = IMPORTANT NOTICE =
 
-3.0 is a complete overhaul of the plugin, and as a result we're starting the changelog fresh. For release notes from the 2.x lifecycle, see <a href="http://m.tri.be/k">our 2.x release notes.</a>
+3.x is a complete overhaul of the plugin, and as a result we're starting the changelog fresh. For release notes from the 2.x lifecycle, see <a href="http://m.tri.be/k">our 2.x release notes.</a>
+
+= 3.2 =
+
+* Adjusted the size of event featured image requested upon import to pull the maximum file size possible (thanks to Thomas on the forums for first reporting this!)
+* Incorporated new French translation files, courtesy of Ali Senhaji
+
+= 3.1 =
+
+* Fix API photos URLs
+* Fix timezone issues
+* Updated translations: Brazilian Portuguese (new), Polish (new), Romanian (new)
 
 = 3.0.1 =
 

@@ -77,9 +77,9 @@
 			<a class="header-top-links" href="/about-us">About Us</a>
 			<a class="header-top-links" href="/artist-index-page">Artists</a>
 			<a class="header-top-links" href="/album-reviews">Reviews</a>
-			<span class="header-top-links top-link-bold" href="#">
-				<?php echo do_shortcode('[flexible-frontend-login]'); ?>
-			</span>
+			<!-- <span class="header-top-links top-link-bold" href="#">
+				<//?php echo do_shortcode('[flexible-frontend-login]'); ?>
+			</span> -->
 			<span class="header-top-links">
 				|  &nbsp;<a class="my-account-header" href="/my-account"> My Account</a>
 			</span>

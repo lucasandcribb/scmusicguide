@@ -189,7 +189,7 @@ ul.wpuf_customs {display: none;}
 #exclusive-container .exclusive-video {position:relative; float:left; width:350px; margin-right:10px; margin-top:25px; margin-left:10px;}
 #exclusive-container .exclusive-video div {position:relative; float:left;}
 .exclusive-vid-title {width:100%; text-align:center; font-size:18px; font-weight:bold; margin-bottom:5px;}
-#exclusive-container .exclusive-video .exclusive-vid-holder {width:350px; height:250px; text-align:center; border:1px solid #999; margin-top:5px;}
+#exclusive-container .exclusive-video .exclusive-vid-holder {max-width:350px; max-height:250px; text-align:center; margin-top:5px;}
 
 #exclusive-container .exclusive-article {position:relative; float:right; width:350px; margin-top:15px;}
 #exclusive-container .exclusive-article div {position:relative; float:left;}
@@ -358,7 +358,9 @@ ul.wpuf_customs {display: none;}
 .about-us-profile a, .about-us-profile div {position:relative; float:left;}
 .about-us-profile a img {max-width:225px;}
 .profile-titles {width:475px; font-size:18px; font-weight:bold; margin-bottom:10px;}
-.profile-info {width:450px; padding:20px; padding-top:0px;}
+.about-name {margin-bottom:5px; }
+.about-name, .about-title {width:100%;}
+.profile-info {width:450px; padding:20px; padding-top:0px; line-height:1.71429;}
 
 
 /* ARTIST INDEX */

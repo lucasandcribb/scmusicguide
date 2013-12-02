@@ -69,14 +69,14 @@ Template Name: Homepage
 				
 			</div>
 			
-			<div class="exclusive-video">
+			<div id="exclusive-vid-container"  class="exclusive-video">
 				<div class="exclusive-vid-title"><?php the_field('exclusive_video_title') ?></div>
-				<div class="exclusive-vid-holder"><?php the_field('exclusive_videos') ?></div>
+				<div id="exclusive-vid-holder" class="exclusive-vid-holder"><?php the_field('exclusive_videos') ?></div>
 			</div>
 
-			<div class="music-player">
+			<div id="exclusive-track-container" class="music-player">
 				<div class="exclusive-vid-title"><?php the_field('exclusive_track_title') ?></div>
-				<div class="exclusive-vid-holder"><?php the_field('exclusive_music_track') ?></div>
+				<div id="exclusive-track-holder" class="exclusive-vid-holder"><?php the_field('exclusive_music_track') ?></div>
 			</div>
 
 		<?php endwhile; ?>

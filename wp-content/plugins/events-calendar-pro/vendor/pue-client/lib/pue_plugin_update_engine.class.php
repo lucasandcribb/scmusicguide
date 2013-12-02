@@ -16,7 +16,7 @@ if ( !class_exists( 'TribePluginUpdateEngineChecker' ) ) {
 	 * @slighty modified by Joachim Kudish
 	 * @heavily modified by Peter Chester
 	 * @license GPL2 or greater.
-	 * @version 1.5
+	 * @version 1.6
 	 * @access public
 	 */
 	class TribePluginUpdateEngineChecker {
@@ -81,6 +81,8 @@ if ( !class_exists( 'TribePluginUpdateEngineChecker' ) ) {
 
 			//dashboard message "dismiss upgrade" link
 			add_action( "wp_ajax_".$this->dismiss_upgrade, array(&$this, 'dashboard_dismiss_upgrade'));
+
+			add_filter( 'tribe-pue-install-keys', array( &$this, 'return_install_key' ) );
 		}
 
 		/********************** Getter / Setter Functions **********************/
@@ -265,7 +267,6 @@ if ( !class_exists( 'TribePluginUpdateEngineChecker' ) ) {
 
 
 		/********************** General Functions **********************/
-
 
 		/**
 		 * Inserts license key fields on license key page
@@ -803,6 +804,23 @@ if ( !class_exists( 'TribePluginUpdateEngineChecker' ) ) {
 				$source_array += $insert_array;
 			}
 			return $source_array;
+		}
+
+		/**
+		 * Add this plugin key to the list of keys
+		 *
+		 * @param array $keys
+		 *
+		 * @return array $keys
+		 *
+		 * @author Peter Chester
+		 * @since 1.6
+		 */
+		public function return_install_key( $keys = array() ) {
+			if ( !empty( $this->install_key ) ) {
+				$keys[ $this->get_slug() ] = $this->install_key;
+			}
+			return $keys;
 		}
 	}
 }
