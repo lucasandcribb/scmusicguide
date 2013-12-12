@@ -105,7 +105,7 @@ jQuery(document).ready(function($) {
 
 		var savedVenue = $("#saved_venue");
 		
-		if ( savedVenue.size() > 0 && savedVenue.val() != '0' && !$('.nosaved').get(0) ) {
+		if ( savedVenue.length > 0 && savedVenue.val() != '0' ) {
 			venueFields.hide();
 			$('[name="venue[Venue]"]').val('');
 		}
@@ -127,7 +127,7 @@ jQuery(document).ready(function($) {
 
 		var savedorganizer = $("#saved_organizer");
 		
-		if ( savedorganizer.size() > 0 && savedorganizer.val() != '0' && !$('.nosaved_organizer').get(0) ) {
+		if ( savedorganizer.length > 0 && savedorganizer.val() != '0' ) {
 			organizerFields.hide();
 			$('input',organizerFields).val('');
 		}
@@ -158,6 +158,34 @@ jQuery(document).ready(function($) {
 	}
 	
 	tribeShowHideCorrectStateProvinceInput( $("#EventCountry > option:selected").val() );
+
+	var $hidesub = $('[name="hideSubsequentRecurrencesDefault"]'),
+		$userhide = $('[name="userToggleSubsequentRecurrences"]');
+
+	if($hidesub.length && $userhide.length){
+
+		var $userwrap = $('#tribe-field-userToggleSubsequentRecurrences');
+
+		if($hidesub.is(':checked')){
+			$userhide.prop('checked', false);
+			$userwrap.hide();
+		}
+
+		$hidesub
+			.on('click', function () {
+				var $this = $(this);
+
+				if(!$this.is(':checked')){
+					$userwrap.show();
+				} else {
+					$userhide.prop('checked', false);
+					$userwrap.hide();
+				}
+
+			});
+
+
+	}
 
 	$("#EventCountry").change(function() {
 		var countryLabel = $(this).find('option:selected').val();
@@ -311,6 +339,8 @@ jQuery(document).ready(function($) {
 		if (val == "On") {
 			$('#rec-count').hide();
 			$('#recurrence_end').show();
+		} else if ( val == "Never" ) {
+			$('#rec-count, #recurrence_end').hide();
 		} else {
 			$('#recurrence_end').hide();
 			$('#rec-count').show();

@@ -69,10 +69,12 @@ $generalTab = array(
 		 ),
 		'liveFiltersUpdate' => array(
 			'type' => 'checkbox_bool',
-			'label' => __( 'Use Javascript to control page load', 'tribe-events-calendar' ),
-			'tooltip' => __( 'Enable ajax to live refresh content.' , 'tribe-events-calendar' ),
+			'label' => __( 'Use Javascript to control date filtering', 'tribe-events-calendar' ),
+			'tooltip' => tribe_get_option('tribeDisableTribeBar', false) == true ? __( 'This option is disabled when "Disable the Event Search Bar" is checked on the Display settings tab.' , 'tribe-events-calendar' ) : __( 'Enable live ajax for datepicker on front end (User submit not required).' , 'tribe-events-calendar' ),
+			'attributes' => tribe_get_option('tribeDisableTribeBar', false) == true ? array('disabled' => 'disabled') : null,
 			'default' => true,
 			'validation_type' => 'boolean',
+			'class' => tribe_get_option('tribeDisableTribeBar', false) == true ? 'tribe-fieldset-disabled' : null,			
 		),
 		'showComments' => array(
 			'type' => 'checkbox_bool',
@@ -133,7 +135,7 @@ $generalTab = array(
 		),
 		'multiDayCutoffHelper' => array(
 			'type' => 'html',
-			'html' => '<p class="tribe-field-indent tribe-field-description description">' . sprintf( __( 'Have events that run past midnight? Control when your day official ends to avoid awkwardly adding your event to the next day.', 'tribe-events-calendar' ) ) . '</p>',
+			'html' => '<p class="tribe-field-indent tribe-field-description description">' . sprintf( __( "Have an event that runs past midnight? Select a time after that event's end to avoid showing the event on the next day's calendar.", 'tribe-events-calendar' ) ) . '</p>',
 			'conditional' => ( '' != get_option( 'permalink_structure' ) ),
 		),
 		'defaultCurrencySymbol' => array(

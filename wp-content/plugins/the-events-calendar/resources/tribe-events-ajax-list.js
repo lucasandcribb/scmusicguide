@@ -31,6 +31,9 @@
 			if (td.params.length)
 				params = params + '&' + td.params;
 
+			if (ts.category)
+				params = params + '&tribe_event_category=' + ts.category;
+
 			history.replaceState({
 				"tribe_params": params,
 				"tribe_url_params": td.params
@@ -119,12 +122,11 @@
 			}
 		}
 
-		if (tt.live_ajax() && tt.pushstate) {
+		if (tt.no_bar() || tt.live_ajax() && tt.pushstate) {
 			$('#tribe-events-bar').on('changeDate', '#tribe-bar-date', function (e) {
 				if (!tt.reset_on()) {
 					ts.popping = false;
 					tribe_events_bar_listajax_actions(e);
-
 				}
 			});
 		}
