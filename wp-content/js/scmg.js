@@ -334,7 +334,7 @@ function checkExclusiveContent() {
         $('#exclusive-track-container').hide();
     }
 
-    if (vidContent == "" && trackContent == "") {
+    if (vidContent == "") {
         $('.exclusive-article').css({'width':'100%'});
     }
 }

@@ -58,6 +58,11 @@ Template Name: Homepage
 		<?php $artist_array = array(); ?>
 		<?php $e_loop = new WP_Query( array( 'post_type' => 'exclusive', 'posts_per_page' => 1, 'order' => 'DESC' ) ); ?>
 		<?php while ( $e_loop->have_posts() ) : $e_loop->the_post(); $excl_url = get_permalink();?>
+			
+			<div id="exclusive-vid-container"  class="exclusive-video">
+				<div class="exclusive-vid-title"><?php the_field('exclusive_video_title') ?></div>
+				<div id="exclusive-vid-holder" class="exclusive-vid-holder"><?php the_field('exclusive_videos') ?></div>
+			</div>
 
 			<div class="exclusive-article">
 				<div class="exclusive-article-title"><?php the_title(); ?></div>
@@ -67,11 +72,6 @@ Template Name: Homepage
 					<a href="<?php echo $excl_url; ?>">...Read More</a>
 				</div>
 				
-			</div>
-			
-			<div id="exclusive-vid-container"  class="exclusive-video">
-				<div class="exclusive-vid-title"><?php the_field('exclusive_video_title') ?></div>
-				<div id="exclusive-vid-holder" class="exclusive-vid-holder"><?php the_field('exclusive_videos') ?></div>
 			</div>
 
 			<div id="exclusive-track-container" class="music-player">
