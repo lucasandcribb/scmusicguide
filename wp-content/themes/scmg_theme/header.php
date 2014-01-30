@@ -80,9 +80,9 @@
 			<!-- <span class="header-top-links top-link-bold" href="#">
 				<//?php echo do_shortcode('[flexible-frontend-login]'); ?>
 			</span> -->
-			<span class="header-top-links">
+			<!-- <span class="header-top-links">
 				|  &nbsp;<a class="my-account-header" href="/my-account"> My Account</a>
-			</span>
+			</span> -->
 		</div>
 		<div id="social-links">
 			<a href="http://www.facebook.com/sharer.php?u=<?php echo $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?> " target="_blank"><img class="social-link" src="/wp-content/images/social-icons/fb.jpg" /></a>
@@ -96,7 +96,7 @@
 
 		<?php get_search_form(); ?>
 
-		<div id="f-login"><?php echo do_shortcode('[flexible-frontend-login-modal]'); ?></div>
+		<!-- <div id="f-login"><//?php echo do_shortcode('[flexible-frontend-login-modal]'); ?></div> -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
