@@ -527,6 +527,8 @@ article.tribe_events .entry-content {width:99%;}
 .single article {margin-bottom:20px;}
 .fb-like, .twitter-share-button, #google-plus {position:relative; float:left; margin-bottom:25px; width:100%;}
 .fb-follow {margin-bottom:20px;}
+.single article footer.entry-meta {background:#fff; padding-left:0px;}
+.single article footer.entry-meta .by-author {color:#000; font-size:15px;}
 
 
 /* SEARCH RESULTS */
