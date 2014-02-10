@@ -5,7 +5,7 @@ Template Name: Artist Index
 ?>
 <?php get_header(); ?>
 
-<div id="banner-slideshow" class="hp-slideshow .banner-slideshow-artist">
+<div id="banner-slideshow" class="hp-slideshow banner-slideshow-artist">
 	<div id="slide-next" class="slide-btn"></div>
 
 	<?php $slide_array = array(); ?>

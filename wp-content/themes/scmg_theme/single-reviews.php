@@ -38,14 +38,12 @@ get_header(); ?>
 				<?php the_field('review_content'); ?>
 			</div>
 			<div class="review-band-links">
-				<div>Artist Website:</div>
-				<a href="<?php the_field('artist_website'); ?>"><?php the_field('artist_website'); ?></a>
-				<div>Artist Facebook:</div>
-				<a href="<?php the_field('artist_facebook'); ?>"><?php the_field('artist_facebook'); ?></a>
-				<div>Artist YouTube:</div>
-				<a href="<?php the_field('artist_youtube'); ?>"><?php the_field('artist_youtube'); ?></a>
-				<div>Artist iTunes:</div>
-				<a href="<?php the_field('artist_itunes'); ?>"><?php the_field('artist_itunes'); ?></a>
+		
+				<div class="artist-website artist-site-links"><a href="<?php the_field('artist_website'); ?> target="blank""><?php the_field('artist_name'); ?>&#39;s Website</a></div>
+				<div class="artist-facebook artist-site-links"><a href="<?php the_field('artist_facebook'); ?> target="blank""><?php the_field('artist_name'); ?> on Facebook</a></div>
+				<div class="artist-youtube artist-site-links"><a href="<?php the_field('artist_youtube'); ?>" target="blank">View <?php the_field('artist_name'); ?> YouTube Videos</a></div>
+				<div class="artist-itunes artist-site-links"><a href="<?php the_field('artist_itunes'); ?>" target="blank">Buy <?php the_field('artist_name'); ?>&#39;s Music at iTunes</a></div>
+
 			</div>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php comments_template(); ?>
