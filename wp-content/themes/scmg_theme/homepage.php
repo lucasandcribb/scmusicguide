@@ -58,67 +58,33 @@ Template Name: Homepage
 <div id="featured-review" class="featured-section">
 	<a href="/album-reviews"><div class="fr-title">ALBUM REVIEWS</div></a>
 	<div class="fr-reveiws">
-		<?php $review_array = array(); ?>
-		
-		<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 100, 'order' => 'DESC' ) ); ?>
-		<?php while ( $loop->have_posts() ) : $loop->the_post(); $id = get_the_ID(); ?>
-			<?php array_push($review_array, $id); ?>
+		<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 1, 'order' => 'DESC') ); ?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); 
+				$id = get_the_ID(); $review_url = get_permalink(); $content = get_post_meta($id, 'review_content', true);?>
+			<div class="fr-review-one-cont">
+				<a class="fr-review-img" href="<?php echo $review_url; ?>"><?php echo the_post_thumbnail() ?></a>
+				<div class="fr-review-title"><a href="<?php echo $review_url; ?>"><?php the_title(); ?></a></div>
+				<div class="review-one-body">
+					<?php echo substr($content, 0, 400).'...'; ?>
+				</div>
+				<div class="fr-read-more"><a href="<?php echo $review_url; ?>">Read More</a></div>
+			</div>
 		<?php endwhile; ?>
-		<?php $reviewCount = 0; foreach ($review_array as $reviews) {$reviewCount++;} ?>
-
-		<?php $numbers = range(0,$reviewCount-1);
-		shuffle($numbers);
-		$threeRandNumbers = array_slice($numbers, 0, 3); ?>
-		
-		<?php $i = $threeRandNumbers[0];
-			$id = $review_array[$i];
-			$reviewOne = get_post($id); 
-			$title = $reviewOne->post_title;
-			$permalink = get_permalink($id);
-			$content = get_post_meta($id, 'review_content', true);
-		?>
-		<div class="fr-review-one-cont" rel="<?php echo $id; ?>">
-			<a class="fr-review-img" href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($id); ?>  </a>
-			<div class="fr-review-title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></div>
-			<div class="review-one-body">
-				<?php echo substr($content, 0, 500).'...'; ?>
-								</div>
-			<div class="fr-read-more"><a href="<?php echo $permalink; ?>">Read More</a></div>
-		</div>
-		
 		<div id="review-divider"></div>
-
-		<?php $i_two = $threeRandNumbers[1];
-			$id_two = $review_array[$i_two];
-			$reviewOne = get_post($id_two); 
-			$title = $reviewOne->post_title;
-			$permalink = get_permalink($id_two);
-			$content = get_post_meta($id_two, 'review_content', true);
-		?>
-		<div class="fr-review-sm-cont" rel="<?php echo $id_two; ?>">
-			<a class="fr-review-sm-img" href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($id_two); ?>  </a>
-			<div class="fr-review-sm-title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></div>
-			<div class="fr-review-sm-body">
-				<?php echo substr($content, 0, 300).'...'; ?>
-								</div>
-			<div class="fr-read-more"><a href="<?php echo $permalink; ?>">Read More</a></div>
-		</div>
-
-		<?php $i_three = $threeRandNumbers[2];
-			$id_three = $review_array[$i_three];
-			$reviewOne = get_post($id_three); 
-			$title = $reviewOne->post_title;
-			$permalink = get_permalink($id_three);
-			$content = get_post_meta($id_three, 'review_content', true);
-		?>
-		<div class="fr-review-sm-cont" rel="<?php echo $id_two; ?>">
-			<a class="fr-review-sm-img" href="<?php echo $permalink; ?>"><?php echo get_the_post_thumbnail($id_three); ?>  </a>
-			<div class="fr-review-sm-title"><a href="<?php echo $permalink; ?>"><?php echo $title; ?></a></div>
-			<div class="fr-review-sm-body">
-				<?php echo substr($content, 0, 300).'...'; ?>
-								</div>
-			<div class="fr-read-more"><a href="<?php echo $permalink; ?>">Read More</a></div>
-		</div>
+		<?php $loop = new WP_Query( array( 'post_type' => 'reviews', 'posts_per_page' => 3, 'order' => 'DESC') ); 
+			  $rev_num = 1;?>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); 
+				$id = get_the_ID(); $review_url = get_permalink(); $content = get_post_meta($id, 'review_content', true);?>
+			<div class="fr-review-sm-cont rev-<?php echo $rev_num; ?>">
+				<a class="fr-review-sm-img" href="<?php echo $review_url; ?>"><?php echo the_post_thumbnail() ?></a>
+				<div class="fr-review-sm-title"><a href="<?php echo $review_url; ?>"><?php the_title(); ?></a></div>
+				<div class="fr-review-sm-body">
+					<?php echo substr($content, 0, 200).'...'; ?>
+				</div>
+				<div class="fr-read-more"><a href="<?php echo $review_url; ?>">Read More</a></div>
+			</div>
+			<?php $rev_num++; ?>
+		<?php endwhile; ?>
 	</div>
 </div>
 
