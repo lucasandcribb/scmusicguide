@@ -338,7 +338,7 @@ ul.wpuf_customs {display: none;}
 #show-single-artist-in-month, #show-single-artist-in-month div {position:relative; float:left;}
 
 /* Musicians Corner */
-#musicians-corner-cont {position:relative; float:left; width:750px; border:1px solid #333;}
+#musicians-corner-cont {position:relative; float:left; width:750px; border:1px solid #333; margin-bottom:20px;}
 #musicians-corner-cont .musicians-corner-title {width:730px; background:#c39246; height:30px; padding-top:5px; font-size:24px; color:#fff;
 	letter-spacing:2px; font-weight:bold; padding-left:20px;}
 .mc-nav, .mc-nav div {position:relative; float:left;}
