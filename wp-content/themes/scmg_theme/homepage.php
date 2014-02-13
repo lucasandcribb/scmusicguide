@@ -32,7 +32,7 @@ Template Name: Homepage
 			$video = get_field('homepage_slider_video', $slide_id); ?>
 		
 		<div id="slide-<?php echo $s; ?>" class="slide-main" rel="<?php echo $s; ?>">
-			<?php if ($image['url'] != '') { ?>
+			<?php if ($image['url']) { ?>
 				<img src="<?php echo $image['url']; ?>" />
 			<?php } else {
 				echo $video;
