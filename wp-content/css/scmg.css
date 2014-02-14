@@ -154,7 +154,7 @@ footer {position:relative;width:100%; height:200px; background:#000; margin-top:
 .slide-thumb {opacity:0.25;}
 .current-thumb {opacity:1.0;}
 #hp-slide-cont .slide-title {opacity:0.75; font-size:32px; position:absolute; right:10px; top:10px; z-index:1; width:730px; height:380px;}
-#hp-slide-cont .hp-slide-title  {opacity:0.75; font-size:32px; position:absolute; right:10px; top:10px; z-index:1; max-width:800px;}
+#hp-slide-cont .hp-slide-title  {opacity:0.75; font-size:32px; position:absolute; right:10px; bottom:35px; z-index:1; max-width:800px;}
 #hp-slide-cont .slide-title a, #hp-slide-cont .slide-title, #hp-slide-cont .hp-slide-title {color:#efefef; text-decoration:none; vertical-align:bottom; text-align:right;
 	text-shadow: 0.1em 0.1em 0.05em #333}
 #hp-slide-cont .slide-title a:hover, #hp-slide-cont .slide-title:hover, #hp-slide-cont .hp-slide-title:hover {color:#fff;}

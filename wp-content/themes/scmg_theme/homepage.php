@@ -31,14 +31,20 @@ Template Name: Homepage
 			$image = get_field('homepage_slider_image', $slide_id);
 			$video = get_field('homepage_slider_video', $slide_id); ?>
 		
-		<div id="slide-<?php echo $s; ?>" class="slide-main" rel="<?php echo $s; ?>">
+		
 			<?php if ($image['url']) { ?>
-				<img src="<?php echo $image['url']; ?>" />
-			<?php } else {
-				echo $video;
-			} ?>
-			<a href="<?php echo $slide_permalink; ?>"><div class="hp-slide-title"><?php echo $slide_title; ?></div></a>
-		</div>
+				<div id="slide-<?php echo $s; ?>" class="slide-main image-slide" rel="<?php echo $s; ?>">
+					<img src="<?php echo $image['url']; ?>" />
+					<a href="<?php echo $slide_permalink; ?>"><div class="hp-slide-title"><?php echo $slide_title; ?></div></a>
+				</div>
+			<?php } else { ?>
+				<div id="slide-<?php echo $s; ?>" class="slide-main video-slide" rel="<?php echo $s; ?>">
+					<?php echo $video; ?>
+					<a href="<?php echo $slide_permalink; ?>"><div class="hp-slide-title"><?php echo $slide_title; ?></div></a>
+				</div>
+			<?php } ?>
+			
+		
 		<?php } ?>
 
 		<div class="index-dots-cont">
