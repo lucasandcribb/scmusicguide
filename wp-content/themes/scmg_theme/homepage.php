@@ -14,7 +14,7 @@ Template Name: Homepage
 
 	<?php $slide_array = array();
 		
-	$slide_loop = new WP_Query( array( 'post_type' => 'any', 'category_name' => 'Homepage Slider', 'posts_per_page' => 4 ) ); 
+	$slide_loop = new WP_Query( array( 'post_type' => 'any', 'category_name' => 'Homepage Slider', 'posts_per_page' => 4, 'order' => 'DESC') ); 
 
 	while ( $slide_loop->have_posts() ) : $slide_loop->the_post(); $slide_id = get_the_ID();
 		array_push($slide_array, $slide_id);
