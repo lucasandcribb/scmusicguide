@@ -96,7 +96,7 @@ Template Name: Homepage
 
 
 <div id="exclusive-container" class="featured-section">
-	<div id="exclusive-title" class="fr-title">FEATURED ARTISTS</div>
+	<div id="exclusive-title" class="fr-title">FEATURED ARTIST</div>
 	<div id="exclusive-content">
 		<?php $artist_array = array(); ?>
 		<?php $e_loop = new WP_Query( array( 'post_type' => 'exclusive', 'posts_per_page' => 1, 'order' => 'DESC' ) ); ?>

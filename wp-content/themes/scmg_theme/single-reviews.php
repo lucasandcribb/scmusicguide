@@ -39,8 +39,8 @@ get_header(); ?>
 			</div>
 			<div class="review-band-links">
 		
-				<div class="artist-website artist-site-links"><a href="<?php the_field('artist_website'); ?> target="blank""><?php the_field('artist_name'); ?>&#39;s Website</a></div>
-				<div class="artist-facebook artist-site-links"><a href="<?php the_field('artist_facebook'); ?> target="blank""><?php the_field('artist_name'); ?> on Facebook</a></div>
+				<div class="artist-website artist-site-links"><a href="<?php the_field('artist_website'); ?>" target="blank"><?php the_field('artist_name'); ?>&#39;s Website</a></div>
+				<div class="artist-facebook artist-site-links"><a href="<?php the_field('artist_facebook'); ?>" target="blank"><?php the_field('artist_name'); ?> on Facebook</a></div>
 				<div class="artist-youtube artist-site-links"><a href="<?php the_field('artist_youtube'); ?>" target="blank">View <?php the_field('artist_name'); ?> YouTube Videos</a></div>
 				<div class="artist-itunes artist-site-links"><a href="<?php the_field('artist_itunes'); ?>" target="blank">Buy <?php the_field('artist_name'); ?>&#39;s Music at iTunes</a></div>
 
