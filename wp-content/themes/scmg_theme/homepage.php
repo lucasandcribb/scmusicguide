@@ -44,11 +44,10 @@ Template Name: Homepage
 				</div>
 			<?php } ?>
 			
-		
+			
 		<?php } ?>
 
 		<div class="index-dots-cont">
-			
 			<?php for ($d=0;$d<$totalSlideCount;$d++) { ?>
 				<div class="each-dot-cont">
 					<div class="index-dots" rel="<?php echo $d; ?>"></div>
@@ -56,6 +55,13 @@ Template Name: Homepage
 			<?php } ?>
 		</div>
 
+	</div>
+
+	<div class="hp-vid-alert">
+		<img class="pause-slides on" src="/wp-content/images/pause.png" />
+		<div class="pause-slide-mssg">Pause Slideshow</div>
+		<img class="play-slides" src="wp-content/images/play.png" />
+		<div class="play-slide-mssg">Play Slideshow</div>
 	</div>
 
 </div>
