@@ -59,7 +59,7 @@ Template Name: Homepage
 
 	<div class="hp-vid-alert">
 		<img class="pause-slides on" src="/wp-content/images/pause.png" />
-		<div class="pause-slide-mssg">Pause Slideshow</div>
+		<div class="pause-slide-mssg">Pause Slideshow to View a Video</div>
 		<img class="play-slides" src="wp-content/images/play.png" />
 		<div class="play-slide-mssg">Play Slideshow</div>
 	</div>
